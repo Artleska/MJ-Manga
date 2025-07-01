@@ -222,14 +222,7 @@ function countCommonGenres(mangaGenres, selectedGenres) {
   return mangaGenres.filter(genre => selectedGenres.includes(genre.toLowerCase())).length;
 }
 
-// Gère l’ouverture/fermeture de la sidebar tri
-document.getElementById("openSortSidebarBtn").addEventListener("click", () => {
-  document.getElementById("sortSidebar").style.display = "block";
-});
 
-document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
-  document.getElementById("sortSidebar").style.display = "none";
-});
 
 </script>
 

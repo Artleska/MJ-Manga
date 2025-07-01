@@ -47,14 +47,12 @@ header {
 /* Cartes mangas */
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur mobile */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
-  width: 100%;
-box-sizing: border-box;
-
 }
+
 
 
 @media (min-width: 600px) {
@@ -337,6 +335,12 @@ html, body {
   overflow-x: hidden; /* ✅ bloque scroll horizontal */
   max-width: 100vw;   /* ✅ empêche le contenu de dépasser */
 }
+
+img, .manga, .popup-content {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 
 
 

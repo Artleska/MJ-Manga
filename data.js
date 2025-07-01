@@ -1101,6 +1101,13 @@ function openPopup(id) {
   document.getElementById('popup').style.display = 'flex';
 }
 
+function formatGenres(genres) {
+  if (!genres) return "—";
+  const arr = Array.isArray(genres) ? genres : genres.split(',');
+  return arr.map(g => g.trim()[0].toUpperCase() + g.trim().slice(1)).join(', ');
+}
+
+
 
 
 
@@ -1190,7 +1197,9 @@ checkboxes.forEach(cb => cb.addEventListener('change', filterMangas));
 
 // Générer au chargement
 document.addEventListener("DOMContentLoaded", () => {
-  generateCards();
+  displayMangas(Object.values(mangaData));
+  filterMangas();
 });
+
 
 
