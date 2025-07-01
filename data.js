@@ -36,7 +36,7 @@ const mangaData = {
     genres: "acting,badass,comedie,drame,female lead,modern,romance,secret identity",
     date: "2020",
     status: "En cours",
-   chTotal: "341",
+    chTotal: "341",
     chLus: ".138.340",
     externalLinks: {
       "Comick": "https://comick.io/comic/she-is-coming-please-get-down?page=6#chapter-header",
@@ -393,6 +393,20 @@ const mangaData = {
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/becoming-his-unwanted-wife",
       "Mangapark": "https://mangapark.net/title/380537-en-becoming-the-unwanted-mistress-of-a-noble-family"
+    }
+  },
+  IdTheGreatestFusionFantasy: {
+    title: "Id - The Greatest Fusion Fantasy ",
+    otherTitles: ["The Greatest Fusion Fantasy,Id"],
+    image: "https://cdn.mangaupdates.com/image/i166851.jpg",
+    description: "Aventures d’un homme venant d’une lointaine contrée orientale, se retrouvant dans un univers « fantastique » à l’occidentale. Il y rencontra elfes, nains, mages et dragons.",
+    genres: "male lead",
+    date: "2002",
+    status: "Completer",
+    chTotal: "188",
+    chLit: "188.",
+    externalLinks: {
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/id"
     }
   },
   thequeenstartsasanalister: {
@@ -913,74 +927,16 @@ const mangaData = {
   },
 };
 
-
 // DOM elements
 const container = document.getElementById('mangaContainer');
 const searchInput = document.getElementById('searchInput');
 const checkboxes = document.querySelectorAll('.sidebar-genres input[type="checkbox"]');
 
-function createMangaCard(manga, id) {
-  const imageSrc = manga.image && manga.image.trim() !== '' ? manga.image : 'image/fond.jpg';
-  const card = document.createElement('div');
-  card.classList.add('manga');
-  card.setAttribute('data-id', id);
-  card.setAttribute('data-title', manga.title.toLowerCase());
-  const genresStr = Array.isArray(manga.genres)
-    ? manga.genres.map(g => g.toLowerCase()).join(',')
-    : (manga.genres || '').toLowerCase();
-  card.setAttribute('data-genres', genresStr);
-
-  card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
-
-  card.innerHTML = `
-    <img src="${imageSrc}" alt="${manga.title || 'Manga'}">
-    <h3>${manga.title || 'Sans titre'}</h3>
-  `;
-
-  card.addEventListener('click', () => openPopup(id));
-  return card;
-}
-
-// Générer les cartes mangas
-function generateCards() {
-  container.innerHTML = '';
-  for (const id in mangaData) {
-    const manga = mangaData[id];
-    const imageSrc = manga.image && manga.image.trim() !== ''
-      ? manga.image
-      : 'image/fond.jpg';
-
-    const card = document.createElement('div');
-    card.classList.add('manga');
-    card.setAttribute('data-id', id);
-    card.setAttribute('data-title', manga.title.toLowerCase());
-    const genresStr = Array.isArray(manga.genres)
-      ? manga.genres.map(g => g.toLowerCase()).join(',')
-      : (manga.genres || '').toLowerCase();
-    card.setAttribute('data-genres', genresStr);
-
-    card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
-
-    card.innerHTML = `
-      <img src="${imageSrc}" alt="${manga.title || 'Manga'}">
-      <h3>${manga.title || 'Sans titre'}</h3>
-    `;
-
-    card.addEventListener('click', () => openPopup(id));
-    container.appendChild(card);
-  }
-
-
-}
-
-
-
-let currentSort = null; // 🔁 Garde en mémoire le tri actif
+let currentSort = null;
 
 function sortManga(type) {
   const buttons = document.querySelectorAll('.sort-buttons button');
 
-  // 🔁 Si on reclique sur le même bouton, on annule
   if (currentSort === type) {
     currentSort = null;
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -995,14 +951,12 @@ function sortManga(type) {
   if (activeBtn) activeBtn.classList.add('active');
 
   let filteredMangas = Object.values(mangaData);
-
-  // Harmoniser chTotal
   filteredMangas.forEach(m => {
     m.chTotal = m.chTotal || m.chapitresTotal || 0;
   });
 
   const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
-    .map(cb => cb.value.toLowerCase());
+    .map(cb => cb.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
 
   if (type === 'alphabetique') {
     filteredMangas.sort((a, b) => a.title.localeCompare(b.title));
@@ -1012,22 +966,63 @@ function sortManga(type) {
     let baseGenres = [];
 
     if (selectedGenres.length > 0) {
-      baseGenres = selectedGenres;
+      baseGenres = selectedGenres.map(g => {
+  const genre = g.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
+  return (genre === 'female lead' || genre === 'male lead') ? 'leadtype' : genre;
+});
+
     } else {
-      // choisir un manga avec des genres valides
-      const base = filteredMangas.find(m => m.genres && m.genres.length > 0);
+      const base = filteredMangas.find(m => m.genres && (Array.isArray(m.genres) ? m.genres.length > 0 : m.genres.trim() !== ''));
       if (base) {
         baseGenres = Array.isArray(base.genres)
-          ? base.genres.map(g => g.toLowerCase().trim())
-          : base.genres.toLowerCase().split(',').map(g => g.trim());
+          ? base.genres.map(g => g.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim())
+          : base.genres.split(',').map(g => g.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim());
       }
     }
 
-    filteredMangas.sort((a, b) => {
-      const commonA = countCommonGenres(a.genres, baseGenres);
-      const commonB = countCommonGenres(b.genres, baseGenres);
-      return commonB - commonA;
-    });
+      if (baseGenres.length === 0) {
+    displayMangas(filteredMangas);
+    filterMangas();
+    return;
+  }
+
+   const femaleLeadGroup = [];
+const maleLeadGroup = [];
+const otherGroup = [];
+
+filteredMangas.forEach(m => {
+  const genres = normalizeGenresArray(m.genres);
+  if (genres.includes("female lead")) {
+    femaleLeadGroup.push(m);
+  } else if (genres.includes("male lead")) {
+    maleLeadGroup.push(m);
+  } else {
+    otherGroup.push(m);
+  }
+});
+
+// Tri de chaque groupe par similarité
+femaleLeadGroup.sort((a, b) => {
+  const commonA = countCommonGenres(a.genres, baseGenres);
+  const commonB = countCommonGenres(b.genres, baseGenres);
+  return commonB - commonA;
+});
+
+maleLeadGroup.sort((a, b) => {
+  const commonA = countCommonGenres(a.genres, baseGenres);
+  const commonB = countCommonGenres(b.genres, baseGenres);
+  return commonB - commonA;
+});
+
+otherGroup.sort((a, b) => {
+  const commonA = countCommonGenres(a.genres, baseGenres);
+  const commonB = countCommonGenres(b.genres, baseGenres);
+  return commonB - commonA;
+});
+
+// Fusionner les 3 groupes
+filteredMangas = [...femaleLeadGroup, ...maleLeadGroup, ...otherGroup];
+
   } else if (type === 'chapitresMin') {
     const min = parseInt(document.getElementById("minChapitresInput").value) || 0;
     filteredMangas = filteredMangas.filter(m => m.chTotal >= min);
@@ -1035,31 +1030,32 @@ function sortManga(type) {
   }
 
   displayMangas(filteredMangas);
-  filterMangas();
+  filterMangas(); // toujours appliquer les filtres visuels
 }
 
+function normalizeGenresArray(genres) {
+  if (!genres) return [];
 
+  const arr = Array.isArray(genres) ? genres : genres.split(',');
+
+  return arr.map(g =>
+    g.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim()
+  );
+}
 
 
 
 function countCommonGenres(mangaGenres, selectedGenres) {
-  if (!mangaGenres) return 0;
-
-  const genresArray = Array.isArray(mangaGenres)
-    ? mangaGenres.map(g => g.toLowerCase().trim())
-    : mangaGenres.split(',').map(g => g.toLowerCase().trim());
-
-  return genresArray.filter(genre => selectedGenres.includes(genre)).length;
+  const mangaArray = normalizeGenresArray(mangaGenres);
+  const selectedArray = normalizeGenresArray(selectedGenres);
+  return mangaArray.filter(genre => selectedArray.includes(genre)).length;
 }
-
-
-
 
 
 function displayMangas(mangas) {
   container.innerHTML = '';
   mangas.forEach(manga => {
-    const id = manga.id || Object.keys(mangaData).find(key => mangaData[key] === manga);
+    const id = Object.keys(mangaData).find(key => mangaData[key] === manga);
     const imageSrc = manga.image && manga.image.trim() !== '' ? manga.image : 'image/fond.jpg';
 
     const card = document.createElement('div');
@@ -1067,28 +1063,22 @@ function displayMangas(mangas) {
     card.setAttribute('data-id', id);
     card.setAttribute('data-title', manga.title.toLowerCase());
     const genresStr = Array.isArray(manga.genres)
-  ? manga.genres.map(g => g.toLowerCase().trim()).join(',')
-  : (manga.genres || '').toLowerCase().trim();
-card.setAttribute('data-genres', genresStr);
-
+      ? manga.genres.map(g => g.toLowerCase().trim()).join(',')
+      : (manga.genres || '').toLowerCase().trim();
+    card.setAttribute('data-genres', genresStr);
     card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
 
     card.innerHTML = `
-      <img src="${imageSrc}" alt="${manga.title || 'Manga'}">
-      <h3>${manga.title || 'Sans titre'}</h3>
-    `;
+  <img src="${imageSrc}" alt="Couverture de ${manga.title || 'Manga'}">
+  <h3>${manga.title || 'Sans titre'}</h3>
+`;
+
 
     card.addEventListener('click', () => openPopup(id));
     container.appendChild(card);
   });
 }
 
-
-
-
-
-
-// Ouvrir le popup manga
 function openPopup(id) {
   const manga = mangaData[id];
   document.getElementById('popupTitle').innerText = manga.title;
@@ -1097,7 +1087,7 @@ function openPopup(id) {
   document.getElementById('popupGenres').innerText = formatGenres(manga.genres || "");
   document.getElementById('popupOtherTitles').innerText = manga.otherTitles?.join(', ') || "Aucun";
 
-  // Set ch and ch total side-by-side
+  // Ch et Ch total
   const popupChContainer = document.getElementById('popupChContainer');
   popupChContainer.innerHTML = `
     <div class="row">
@@ -1106,7 +1096,7 @@ function openPopup(id) {
     </div>
   `;
 
-  // Set date and status side-by-side
+  // Date et status
   const popupDateStatus = document.getElementById('popupDateStatus');
   popupDateStatus.innerHTML = `
     <div class="row">
@@ -1115,7 +1105,7 @@ function openPopup(id) {
     </div>
   `;
 
-  // ✅ Liens externes sur une ligne
+  // Liens externes
   const externalLinksContainer = document.getElementById('popupExternalLinks');
   externalLinksContainer.innerHTML = '';
   if (manga.externalLinks) {
@@ -1136,71 +1126,54 @@ function openPopup(id) {
   document.getElementById('popup').style.display = 'flex';
 }
 
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
 function formatGenres(genres) {
   if (!genres) return "—";
   const arr = Array.isArray(genres) ? genres : genres.split(',');
   return arr.map(g => g.trim()[0].toUpperCase() + g.trim().slice(1)).join(', ');
 }
 
-
-
-
-
-// Fermer le popup
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-}
-
-// Formater les genres avec majuscules
-function formatGenres(genres) {
-  if (!genres) return "—";
-  return genres.split(',').map(g => g.trim()[0].toUpperCase() + g.trim().slice(1)).join(', ');
-}
-
-// Filtrer les mangas
 function filterMangas() {
-  const search = searchInput.value.toLowerCase();
+  const search = searchInput.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const selectedGenres = Array.from(checkboxes)
     .filter(cb => cb.checked)
-    .map(cb => cb.value.toLowerCase());
+    .map(cb => cb.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
 
   document.querySelectorAll('.manga').forEach(card => {
-    const title = card.getAttribute('data-title');
+    const title = card.getAttribute('data-title').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const genresStr = card.getAttribute('data-genres') || "";
-const genres = genresStr
-  .split(',')
-  .map(g => g.trim().toLowerCase())
-  .filter(g => g.length > 0); // <-- empêche le bug si data-genres est vide
+    const genres = genresStr
+      .split(',')
+      .map(g => g.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+      .filter(g => g.length > 0);
 
-
-    const otherTitles = card.getAttribute('data-othertitles')?.toLowerCase() || "";
+    const otherTitles = (card.getAttribute('data-othertitles') || "")
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
 
     const matchesTitle = title.includes(search) || otherTitles.includes(search);
-    const matchesGenres = selectedGenres.every(g => genres.includes(g.trim()));
-
+    const matchesGenres = selectedGenres.every(g => genres.includes(g));
 
     card.style.display = matchesTitle && matchesGenres ? 'block' : 'none';
   });
 }
 
-// Réinitialiser les filtres
 function resetFilters() {
-  // Réinitialiser la recherche
   searchInput.value = '';
-
-  // Décocher les genres
   checkboxes.forEach(cb => cb.checked = false);
 
-  // Vider le champ de chapitres minimum
   const minChapitresInput = document.getElementById("minChapitresInput");
   if (minChapitresInput) minChapitresInput.value = '';
 
-  // Réafficher tous les mangas sans tri ni filtre
   displayMangas(Object.values(mangaData));
+  filterMangas(); // ✅ Ajout important pour appliquer les filtres
 }
 
 
-// Gestion sidebar genres
 document.getElementById("openSidebarBtn").addEventListener("click", () => {
   document.getElementById("genreSidebar").classList.add("open");
 });
@@ -1216,7 +1189,6 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// Gestion sidebar tri
 document.getElementById("openSortSidebarBtn").addEventListener("click", () => {
   document.getElementById("sortSidebar").classList.add("open");
 });
@@ -1232,16 +1204,14 @@ window.addEventListener("click", (e) => {
   }
 });
 
-
-// Lier filtres
 searchInput.addEventListener('input', filterMangas);
 checkboxes.forEach(cb => cb.addEventListener('change', filterMangas));
 
-// Générer au chargement
 document.addEventListener("DOMContentLoaded", () => {
   displayMangas(Object.values(mangaData));
   filterMangas();
 });
+
 
 
 

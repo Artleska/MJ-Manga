@@ -103,9 +103,6 @@
       <input type="checkbox" id="vampire" value="vampire" /><label for="vampire">Vampire</label>
       <input type="checkbox" id="villainess" value="villainess" /><label for="villainess">villainess</label>
       <input type="checkbox" id="yaoi" value="yaoi" /><label for="yaoi">Yaoi</label>
-      <input type="checkbox" id="" value="" /><label for=""></label>
-      <input type="checkbox" id="" value="" /><label for=""></label>
-      <input type="checkbox" id="" value="" /><label for=""></label>
     </div>
   </div>
 
@@ -186,45 +183,7 @@
 
   <script src="data.js"></script>
 
-  <script>
-
-  const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
-    .map(cb => cb.value.toLowerCase());
-
-  if (type === 'alphabetique') {
-    filteredMangas.sort((a, b) => a.title.localeCompare(b.title));
-
-  } else if (type === 'date') {
-    filteredMangas.sort((a, b) => {
-      const dateA = new Date(a.date || "2000-01-01");
-      const dateB = new Date(b.date || "2000-01-01");
-      return dateB - dateA;
-    });
-
-  } else if (type === 'genres') {
-    filteredMangas.sort((a, b) => {
-      const commonA = countCommonGenres(a.genres, selectedGenres);
-      const commonB = countCommonGenres(b.genres, selectedGenres);
-      return commonB - commonA;
-    });
-
-  } else if (type === 'chapitresMin') {
-    const min = parseInt(document.getElementById("minChapitresInput").value) || 0;
-    filteredMangas = filteredMangas.filter(m => (m.chapitresTotal || 0) >= min);
-    filteredMangas.sort((a, b) => (b.chapitresTotal || 0) - (a.chapitresTotal || 0));
-  }
-
-  displayMangas(filteredMangas);
-
-
-function countCommonGenres(mangaGenres, selectedGenres) {
-  if (!Array.isArray(mangaGenres)) return 0;
-  return mangaGenres.filter(genre => selectedGenres.includes(genre.toLowerCase())).length;
-}
-
-
-
-</script>
+  
 
 
 
