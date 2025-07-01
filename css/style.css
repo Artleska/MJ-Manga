@@ -47,22 +47,26 @@ header {
 /* Cartes mangas */
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Mobile par défaut : 3 cartes */
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur mobile */
   gap: 20px;
   padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
+
 
 @media (min-width: 600px) {
   .container {
-    grid-template-columns: repeat(5, 1fr); /* Tablette */
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes sur tablette */
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Grand écran */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* auto pour grand écran */
   }
 }
+
 
 
 .manga img {
@@ -76,8 +80,7 @@ header {
 }
 
 .manga {
-  width: 200px;
-  height: 300px;
+  width: 100%;
   background-color: #131313;
   border-radius: 10px;
   padding: 10px;
@@ -86,8 +89,9 @@ header {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pour pousser les genres en bas */
+  justify-content: space-between;
 }
+
 
 .manga h3 {
   font-size: 17px;
@@ -140,13 +144,18 @@ header {
   padding: 20px;
   position: relative;
   color: #fff;
+  max-height: 90vh;        /* ✅ empêche de dépasser la hauteur de l'écran */
+  overflow-y: auto;        /* ✅ permet de scroller si le contenu est trop long */
+  box-sizing: border-box;
 }
+
 
 .popup-flex {
   display: flex;
+  flex-direction: column; /* ✅ colonne par défaut (mobile) */
   gap: 20px;
-  flex-wrap: wrap;
 }
+
 
 .popup-flex img {
   max-width: 400px;
@@ -154,6 +163,13 @@ header {
   border-radius: 10px;
   object-fit: cover;
 }
+
+@media (min-width: 600px) {
+  .popup-flex {
+    flex-direction: row; /* ✅ rangée dès tablette */
+  }
+}
+
 
 .popup-info {
   flex: 1;
@@ -171,7 +187,9 @@ header {
   font-size: 24px;
   cursor: pointer;
   color: #fff;
+  z-index: 10;
 }
+
 
 /* Sidebar genre */
 .sidebar {
