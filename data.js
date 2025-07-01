@@ -613,29 +613,28 @@ const mangaData = {
     }
   },
   veuxtuetremonheros: {
-    title: "Veux-tu être mon héros?",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    status: "",
-    chtoTal: "",
+    title: "Veux-tu être mon héros? ",
+    otherTitles: ["Will You Be My Male Lead?"],
+    image: "https://cdn.mangaupdates.com/image/i387989.jpg",
+    description: "Depuis toujours, Shin Ara est amoureuse de son ami d'enfance, Seungwoo. Elle lui a même écrit un roman pour lui exprimer ses sentiments, mais il ne l'a jamais lu... Et il est bien le seul, car ce premier roman est devenu un grand succès ! Maintenant, Ara doit écrire un second livre. Mais elle manque d'inspiration... Jusqu'à ce qu'elle rencontre le directeur de sa maison d'édition ! Beau, professionnel, et très différent de Seugwoo, Jungwoo ferait un modèle parfait pour le héros de son roman !",
+    genres: "romance,female lead",
+    date: "Octobre 2024",
+    status: "Complete",
+    chtoTal: "60",
     chLit:"",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/veux-tu-etre-mon-heros"
     }
   },
-  La4: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
+  honeyiwanttoeatupyourmoney: {
+    title: "Honey, I Want to Eat Up Your Money!",
+    otherTitles: ["Honey, I'm Gonna Eat Till You Drop / Husband, I Want to Eat Till You Collapse / Husband, I Want to Eat to Break You Down"],
+    image: "https://cdn.mangaupdates.com/image/i365288.jpg",
+    description: "Les enfants ne font que des choix ! Je veux à la fois de la nourriture et le président ! Le roi du gros estomac qui peut manger dix chats de riz a vaincu avec succès le président autoritaire et s'est lancé sur une route plus large de gourmets !",
     genres: "",
     date: "",
-    status: "",
-    chTotal: "",
+    status: "Complete",
+    chTotal: "54",
     chLit:"",
     externalLinks: {
       "Comick": "",
