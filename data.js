@@ -5,10 +5,10 @@ const mangaData = {
     image: "https://meo.comick.pictures/0xLZa-m.jpg",
     description: "Kim Ayoung, 30 ans, vient tout juste d'ouvrir sa clinique vétérinaire, mais aucun patient ne vient la consulter. Son affaire semble être un échec complet... Un soir pourtant, une magnifique jeune femme se présente à la clinique et demande à Ayoung de la soigner contre les parasites. Est-ce une mauvaise blague ? C'est du moins ce que pense la docteure jusqu'à ce que sa patiente se transforme… en dragon gigantesque ! ",
     genres: "female lead,animals,médicale,moderne,surnaturel",
-    date: "Août 2024",
+    date: "2020",
     status: "Complete",
     chTotal: "152",
-    chLus:"88",
+    chLus: "88.",
     externalLinks: {
       "Comick": "https://crunchyscan.fr/lecture-en-ligne/la-veterinaire-des-creatures-mythiques",
       "CrunchyScan": "https://mangaplus.shueisha.co.jp/titles/100020"
@@ -20,10 +20,10 @@ const mangaData = {
     image: "image/Sorry-I-am-also-a-big-shot.jpeg",
     description: "Lire le manhua Désolé, je suis aussi un gros bonnet / Li Yuan, qui était poursuivie après s'être réveillée à l'hôpital, a découvert qu'elle avait perdu la mémoire. Au moment critique, un homme prétendant être son mari est apparu et a tué le dernier tueur.",
     genres: "female lead",
-    date: "Octobre 2024",
+    date: "2023",
     status: "Complete",
-    chtotal: "50",
-    ch:"",
+    chTotal: "50",
+    chLus: ".27",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/sorry-i-am-also-a-big-shot",
     }
@@ -34,25 +34,25 @@ const mangaData = {
     image: "https://meo.comick.pictures/jx3vym.jpg",
     description: "Xie Ran était une actrice de la liste D. La rumeur veut qu'elle se soit noyée dans la mer, mais quand elle est soudainement revenue, elle n'était plus la fille qu'ils connaissaient... Au nom de sa sœur jumelle décédée, Sylvia est déterminée à se venger. Elle n'aura aucune pitié de ceux qui ont maltraité sa chère sœur. Le jeu de la chasse et du meurtre vien de commencer, car quand elle vient, vous devez vous incliner devant votre reine !",
     genres: "acting,badass,comedie,drame,female lead,modern,romance,secret identity",
-    date: "Février 2025",
+    date: "2020",
     status: "En cours",
-    chtotal: "341",
-    ch:"",
+   chTotal: "341",
+    chLus: ".138.340",
     externalLinks: {
       "Comick": "https://comick.io/comic/she-is-coming-please-get-down?page=6#chapter-header",
       "Bato": "https://bato.to/series/96382"
     }
   },
-    Beneaththeladysmask: {
+  Beneaththeladysmask: {
     title: "Beneath the lady's mask",
     otherTitles: ["Your Fake Facade Failed Again, Ma'am / Ma'am You Have Been Uncovered / Ma'am, Your Mask Has Fallen Off Again "],
     image: "https://meo.comick.pictures/v8p2xa.png",
     description: "Mère disait toujours à Qinran : « Ton beau-père est issu d'une famille célèbre, ton frère aîné est un génie et ta sœur est une excellente élève de son lycée. Toi, un paysan, ne les embarrasse pas. » Tous les gens de la capitale qui avaient un statut reçurent un avertissement de la part de M. Juan de la famille Cheng : « La femme de M. Juan est de la campagne et ne comprend pas notre situation actuelle, et elle a un mauvais caractère. Bref, tout le monde devrait être très patient. » Jusqu'au jour où, alors que Maître Juan enquêtait sur un certain grand patron, ses hommes tombèrent dans un silence confus en regardant l'un des gilets de sa belle-sœur qui prétendait ne rien savoir…",
     genres: "female lead,romance,badas",
-    date: "Octobre 2024",
+    date: "2024",
     status: "En cours",
-    chtotal: "82",
-    ch:"",
+    chTotal: "82",
+    chLus: "..27",
     externalLinks: {
       "Comick": "https://comick.io/comic/beneath-the-lady-s-mask",
       "Snow": "https://snowmtl.ru/comics/beneath-the-lady-s-mask"
@@ -64,26 +64,26 @@ const mangaData = {
     image: "https://meo.comick.pictures/Nrqxpo.jpg",
     description: "La famille Gu, chef du continent Jijing, a été victime d'un complot et la famille a été séparée. Le chef de la jeune famille, Gu Mang, a emmené son jeune frère, Gu Si, en se déguisant, pour reprendre le pouvoir, vaincre le méchant, venger la famille, gagner en gloire et récupérer le plus beau président en cours de route.",
     genres: "badass,female lead,moderne,romance,secret identity",
-    date: "Mars 2025",
+    date: "2022",
     status: "En cours",
-    chtotal: "",
-    ch:"",
+    chTotal: "",
+    chLus: ".178.99",
     externalLinks: {
       "Comick": "https://comick.io/comic/madam-and-her-daily-online-face-slapping",
       "Bato": "https://bato.to/series/158565",
-      "Snow":"https://snowmtl.ru/comics/proving-them-wrong-everyday"
+      "Snow": "https://snowmtl.ru/comics/proving-them-wrong-everyday"
     }
   },
-    Rebornthesavageheiress: {
+  Rebornthesavageheiress: {
     title: "Reborn: the savage heiress",
     otherTitles: ["The Daughter of a Wealthy Family Went Crazy After Being Reborn / A Wealthy Young Lady "],
     image: "https://cdn.mangaupdates.com/image/i439634.jpg",
     description: "Un grand incendie lui a fait comprendre le cœur humain. Après avoir renaître, elle est déterminée à changer sa vie misérable ! Elle a combattu sa sœur maléfique et a rompu les liens familiaux, la fille riche de la famille Bai est maintenant invincible ! La nature arrogante, l'identité de l'étudiant du médecin miracle, du chef de hacker, du génie des mathématiques... Tout n'était qu'un masque. La chose la plus importante était qu'il était le cœur du maître du manoir Lu.",
-    genres: "",
-    date: "",
+    genres: "female lead,",
+    date: "2024",
     status: "En cours",
-    chtotal: "47",
-    ch:"",
+    chTotal: "47",
+    chLus: ".47",
     externalLinks: {
       "Comick": "https://comick.io/comic/reborn-the-savage-heiress",
     }
@@ -96,22 +96,22 @@ const mangaData = {
     genres: "female lead,romance,badass,drame,médicale",
     date: "",
     status: "Complete",
-    chtotal: "150",
-    ch:"",
+    chTotal: "150",
+    chLus: "",
     externalLinks: {
       "Bato": "https://bato.to/series/83612/sealed-with-lips"
     }
   },
-    Allheroesloveme: {
+  Allheroesloveme: {
     title: "All heroes love me",
     otherTitles: [" The Madam Has Became The Favourite of The Big Bosses / The Madam Has Become Big Shots’ Favorite One"],
     image: "https://cdn.mangaupdates.com/image/i448935.png",
     description: "Lorsque Lan Jin est retournée dans son propre monde trois ans plus tard, elle a découvert que sa réputation était ruinée. De plus, elle avait cinq fiancés et cinq fils qui venaient de cinq mondes de voyage dans le temps.",
     genres: "badass,female lead,romance",
     date: "Juin 2025",
-    status: "Complete",
+    chTotal: "Complete",
     chtotal: "142",
-    ch:"",
+    chLus: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/all-the-heroes-love-me?chap-order=0&date-order=",
       "Happy": "https://m.happymh.com/manga/furentachengledalaomendetuanchong"
@@ -125,14 +125,14 @@ const mangaData = {
     genres: "romance,female lead",
     date: "Février 2025",
     status: "Complete",
-    chtotal: "214",
-    ch:"",
+    chTotal: "214",
+    chLus: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/the-big-shot-s-darling-returns",
       "Discord": "Discord : Lollÿ"
     }
   },
-    Thealmightydaugtherrunstheworld: {
+  Thealmightydaugtherrunstheworld: {
     title: "The almighty daugther runs the world",
     otherTitles: ["The Almighty Daughter Burns the Heavens "],
     image: "https://cdn.mangaupdates.com/image/i448904.png",
@@ -140,8 +140,8 @@ const mangaData = {
     genres: "badass,female lead,romance",
     date: "Février 2025",
     status: "En cours",
-    chtotal: "166",
-    ch:"",
+    chTotal: "166",
+    chLus: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/the-almighty-daughter-runs-the-world",
     }
@@ -154,13 +154,13 @@ const mangaData = {
     genres: "",
     date: "Février 2025",
     status: "Complete",
-    chtotal: "442",
-    ch:"",
+    chTotal: "442",
+    chLus: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/00-the-fiesty-wife-is-not-to-be-messed-with",
     }
   },
-    brilliantgalaxy: {
+  brilliantgalaxy: {
     title: "Brilliant Galaxy",
     otherTitles: ["My Loyal Husband After Our Divorce / The Brightest Galaxy / The Most Shinning Galaxy "],
     image: "https://cdn.mangaupdates.com/image/i396337.jpg",
@@ -168,8 +168,8 @@ const mangaData = {
     genres: "",
     date: "Février 2025",
     status: "Complete",
-    chtotal: "170",
-    ch:"",
+    chTotal: "170",
+    chLus: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/brilliant-galaxy",
     }
@@ -182,13 +182,13 @@ const mangaData = {
     genres: "",
     date: "Février 2025",
     status: "Complete",
-    chtotal: "146",
-    ch:"",
+    chTotal: "146",
+    chLus: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/nancheng-waits-for-the-moon",
     }
   },
-    shequitsthefemalesupportingroleinmelodramaticnovel: {
+  shequitsthefemalesupportingroleinmelodramaticnovel: {
     title: "She Quits the Female Supporting Role in Melodramatic Novel",
     otherTitles: ["Melodramatic Novel’s Side Character Quits "],
     image: "https://cdn.mangaupdates.com/image/i409250.png",
@@ -197,7 +197,7 @@ const mangaData = {
     date: "Février 2025",
     status: "Complete",
     chtoTal: "55",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/melodramatic-novels-side-character-quits",
     }
@@ -211,12 +211,12 @@ const mangaData = {
     date: "Octobre 2024",
     status: "Complete",
     chTotal: "120",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/ancestor-she-s-beautiful-and-sassy",
     }
   },
-    quicktransmigrationiamthegodbyraisingcubs: {
+  quicktransmigrationiamthegodbyraisingcubs: {
     title: "Quick Transmigration: I Am the God by Raising Cubs",
     otherTitles: [""],
     image: "https://cdn.mangaupdates.com/image/i411591.png",
@@ -225,7 +225,7 @@ const mangaData = {
     date: "Décembre 2024",
     status: "Complete",
     chTotal: "250",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/quick-transmigration-i-am-the-god-by-raising-cubs",
     }
@@ -239,7 +239,7 @@ const mangaData = {
     date: "Octobre 2024",
     status: "Cancelled",
     chTotal: "31",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Scan-manga": "https://m.scan-manga.com/11042/Quick-Transmigration-Cannon-Fodder-s-Record-of-Counterattacks.html",
       "Mangapark": "https://mangapark.net/title/99910-en-cannon-fodder-s-record-of-counterattacks"
@@ -254,7 +254,7 @@ const mangaData = {
     date: "Octobre 2024",
     status: "En cours",
     chTotal: "128",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/the-host-is-a-villainess",
       "Mangabuddy": "https://mangabuddy.com/quick-transmigration-the-host-wants-to-die",
@@ -270,7 +270,7 @@ const mangaData = {
     date: "Fevrier 2025",
     status: "Complete",
     chtoTal: "811",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/00-cheating-men-must-die-jzvv7yiy",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/cheating-men-must-die?asgtbndr=1&cid=2091945"
@@ -285,7 +285,7 @@ const mangaData = {
     date: "",
     status: "Complete",
     chTotal: "198",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/quick-transmigration-the-villain-is-too-spoiled-and-flirty",
       "Snow": "https://snowmtl.ru/comics/quick-transmigration-the-villain-is-too-spoiled-and-flirty"
@@ -300,7 +300,7 @@ const mangaData = {
     date: "Décembre 2024",
     status: "Complete",
     chTotal: "143",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/be-jealous",
     }
@@ -314,12 +314,12 @@ const mangaData = {
     date: "Octobre 2024",
     status: "Complete",
     chTotal: "90",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Bato": "https://bato.to/series/103491",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/mon-etrange-seconde-vie/"
     }
-  },  
+  },
   calmdownrevengequeen: {
     title: "Calm Down, Revenge Queen",
     otherTitles: ["Quick Transmigration: Revenge Queen / Fodder, Please Calm Down!"],
@@ -329,7 +329,7 @@ const mangaData = {
     date: "Novembre 2024",
     status: "Complete",
     chTotal: "177",
-    chLit:"",
+    chLit: "40",
     externalLinks: {
       "Comick": "https://comick.io/comic/revenge-queen",
       "Webcomics": "WebComics.com"
@@ -344,7 +344,7 @@ const mangaData = {
     date: "Octobre 2024",
     status: "Discontinued",
     chtoTal: "108",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Mangapark": "https://mangapark.net/title/100985-en-supporting-villainess-s-survival-diary",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/villainesss-survival-diary/"
@@ -359,7 +359,7 @@ const mangaData = {
     date: "Août 2024",
     status: "Complete",
     chTotal: "103",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/i-became-the-villains-wife",
       "Mangapark": "https://mangapark.net/title/127426-en-i-became-the-villain-s-wife"
@@ -374,7 +374,7 @@ const mangaData = {
     date: "Novembre 2024",
     status: "En cours",
     chTotal: "90",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/after-breaking-up-he-with-my-ex-s-uncle",
       "Mangapark": "https://mangapark.net/title/401614-en-after-breaking-up-i-had-relationship-with-my-ex-s-uncle-in-law"
@@ -389,12 +389,12 @@ const mangaData = {
     date: "Février 2025",
     status: "Complete",
     chTotal: "150",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/becoming-his-unwanted-wife",
       "Mangapark": "https://mangapark.net/title/380537-en-becoming-the-unwanted-mistress-of-a-noble-family"
     }
-  },  
+  },
   thequeenstartsasanalister: {
     title: "The Queen Starts as an A-Lister",
     otherTitles: ["The Queen Starts From the Top"],
@@ -404,13 +404,13 @@ const mangaData = {
     date: "Février2025",
     status: "En cours",
     chTotal: "96",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/the-queen-starts-as-an-a-lister",
       "Snow": "https://snowmtl.ru/comics/the-queen-starts-as-an-a-lister"
     }
   },
-  transmigratingastheyoungersisterofabigshotwithmultipleidentities:{
+  transmigratingastheyoungersisterofabigshotwithmultipleidentities: {
     title: "Transmigrating as the Younger Sister of a Bigshot With Multiple Identities",
     otherTitles: ["Trapped as a Villainous Fake Sister / Transmigrated as the Masked Boss's Sister"],
     image: "https://cdn.mangaupdates.com/image/i453465.jpg",
@@ -419,7 +419,7 @@ const mangaData = {
     date: "Février 2025",
     status: "En cours",
     chtoTal: "52",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/transmigrating-as-the-younger-sister-of-a-bigshot-with-multiple-identities",
     }
@@ -433,7 +433,7 @@ const mangaData = {
     date: "Mars 2025",
     status: "En cours",
     chTotal: "175",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/the-real-daughter-she-is-an-almighty-boss",
     }
@@ -447,7 +447,7 @@ const mangaData = {
     date: "Mai 2025",
     status: "En cours",
     chTotal: "344",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Mangapark": "https://mangapark.net/title/413267-en-everyone-s-darling",
       "Snow": "https://snowmtl.ru/comics/everyone-s-darling"
@@ -462,14 +462,14 @@ const mangaData = {
     date: "Novembre 2024",
     status: "Complete",
     chTotal: "329",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Mangapark": "https://mangapark.net/title/249486-en-my-brothers-dote-on-me",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/my-brothers-dote-on-me/",
-      "Bato":"https://bato.to/series/125505",
-      "Snow":"https://snowmtl.ru/comics/the-real-daughter-of-the-qin-family"
+      "Bato": "https://bato.to/series/125505",
+      "Snow": "https://snowmtl.ru/comics/the-real-daughter-of-the-qin-family"
     }
-  },  
+  },
   reincarnationofthebusinesswomanatschool: {
     title: "Reincarnation Of The Businesswoman At School ",
     otherTitles: ["Aristocratic Boss Is Actually the Female High School Student!"],
@@ -479,7 +479,7 @@ const mangaData = {
     date: "Août 2024",
     status: "Complete",
     chTotal: "231",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://manhwaclan.com/manga/reincarnation-of-the-businesswoman-at-school/",
     }
@@ -493,7 +493,7 @@ const mangaData = {
     date: "Août 2024",
     status: "Complete",
     chtoTal: "530",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Mangapark": "https://mangapark.net/comic/105312/national-school-prince-is-a-girl",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/national-school-prince-is-a-girl/"
@@ -508,7 +508,7 @@ const mangaData = {
     date: "Mars 2025",
     status: "Complete",
     chTotal: "203",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/boss-makes-the-boy-group-s-center-of-me",
     }
@@ -522,7 +522,7 @@ const mangaData = {
     date: "Novembre 2024",
     status: "Complete",
     chTotal: "267",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/sweetheart-v5-the-boss-is-too-kind"
     }
@@ -536,11 +536,11 @@ const mangaData = {
     date: "Novembre 2024",
     status: "En cours",
     chTotal: "55",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/prise-au-piege-dans-un-drama"
     }
-  },  
+  },
   sevenyearslater: {
     title: "Seven Years Later",
     otherTitles: [""],
@@ -550,7 +550,7 @@ const mangaData = {
     date: "",
     status: "Complete",
     chTotal: "94",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/02-seven-years-later",
     }
@@ -564,7 +564,7 @@ const mangaData = {
     date: "",
     status: "Complete",
     chtoTal: "45",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/00-horror-romance-cheoyong",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/un-amour-horrifique/"
@@ -579,7 +579,7 @@ const mangaData = {
     date: "Septembre 2024",
     status: "Complete",
     chTotal: "92",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/lrsquoimmortelle"
     }
@@ -593,7 +593,7 @@ const mangaData = {
     date: "Février 2025",
     status: "Complete",
     chTotal: "117",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/reborn-queen-s-revenge",
     }
@@ -607,7 +607,7 @@ const mangaData = {
     date: "Octobre 2024",
     status: "Complete",
     chTotal: "80",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/un-amour-accidentel"
     }
@@ -621,7 +621,7 @@ const mangaData = {
     date: "Octobre 2024",
     status: "Complete",
     chtoTal: "60",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/veux-tu-etre-mon-heros"
     }
@@ -635,7 +635,7 @@ const mangaData = {
     date: "",
     status: "Complete",
     chTotal: "54",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -650,7 +650,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -665,67 +665,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },  
-    La3: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    status: "",
-    chtoTal: "",
-    chLit:"",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La4: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    status: "",
-    chTotal: "",
-    chLit:"",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La5: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    status: "",
-    chTotal: "",
-    chLit:"",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La6: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    status: "",
-    chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -740,7 +680,7 @@ const mangaData = {
     date: "",
     status: "",
     chtoTal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -755,7 +695,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -770,7 +710,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -785,13 +725,13 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
-  },  
-    La3: {
+  },
+  La3: {
     title: "",
     otherTitles: [""],
     image: "",
@@ -800,7 +740,67 @@ const mangaData = {
     date: "",
     status: "",
     chtoTal: "",
-    chLit:"",
+    chLit: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La4: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La5: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La6: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La3: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chtoTal: "",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -815,7 +815,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -830,7 +830,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -845,7 +845,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -860,7 +860,7 @@ const mangaData = {
     date: "",
     status: "",
     chtoTal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -875,7 +875,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -890,7 +890,7 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
@@ -905,12 +905,12 @@ const mangaData = {
     date: "",
     status: "",
     chTotal: "",
-    chLit:"",
+    chLit: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
-  },  
+  },
 };
 
 
@@ -925,7 +925,11 @@ function createMangaCard(manga, id) {
   card.classList.add('manga');
   card.setAttribute('data-id', id);
   card.setAttribute('data-title', manga.title.toLowerCase());
-  card.setAttribute('data-genres', (manga.genres || '').toLowerCase());
+  const genresStr = Array.isArray(manga.genres)
+    ? manga.genres.map(g => g.toLowerCase()).join(',')
+    : (manga.genres || '').toLowerCase();
+  card.setAttribute('data-genres', genresStr);
+
   card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
 
   card.innerHTML = `
@@ -942,15 +946,19 @@ function generateCards() {
   container.innerHTML = '';
   for (const id in mangaData) {
     const manga = mangaData[id];
-    const imageSrc = manga.image && manga.image.trim() !== '' 
-      ? manga.image 
+    const imageSrc = manga.image && manga.image.trim() !== ''
+      ? manga.image
       : 'image/fond.jpg';
 
     const card = document.createElement('div');
     card.classList.add('manga');
     card.setAttribute('data-id', id);
     card.setAttribute('data-title', manga.title.toLowerCase());
-    card.setAttribute('data-genres', (manga.genres || '').toLowerCase());
+    const genresStr = Array.isArray(manga.genres)
+      ? manga.genres.map(g => g.toLowerCase()).join(',')
+      : (manga.genres || '').toLowerCase();
+    card.setAttribute('data-genres', genresStr);
+
     card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
 
     card.innerHTML = `
@@ -962,7 +970,7 @@ function generateCards() {
     container.appendChild(card);
   }
 
-  
+
 }
 
 
@@ -972,12 +980,12 @@ let currentSort = null; // 🔁 Garde en mémoire le tri actif
 function sortManga(type) {
   const buttons = document.querySelectorAll('.sort-buttons button');
 
-  // 🔁 Si on clique encore sur le tri actif => on annule
+  // 🔁 Si on reclique sur le même bouton, on annule
   if (currentSort === type) {
     currentSort = null;
     buttons.forEach(btn => btn.classList.remove('active'));
     displayMangas(Object.values(mangaData));
-    filterMangas(); // Réapplique les filtres si actifs
+    filterMangas();
     return;
   }
 
@@ -987,6 +995,12 @@ function sortManga(type) {
   if (activeBtn) activeBtn.classList.add('active');
 
   let filteredMangas = Object.values(mangaData);
+
+  // Harmoniser chTotal
+  filteredMangas.forEach(m => {
+    m.chTotal = m.chTotal || m.chapitresTotal || 0;
+  });
+
   const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
     .map(cb => cb.value.toLowerCase());
 
@@ -995,15 +1009,29 @@ function sortManga(type) {
   } else if (type === 'date') {
     filteredMangas.sort((a, b) => new Date(b.date || "2000-01-01") - new Date(a.date || "2000-01-01"));
   } else if (type === 'genres') {
+    let baseGenres = [];
+
+    if (selectedGenres.length > 0) {
+      baseGenres = selectedGenres;
+    } else {
+      // choisir un manga avec des genres valides
+      const base = filteredMangas.find(m => m.genres && m.genres.length > 0);
+      if (base) {
+        baseGenres = Array.isArray(base.genres)
+          ? base.genres.map(g => g.toLowerCase().trim())
+          : base.genres.toLowerCase().split(',').map(g => g.trim());
+      }
+    }
+
     filteredMangas.sort((a, b) => {
-      const commonA = countCommonGenres(a.genres, selectedGenres);
-      const commonB = countCommonGenres(b.genres, selectedGenres);
+      const commonA = countCommonGenres(a.genres, baseGenres);
+      const commonB = countCommonGenres(b.genres, baseGenres);
       return commonB - commonA;
     });
   } else if (type === 'chapitresMin') {
     const min = parseInt(document.getElementById("minChapitresInput").value) || 0;
-    filteredMangas = filteredMangas.filter(m => (m.chTotal || 0) >= min);
-    filteredMangas.sort((a, b) => (b.chTotal || 0) - (a.chTotal || 0));
+    filteredMangas = filteredMangas.filter(m => m.chTotal >= min);
+    filteredMangas.sort((a, b) => b.chTotal - a.chTotal);
   }
 
   displayMangas(filteredMangas);
@@ -1012,15 +1040,18 @@ function sortManga(type) {
 
 
 
+
+
 function countCommonGenres(mangaGenres, selectedGenres) {
   if (!mangaGenres) return 0;
 
   const genresArray = Array.isArray(mangaGenres)
-    ? mangaGenres
-    : mangaGenres.split(',').map(g => g.trim().toLowerCase());
+    ? mangaGenres.map(g => g.toLowerCase().trim())
+    : mangaGenres.split(',').map(g => g.toLowerCase().trim());
 
   return genresArray.filter(genre => selectedGenres.includes(genre)).length;
 }
+
 
 
 
@@ -1035,7 +1066,11 @@ function displayMangas(mangas) {
     card.classList.add('manga');
     card.setAttribute('data-id', id);
     card.setAttribute('data-title', manga.title.toLowerCase());
-    card.setAttribute('data-genres', (Array.isArray(manga.genres) ? manga.genres.map(g => g.toLowerCase()).join(',') : ''));
+    const genresStr = Array.isArray(manga.genres)
+  ? manga.genres.map(g => g.toLowerCase().trim()).join(',')
+  : (manga.genres || '').toLowerCase().trim();
+card.setAttribute('data-genres', genresStr);
+
     card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
 
     card.innerHTML = `
@@ -1061,8 +1096,8 @@ function openPopup(id) {
   document.getElementById('popupDescription').innerText = manga.description;
   document.getElementById('popupGenres').innerText = formatGenres(manga.genres || "");
   document.getElementById('popupOtherTitles').innerText = manga.otherTitles?.join(', ') || "Aucun";
-  
- // Set ch and ch total side-by-side
+
+  // Set ch and ch total side-by-side
   const popupChContainer = document.getElementById('popupChContainer');
   popupChContainer.innerHTML = `
     <div class="row">
@@ -1070,7 +1105,7 @@ function openPopup(id) {
       <div class="col-md-6"><strong>Ch lus:</strong> ${manga.chLus || '—'}</div>
     </div>
   `;
-  
+
   // Set date and status side-by-side
   const popupDateStatus = document.getElementById('popupDateStatus');
   popupDateStatus.innerHTML = `
@@ -1131,11 +1166,18 @@ function filterMangas() {
 
   document.querySelectorAll('.manga').forEach(card => {
     const title = card.getAttribute('data-title');
-    const genres = card.getAttribute('data-genres').split(',');
+    const genresStr = card.getAttribute('data-genres') || "";
+const genres = genresStr
+  .split(',')
+  .map(g => g.trim().toLowerCase())
+  .filter(g => g.length > 0); // <-- empêche le bug si data-genres est vide
+
+
     const otherTitles = card.getAttribute('data-othertitles')?.toLowerCase() || "";
 
     const matchesTitle = title.includes(search) || otherTitles.includes(search);
-    const matchesGenres = selectedGenres.every(g => genres.includes(g));
+    const matchesGenres = selectedGenres.every(g => genres.includes(g.trim()));
+
 
     card.style.display = matchesTitle && matchesGenres ? 'block' : 'none';
   });
