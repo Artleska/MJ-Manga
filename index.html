@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ma structure de base Bootstrap</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+<body class="pt-5">
+
+
+
+  <!-- Barre de recherche + boutons -->
+  <div class="filters">
+    <div class="filters-row">
+      <input type="text" id="searchInput" placeholder="Rechercher par titre..." />
+      <button id="openSidebarBtn">Filtres de genre</button>
+      <button id="openSortSidebarBtn">Trier</button>
+      <button onclick="resetFilters()">Tout réinitialiser</button>
+    </div>
+  </div>
+
+  <!-- Sidebar des genres -->
+  <div id="genreSidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>Filtres de genre</h2>
+      <span id="closeSidebarBtn" class="close-btn">×</span>
+    </div>
+
+    <div class="sidebar-genres">
+      <input type="checkbox" id="abuse" value="abuse" /><label for="abuse">Abuse</label>
+      <input type="checkbox" id="academy" value="academy" /><label for="academy">Academy</label>
+      <input type="checkbox" id="acting" value="acting" /><label for="acting">Acting</label>
+      <input type="checkbox" id="action" value="action" /><label for="action">Action</label>
+      <input type="checkbox" id="adopted" value="adopted" /><label for="adopted">Adopted</label>
+      <input type="checkbox" id="androgine" value="androgine" /><label for="androgine">Androgine</label>
+      <input type="checkbox" id="animals" value="animals" /><label for="animals">Animals</label>
+      <input type="checkbox" id="apocalypse" value="apocalypse" /><label for="apocalypse">Apocalypse</label>
+      <input type="checkbox" id="art" value="art" /><label for="art">Art</label>
+      <input type="checkbox" id="arts-martiaux" value="arts martiaux" /><label for="arts-martiaux">Arts martiaux</label>
+      <input type="checkbox" id="aventure" value="aventure" /><label for="aventure">Aventure</label>
+      <input type="checkbox" id="badass" value="badass" /><label for="badass">Badass</label>
+      <input type="checkbox" id="beast world" value="beast world" /><label for="beast world">Beast world</label>
+      <input type="checkbox" id="business" value="business" /><label for="business">Business</label>
+      <input type="checkbox" id="caretaker" value="caretaker" /><label for="caretaker">Caretaker</label>
+      <input type="checkbox" id="comédie" value="comédie" /><label for="comédie">Comédie</label>
+      <input type="checkbox" id="cooking" value="cooking" /><label for="cooking">Cooking</label>
+      <input type="checkbox" id="crossdressing" value="crossdressing" /><label for="crossdressing">Crossdressing</label>
+      <input type="checkbox" id="cultivation" value="cultivation" /><label for="cultivation">Cultivation</label>
+      <input type="checkbox" id="drame" value="drame" /><label for="drame">Drame</label>
+      <input type="checkbox" id="dungeon" value="dungeon" /><label for="dungeon">Dungeon</label>
+      <input type="checkbox" id="enfant" value="enfant" /><label for="enfant">Enfant</label>
+      <input type="checkbox" id="fantasy" value="fantasy" /><label for="fantasy">Fantasy</label>
+      <input type="checkbox" id="father" value="father" /><label for="father">Father</label>
+      <input type="checkbox" id="female lead" value="female lead" /><label for="female lead">Female lead</label>
+      <input type="checkbox" id="jeux vidéo" value="jeux vidéo" /><label for="jeux vidéo">Jeux vidéo</label>
+      <input type="checkbox" id="ghosts" value="ghosts" /><label for="ghosts">Ghosts</label>
+      <input type="checkbox" id="harem" value="harem" /><label for="harem">Harem</label>
+      <input type="checkbox" id="isekai inversé" value="isekai inversé" /><label for="isekai inversé">Isekai inversé</label>
+      <input type="checkbox" id="historical" value="historical" /><label for="historical">Historical</label>
+      <input type="checkbox" id="horreur" value="horreur" /><label for="horreur">Horreur</label>
+      <input type="checkbox" id="isekai" value="isekai" /><label for="isekai">Isekai</label>
+      <input type="checkbox" id="magie" value="magie" /><label for="magie">Magie</label>
+      <input type="checkbox" id="malelead" value="male lead" /><label for="malelead">male lead</label>
+      <input type="checkbox" id="manga" value="manga" /><label for="manga">Manga</label>
+      <input type="checkbox" id="mature" value="mature" /><label for="mature">Mature</label>
+      <input type="checkbox" id="mécanique" value="mécanique" /><label for="mécanique">Mécanique</label>
+      <input type="checkbox" id="médicale" value="médicale" /><label for="médicale">Médicale</label>
+      <input type="checkbox" id="militaire" value="militaire" /><label for="militaire">Militaire</label>
+      <input type="checkbox" id="moderne" value="moderne" /><label for="moderne">Moderne</label>
+      <input type="checkbox" id="monstre" value="monstre" /><label for="monstre">Monstre</label>
+      <input type="checkbox" id="mother" value="mother" /><label for="mother">Mother</label>
+      <input type="checkbox" id="murim" value="murim" /><label for="murim">Murim</label>
+      <input type="checkbox" id="musique" value="musique" /><label for="musique">Musique</label>
+      <input type="checkbox" id="mystère" value="mystère" /><label for="mystère">Mystère</label>
+      <input type="checkbox" id="novel" value="novel" /><label for="novel">Novel</label>
+      <input type="checkbox" id="omegaverse" value="omegaverse" /><label for="omegaverse">Omegaverse</label>
+      <input type="checkbox" id="power" value="power" /><label for="power">Power</label>
+      <input type="checkbox" id="psychologique" value="psychologique" /><label for="psychologique">Psychologique</label>
+      <input type="checkbox" id="réincarnation" value="réincarnation" /><label for="réincarnation">Réincarnation</label>
+      <input type="checkbox" id="return" value="return" /><label for="return">Return</label>
+      <input type="checkbox" id="revenge" value="revenge" /><label for="revenge">Revenge</label>
+      <input type="checkbox" id="rich" value="rich" /><label for="rich">Rich</label>
+      <input type="checkbox" id="romance" value="romance" /><label for="romance">Romance</label>
+      <input type="checkbox" id="school life" value="school life" /><label for="school life">School life</label>
+      <input type="checkbox" id="secret identity" value="secret identity" /><label for="secret identity">Secretidentity</label>
+      <input type="checkbox" id="sick" value="sick" /><label for="sick">Sick</label>
+      <input type="checkbox" id="sport" value="sport" /><label for="sport">Sport</label>
+      <input type="checkbox" id="suicide" value="suicide" /><label for="suicide">Suicide</label>
+      <input type="checkbox" id="superhero" value="superhero" /><label for="superhero">Superhero</label>
+      <input type="checkbox" id="surnaturel" value="surnaturel" /><label for="surnaturel">Surnaturel</label>
+      <input type="checkbox" id="system" value="system" /><label for="system">System</label>
+      <input type="checkbox" id="time travel" value="time travel" /><label for="time travel">Time travel</label>
+      <input type="checkbox" id="tower" value="tower" /><label for="tower">Tower</label>
+      <input type="checkbox" id="transmigration" value="transmigration" /><label for="transmigration">Transmigration</label>
+      <input type="checkbox" id="vampire" value="vampire" /><label for="vampire">Vampire</label>
+      <input type="checkbox" id="villainess" value="villainess" /><label for="villainess">villainess</label>
+      <input type="checkbox" id="yaoi" value="yaoi" /><label for="yaoi">Yaoi</label>
+      <input type="checkbox" id="" value="" /><label for=""></label>
+      <input type="checkbox" id="" value="" /><label for=""></label>
+      <input type="checkbox" id="" value="" /><label for=""></label>
+    </div>
+  </div>
+
+ <!-- Sidebar de tri -->
+<div id="sortSidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h2>Options de tri</h2>
+    <span id="closeSortSidebarBtn" class="close-btn">×</span>
+  </div>
+
+  <div class="sidebar-genres d-flex flex-column gap-2 mt-3">
+    <button onclick="sortManga('alphabetique')" class="btn btn-outline-primary">🔤 Alphabétique (A-Z)</button>
+    <button onclick="sortManga('date')" class="btn btn-outline-primary">🕒 Plus récent</button>
+    <button onclick="sortManga('genres')" class="btn btn-outline-primary">🎭 Genres similaires</button>
+
+    <div class="mt-3">
+      <label for="minChapitresInput" class="form-label">📘 Nombre de chapitres minimum :</label>
+      <input type="number" id="minChapitresInput" placeholder="ex: 50" class="form-control mb-2" />
+      <button onclick="sortManga('chapitresMin')" class="btn btn-outline-success">Filtrer par chapitres</button>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Conteneur des mangas -->
+  <div class="container" id="mangaContainer"></div>
+
+  <!-- Popup manga -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+
+
+
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <div class="popup-flex">
+        <img id="popupImg" src="" alt="" />
+        <div class="popup-info">
+          <h2 id="popupTitle"></h2>
+          <p><strong>Autres titres :</strong> <span id="popupOtherTitles"></span></p>
+          <p><strong>Genres :</strong> <span id="popupGenres"></span></p>
+
+          <!-- Statut et date -->
+          <div id="popupDateStatus" class="popup-section"></div>
+          <!-- Status et Date sur la même ligne -->
+
+
+          <!-- Chapitres -->
+          <div id="popupChContainer" class="popup-section"></div>
+
+
+          <p id="popupDescription"></p>
+          <div id="popupExternalLinks" class="external-links" style="display: flex; flex-wrap: wrap; "></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+  // Ouvrir/fermer la sidebar de tri
+  document.getElementById("openSortSidebarBtn").addEventListener("click", function () {
+    document.getElementById("sortSidebar").style.display = "block";
+  });
+
+  document.getElementById("closeSortSidebarBtn").addEventListener("click", function () {
+    document.getElementById("sortSidebar").style.display = "none";
+  });
+</script>
+
+
+
+  <script src="data.js"></script>
+
+  <script>
+function sortManga(type) {
+  let filteredMangas = [...mangaData]; // Copie de base
+
+  const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
+    .map(cb => cb.value.toLowerCase());
+
+  if (type === 'alphabetique') {
+    filteredMangas.sort((a, b) => a.title.localeCompare(b.title));
+
+  } else if (type === 'date') {
+    filteredMangas.sort((a, b) => {
+      const dateA = new Date(a.date || "2000-01-01");
+      const dateB = new Date(b.date || "2000-01-01");
+      return dateB - dateA;
+    });
+
+  } else if (type === 'genres') {
+    filteredMangas.sort((a, b) => {
+      const commonA = countCommonGenres(a.genres, selectedGenres);
+      const commonB = countCommonGenres(b.genres, selectedGenres);
+      return commonB - commonA;
+    });
+
+  } else if (type === 'chapitresMin') {
+    const min = parseInt(document.getElementById("minChapitresInput").value) || 0;
+    filteredMangas = filteredMangas.filter(m => (m.chapitresTotal || 0) >= min);
+    filteredMangas.sort((a, b) => (b.chapitresTotal || 0) - (a.chapitresTotal || 0));
+  }
+
+  displayMangas(filteredMangas);
+}
+
+function countCommonGenres(mangaGenres, selectedGenres) {
+  if (!Array.isArray(mangaGenres)) return 0;
+  return mangaGenres.filter(genre => selectedGenres.includes(genre.toLowerCase())).length;
+}
+
+// Gère l’ouverture/fermeture de la sidebar tri
+document.getElementById("openSortSidebarBtn").addEventListener("click", () => {
+  document.getElementById("sortSidebar").style.display = "block";
+});
+
+document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
+  document.getElementById("sortSidebar").style.display = "none";
+});
+
+</script>
+
+
+
+
+</body>
+
+</html>
