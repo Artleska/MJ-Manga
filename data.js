@@ -504,10 +504,138 @@ const mangaData = {
     otherTitles: ["I Rely on the Boss to Hold the C Position in the Men's Team"],
     image: "https://cdn.mangaupdates.com/image/i346168.jpg",
     description: "L'influente artiste féminine de la liste A Ye Xian devient un personnage vicieux du même nom dans le roman Fier Best Actor Only Favors Me. Dans ce roman, elle se déguise en garçon dans le groupe de garçons du héros pour harceler le héros, intimider l'héroïne, sabote la relation entre le héros et l'héroïne, et meurt finalement d'une mort tragique. Pour éviter la triste disparition, Ye Xian décide de rester à l'écart du héros et de l'héroïne, de travailler dur, et d'attirer des milliers de fans. Ye Xian pense que son avenir sera brillant, mais elle offense accidentellement Bo Tingshen, le plus haut patron qui aide le héros dans le roman. En tant qu'amateur dans les relations amoureuses, Ye Xian n'est pas conscient de l'amour fou et de la possessivité intense de Bo Tingshen, ce qui entraîne de nombreuses situations gênantes…",
-    genres: "",
+    genres: "romance,female lead,novel,",
     date: "Mars 2025",
     status: "Complete",
     chTotal: "203",
+    chLit:"",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/boss-makes-the-boy-group-s-center-of-me",
+    }
+  },
+  sweetheartv5thebossistookind: {
+    title: "Sweetheart V5: The Boss Is Too Kind!",
+    otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i291921.jpg",
+    description: "Jing Yiren est une princesse de 14 ans fière et talentueuse . Une nuit, elle se réveille en tant que l'épouse du président de la Conglomération Lu. Ce changement soudain mettrait à l'épreuve toutes les fibres de son être! Pour sa part, Lu Ming doit maintenant faire face à une femme qui est complètement confuse par sa nouvelle station dans la vie.",
+    genres: "réincarnation,female lead,romance",
+    date: "Novembre 2024",
+    status: "Complete",
+    chTotal: "267",
+    chLit:"",
+    externalLinks: {
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/sweetheart-v5-the-boss-is-too-kind"
+    }
+  },
+  priseaupiegedansundrama: {
+    title: "Prise au piège dans un drama",
+    otherTitles: ["Trapped in a Soap Opera / I'm Stuck in a Crazy Drama / I'm Trapped in a Terrible Drama"],
+    image: "https://cdn.mangaupdates.com/image/i471327.jpg",
+    description: "Quand j'ai enfin réussi à réaliser mon rêve d'avoir une maison, à ce moment le plus heureux de ma vie, j'ai perdu connaissance et je me suis réincarnée dans le corps de la vilaine d'un drama. Pour retrouver ma vie et pour survivre dans cette série où tous les héros veulent me tuer je dois à tout prix changer l'histoire !",
+    genres: "harem,romance,female lead,villainess,réincarnation,moderne",
+    date: "Novembre 2024",
+    status: "En cours",
+    chTotal: "55",
+    chLit:"",
+    externalLinks: {
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/prise-au-piege-dans-un-drama"
+    }
+  },  
+  sevenyearslater: {
+    title: "Seven Years Later",
+    otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i385359.jpg",
+    description: "Kala Maharani est une fille ordinaire qui est toujours retenue par son père. Un jour, elle a choisi de s'enfuir de chez elle pour célébrer le nouvel an 2014 à Bali. Mais qui aurait pensé qu'elle s'était noyée dans la mer et qu'elle avait été sauvée par son amie qui lui a dit que sept ans s'étaient écoulés. Que va-t-il se passer ? Qu'en est-il de sa famille et de ses amis ? Peut-elle revenir à sa chronologie d'origine ?",
+    genres: "time travel,moderne,female lead",
+    date: "",
+    status: "Complete",
+    chTotal: "94",
+    chLit:"",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/02-seven-years-later",
+    }
+  },
+  La3: {
+    title: "Horror Romance: Cheoyong",
+    otherTitles: [" Un amour horrifique / Cheoyong: A Ghostly Romance / Romance in Horror, Cheoyoug "],
+    image: "https://cdn.mangaupdates.com/image/i362061.jpg",
+    description: "Lee Yeojin est somnambule et ça ne lui rend vraiment pas la vie facile, surtout quand il s’agit de trouver un petit ami. Alors quand Won Jaehee, un inconnu beau comme un dieu, la réveille au milieu d’une de ses crises avec un air compatissant, elle croit trouver l'homme de sa vie ! Ce qu’elle ne sait pas, c’est que Jaehee est un chasseur de fantômes, qu’elle les attire comme un aimant, et que c’est la raison de son intérêt pour elle !",
+    genres: "romance,female lead,moderne",
+    date: "",
+    status: "Complete",
+    chtoTal: "45",
+    chLit:"",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/00-horror-romance-cheoyong",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/un-amour-horrifique/"
+    }
+  },
+  limmortelle: {
+    title: "L’immortelle",
+    otherTitles: [" The Deathless / Endless Twilight "],
+    image: "https://cdn.mangaupdates.com/image/i341723.png",
+    description: "Je ne peux pas mourir alors que je veux... En tant qu'une fille choisie par Dieu, elle possède un pouvoir magique permettant de percevoir le temps restant des humains jusqu'à leur mort. Même si elle se réclame et se révolte de ce pouvoir, elle ne peut le perdre jusqu'à sa mort.",
+    genres: "romance,school life,female lead",
+    date: "Septembre 2024",
+    status: "Complete",
+    chTotal: "92",
+    chLit:"",
+    externalLinks: {
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/lrsquoimmortelle"
+    }
+  },
+  rebornqueensrevenge: {
+    title: "Reborn Queen’s Revenge",
+    otherTitles: ["Rebirth of the Scum-Abusing Queen / Reborn AS A Revenge Queen / Rebirth of the Scum Queen"],
+    image: "https://cdn.mangaupdates.com/image/i344226.jpg",
+    description: "Quels sont les mouvements standard après une renaissance ? À gauche, elle a retourné toute la famille du salaud, à droite, elle s'accroche à un président influent et célèbre. Petite femme : « Mari, j'ai été grondée par mon grand patron comme un chien ». Que dois-je faire à ce sujet ? » Petite femme : « Mon mari, que dois-je faire si mon salaire est trop bas pour élever un enfant ? Le président tyranne a dit : Allez vous arranger pour ma reine et augmentez son salaire de dix millions par an ! Le président tyran a choyé et gâté sa femme au maximum. « Je t'aime, je te donnerai toutes mes propriétés et je me donnerai à toi aussi.",
+    genres: "female lead,romance,moderne,return",
+    date: "Février 2025",
+    status: "Complete",
+    chTotal: "117",
+    chLit:"",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/reborn-queen-s-revenge",
+    }
+  },
+  unamouraccidentel: {
+    title: "Un amour accidente",
+    otherTitles: ["Accidentally in Love / A Relationship of Intended Carelessness"],
+    image: "https://cdn.mangaupdates.com/image/i385719.jpg",
+    description: "Un soir, alors qu’elle ressasse sa douloureuse rupture avec Min-Ho, Eun-Gyeol aperçoit un mystérieux bar qu’elle n’avait jamais remarqué jusqu’alors. Intriguée, elle s’y arrête prendre un dernier verre, puis, suivant les conseils du barman, commande un cocktail spécial et fait un vœu : « Je voudrais retourner un an en arrière. » À son réveil, elle découvre qu’elle est miraculeusement revenue un an dans le passé, la veille de sa rupture… et de la mort de Yi-Yool, le frère de sa meilleure amie ! ",
+    genres: "romance,moderne,time travel",
+    date: "Octobre 2024",
+    status: "Complete",
+    chTotal: "80",
+    chLit:"",
+    externalLinks: {
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/un-amour-accidentel"
+    }
+  },
+  veuxtuetremonheros: {
+    title: "Veux-tu être mon héros?",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chtoTal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La4: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
     chLit:"",
     externalLinks: {
       "Comick": "",
@@ -544,6 +672,171 @@ const mangaData = {
       "CrunchyScan": ""
     }
   },  
+    La3: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chtoTal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La4: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La5: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La6: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La3: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chtoTal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La4: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La5: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La6: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },  
+    La3: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chtoTal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La0: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  La1: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    status: "",
+    chTotal: "",
+    chLit:"",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
   La2: {
     title: "",
     otherTitles: [""],
@@ -574,7 +867,7 @@ const mangaData = {
       "CrunchyScan": ""
     }
   },
-    La4: {
+  La4: {
     title: "",
     otherTitles: [""],
     image: "",
@@ -604,7 +897,7 @@ const mangaData = {
       "CrunchyScan": ""
     }
   },
-    La6: {
+  La6: {
     title: "",
     otherTitles: [""],
     image: "",
@@ -675,18 +968,33 @@ function generateCards() {
 
 
 
+let currentSort = null; // 🔁 Garde en mémoire le tri actif
+
 function sortManga(type) {
+  const buttons = document.querySelectorAll('.sort-buttons button');
+
+  // 🔁 Si on clique encore sur le tri actif => on annule
+  if (currentSort === type) {
+    currentSort = null;
+    buttons.forEach(btn => btn.classList.remove('active'));
+    displayMangas(Object.values(mangaData));
+    filterMangas(); // Réapplique les filtres si actifs
+    return;
+  }
+
+  currentSort = type;
+  buttons.forEach(btn => btn.classList.remove('active'));
+  const activeBtn = [...buttons].find(btn => btn.getAttribute('onclick')?.includes(type));
+  if (activeBtn) activeBtn.classList.add('active');
+
   let filteredMangas = Object.values(mangaData);
   const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
     .map(cb => cb.value.toLowerCase());
+
   if (type === 'alphabetique') {
     filteredMangas.sort((a, b) => a.title.localeCompare(b.title));
   } else if (type === 'date') {
-    filteredMangas.sort((a, b) => {
-      const dateA = new Date(a.date || "2000-01-01");
-      const dateB = new Date(b.date || "2000-01-01");
-      return dateB - dateA;
-    });
+    filteredMangas.sort((a, b) => new Date(b.date || "2000-01-01") - new Date(a.date || "2000-01-01"));
   } else if (type === 'genres') {
     filteredMangas.sort((a, b) => {
       const commonA = countCommonGenres(a.genres, selectedGenres);
@@ -698,14 +1006,23 @@ function sortManga(type) {
     filteredMangas = filteredMangas.filter(m => (m.chTotal || 0) >= min);
     filteredMangas.sort((a, b) => (b.chTotal || 0) - (a.chTotal || 0));
   }
- displayMangas(filteredMangas);
-; // Affiche les résultats triés
+
+  displayMangas(filteredMangas);
+  filterMangas();
 }
 
+
+
 function countCommonGenres(mangaGenres, selectedGenres) {
-  if (!Array.isArray(mangaGenres)) return 0;
-  return mangaGenres.filter(genre => selectedGenres.includes(genre.toLowerCase())).length;
+  if (!mangaGenres) return 0;
+
+  const genresArray = Array.isArray(mangaGenres)
+    ? mangaGenres
+    : mangaGenres.split(',').map(g => g.trim().toLowerCase());
+
+  return genresArray.filter(genre => selectedGenres.includes(genre)).length;
 }
+
 
 
 
@@ -820,10 +1137,20 @@ function filterMangas() {
 
 // Réinitialiser les filtres
 function resetFilters() {
+  // Réinitialiser la recherche
   searchInput.value = '';
+
+  // Décocher les genres
   checkboxes.forEach(cb => cb.checked = false);
-  filterMangas();
+
+  // Vider le champ de chapitres minimum
+  const minChapitresInput = document.getElementById("minChapitresInput");
+  if (minChapitresInput) minChapitresInput.value = '';
+
+  // Réafficher tous les mangas sans tri ni filtre
+  displayMangas(Object.values(mangaData));
 }
+
 
 // Gestion sidebar genres
 document.getElementById("openSidebarBtn").addEventListener("click", () => {
