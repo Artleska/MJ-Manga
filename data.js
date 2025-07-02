@@ -1144,7 +1144,7 @@ const mangaData = {
     otherTitles: ["Chaotic Lof World / Metempsychosis Record / Record of the Heavens"],
     image: "https://cdn.mangaupdates.com/image/i359533.jpg",
     description: "10,000 years ago in the world of Luofu, the banished immortal was born and the evil emperor was resurrected. Their grievances of tens of thousands years erupted overnight. The head master of Sword Exploration School went deep into the Dark Abyss and never be heard of since then... 10,000 years later, he got reborn again...",
-    genres: "action,arts martiaux,male lead,cultivation,transmigration,",
+    genres: "action,arts martiaux,male lead,cultivation,transmigration,fantasy",
     date: "2018",
     dernierLecture: "",
     status: "Complet",
@@ -1156,18 +1156,18 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+  alluringdoctresswangfeiwantsadivorce: {
+    title: "Alluring Doctress Wang Fei Wants a Divorce",
+    otherTitles: ["I Want a Divorce! / Medical Concubine: This Princess Wants a Divorce / The Princess Doctor's Revenge"],
+    image: "https://cdn.mangaupdates.com/image/i309687.jpg",
+    description: "Transporting back in time, she almost met her death because of a bowl of heart blood! What’s worse, the playboy and the basic b*tch tortured her together, not only her body, but also her heart, and they even tried to refine her into medication to cure the basic b*tch. Damn it! I’m a sleeping tiger, not a sick cat! Fighting the playboy and getting back at the basic b*tch, I’ll make them know who I am step by step. But... why does the His Royal Highness climbs onto my bed every night?",
+    genres: "rommance,female lead,historical,médicale,transmigration",
+    date: "2019",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "complet",
+    chTotal: "96",
     chLus: "",
-    chJade: "",
+    chJade: "65",
     externalLinks: {
       "": "",
       "": ""
