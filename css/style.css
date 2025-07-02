@@ -80,6 +80,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 
@@ -388,31 +389,36 @@ img, .manga, .popup-content {
   background-color: #5d5c5c;
 }
 
+/* Par défaut : 3 mangas par ligne, bien adaptés à la largeur */
 #mangaContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
   padding: 10px;
+  box-sizing: border-box;
 }
 
+/* Tablette (≥600px) : 4 mangas */
 @media (min-width: 600px) {
   #mangaContainer {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
+/* Moyenne tablette ou petit ordi (≥800px) : 5 mangas */
 @media (min-width: 800px) {
   #mangaContainer {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
-/* Grand écran : jusqu’à 6 cartes */
+/* Grand écran (≥1200px) : 6 mangas */
 @media (min-width: 1200px) {
   #mangaContainer {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
 
 .status-divider {
   grid-column: 1 / -1;

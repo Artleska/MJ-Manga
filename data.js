@@ -744,7 +744,7 @@ const mangaData = {
     otherTitles: ["Reasoning With A Beast / How to Tame a Beast / Comment dompter une bête"],
     image: "https://cdn.mangaupdates.com/image/i474878.jpg",
     description: "Le secrétaire Seo Yujin reçoit un appel soudain à son président, on lui demande de s'occuper pleinement du frère cadet du président et du troisième fils d'un conglomérat inconnu, Jin Taeoh. Vous avez juste besoin de le garder à l'égard des médias.La première fois qu'elle se rend à l'aéroport pour le rencontrer, sa première impression était qu'il était une assez belle... bête ? Apprivoiser la bête psychotique sans cœur du monde qui ne sait pas où aller !",
-    genres: "",
+    genres: "female lead,moderne,romance",
     date: "2024",
     dernierLecture: "2025-02-01",
     status: "complet",
@@ -752,8 +752,8 @@ const mangaData = {
     chLus: "62",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/manual-for-using-fierce-beast",
+      "MangaPark": "https://mangapark.net/title/393583-en-manual-for-using-fierce-beast"
     }
   },
   LA: {
@@ -973,11 +973,11 @@ const mangaData = {
     chLus: "",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "": "",
+      "": ""
     }
   },
 };
 
-
+// section a jade
 
