@@ -472,6 +472,31 @@ function allerA(groupe) {
   }
 }
 
+// Swipe vers le bas pour fermer la sidebar sur mobile
+function enableSwipeToClose(sidebarId) {
+  const sidebar = document.getElementById(sidebarId);
+  let startY = 0;
+
+  sidebar.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+  });
+
+  sidebar.addEventListener('touchend', (e) => {
+    const endY = e.changedTouches[0].clientY;
+    const diffY = endY - startY;
+
+    // Si l'utilisateur glisse vers le bas d'au moins 50px
+    if (diffY > 50) {
+      sidebar.classList.remove('open');
+    }
+  });
+}
+
+// Applique aux deux sidebars
+enableSwipeToClose('genreSidebar');
+enableSwipeToClose('sortSidebar');
+
+
 
 
 

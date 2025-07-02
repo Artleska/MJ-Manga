@@ -1173,35 +1173,35 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
-    title: "",
+  almightnetwork: {
+    title: "Almight Network",
     otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    image: "https://cdn.mangaupdates.com/image/i454990.jpg",
+    description: "When Fang Lin bought a new smart phone, he found out the phone app gave him a special social network with the immortals. In a dog eat dog world, Lin is taking a stairway to heaven with this special social network.",
+    genres: "cultivation,moderne,male lead,",
+    date: "2018",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "170",
     chLus: "",
-    chJade: "",
+    chJade: "21",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
+  almightymaster: {
+    title: "Almighty Master",
+    otherTitles: ["The Omnipotent / The Peak Master of the City"],
+    image: "https://cdn.mangaupdates.com/image/i379190.jpg",
+    description: "Qin Mo was an orphan raised by five guardians who were the best in their respective disciplines. With the skillsets he had learned from them, he moved to the city to find out the truth about his parents' death. Nonetheless, there were many obstacles in his quest. In the end, would he be able to uncover the mystery behind his parents' death?",
     genres: "",
-    date: "",
+    date: "2019",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "286",
     chLus: "",
-    chJade: "",
+    chJade: "103",
     externalLinks: {
       "": "",
       "": ""
