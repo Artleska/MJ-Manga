@@ -50,6 +50,7 @@
       <input type="checkbox" id="beast world" value="beast world" /><label for="beast world">Beast world</label>
       <input type="checkbox" id="business" value="business" /><label for="business">Business</label>
       <input type="checkbox" id="caretaker" value="caretaker" /><label for="caretaker">Caretaker</label>
+      <input type="checkbox" id="child lead" value="child lead" /><label for="child lead">Child lead</label>
       <input type="checkbox" id="comédie" value="comédie" /><label for="comédie">Comédie</label>
       <input type="checkbox" id="cooking" value="cooking" /><label for="cooking">Cooking</label>
       <input type="checkbox" id="crossdressing" value="crossdressing" /><label for="crossdressing">Crossdressing</label>
@@ -63,12 +64,12 @@
       <input type="checkbox" id="jeux vidéo" value="jeux vidéo" /><label for="jeux vidéo">Jeux vidéo</label>
       <input type="checkbox" id="ghosts" value="ghosts" /><label for="ghosts">Ghosts</label>
       <input type="checkbox" id="harem" value="harem" /><label for="harem">Harem</label>
-      <input type="checkbox" id="isekai inversé" value="isekai inversé" /><label for="isekai inversé">Isekai inversé</label>
       <input type="checkbox" id="historical" value="historical" /><label for="historical">Historical</label>
       <input type="checkbox" id="horreur" value="horreur" /><label for="horreur">Horreur</label>
       <input type="checkbox" id="isekai" value="isekai" /><label for="isekai">Isekai</label>
+      <input type="checkbox" id="long life" value="long life" /><label for="long life">Long life</label>
       <input type="checkbox" id="magie" value="magie" /><label for="magie">Magie</label>
-      <input type="checkbox" id="malelead" value="male lead" /><label for="malelead">male lead</label>
+      <input type="checkbox" id="male lead" value="male lead" /><label for="male lead">male lead</label>
       <input type="checkbox" id="manga" value="manga" /><label for="manga">Manga</label>
       <input type="checkbox" id="mature" value="mature" /><label for="mature">Mature</label>
       <input type="checkbox" id="mécanique" value="mécanique" /><label for="mécanique">Mécanique</label>
@@ -78,6 +79,7 @@
       <input type="checkbox" id="monstre" value="monstre" /><label for="monstre">Monstre</label>
       <input type="checkbox" id="mother" value="mother" /><label for="mother">Mother</label>
       <input type="checkbox" id="murim" value="murim" /><label for="murim">Murim</label>
+      <input type="checkbox" id="multi world" value="multi world" /><label for="multi world">Multiworld</label>
       <input type="checkbox" id="musique" value="musique" /><label for="musique">Musique</label>
       <input type="checkbox" id="mystère" value="mystère" /><label for="mystère">Mystère</label>
       <input type="checkbox" id="novel" value="novel" /><label for="novel">Novel</label>
@@ -90,7 +92,8 @@
       <input type="checkbox" id="rich" value="rich" /><label for="rich">Rich</label>
       <input type="checkbox" id="romance" value="romance" /><label for="romance">Romance</label>
       <input type="checkbox" id="school life" value="school life" /><label for="school life">School life</label>
-      <input type="checkbox" id="secret identity" value="secret identity" /><label for="secret identity">Secretidentity</label>
+      <input type="checkbox" id="seconde chance" value="seconde chance" /><label for="seconde chance">Seconde chance</label>
+      <input type="checkbox" id="secret identity" value="secret identity" /><label for="secret identity">Secret identity</label>
       <input type="checkbox" id="sick" value="sick" /><label for="sick">Sick</label>
       <input type="checkbox" id="sport" value="sport" /><label for="sport">Sport</label>
       <input type="checkbox" id="suicide" value="suicide" /><label for="suicide">Suicide</label>
@@ -114,10 +117,10 @@
   </div>
 
   <div class="sort-buttons sidebar-genres d-flex flex-column gap-2 mt-3">
-    <button onclick="sortManga('alphabetique')" class="btn btn-outline-primary">Alphabétique (A-Z)</button>
-    <button onclick="sortManga('date')" class="btn btn-outline-primary">Plus récent</button>
+    <button onclick="setSort('alphabetique')" class="btn btn-outline-primary">Alphabétique (A-Z)</button>
+    <button onclick="setSort('date')" class="btn btn-outline-primary">Plus récent</button>
     <div class="sort-dropdown">
-  <button class="dropdown-toggle">Statut ▼</button>
+  <button class="dropdown-toggle">Statut</button>
   <div class="dropdown-menu">
     <button onclick="filterByStatus('')">Tous</button>
     <button onclick="filterByStatus('complet')">Complet</button>
@@ -127,7 +130,7 @@
   </div>
 </div>
 
-    <button onclick="sortManga('genres')" class="btn btn-outline-primary">Genres similaires</button>
+    <button onclick="setSort('genres')" class="btn btn-outline-primary">Genres similaires</button>
 
     <div class="mt-3">
       <label for="minChapitresInput" class="form-label">Nombre de chapitres minimum :</label>
@@ -136,10 +139,18 @@
       <input type="number" id="minChapitresInput" placeholder="ex: 50" class="form-control mb-2" />
       </div>
       <div class="col-md-4">
-      <button onclick="sortManga('chapitresMin')" class="btn btn-outline-success">Filtrer</button>
+      <button onclick="setSort('chapitresMin')" class="btn btn-outline-success">Filtrer</button>
       </div>
       </div>
     </div>
+
+    <select id="lectureFilter">
+  <option value="StatusArtles">Status Artles</option>
+  <option value="nonCommence">Non commencé</option>
+  <option value="enCours">En cours</option>
+  <option value="termine">Terminé</option>
+</select>
+
   </div>
 </div>
 

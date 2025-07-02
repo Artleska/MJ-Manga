@@ -6,11 +6,11 @@ const mangaData = {
     description: "Kim Ayoung, 30 ans, vient tout juste d'ouvrir sa clinique vétérinaire, mais aucun patient ne vient la consulter. Son affaire semble être un échec complet... Un soir pourtant, une magnifique jeune femme se présente à la clinique et demande à Ayoung de la soigner contre les parasites. Est-ce une mauvaise blague ? C'est du moins ce que pense la docteure jusqu'à ce que sa patiente se transforme… en dragon gigantesque ! ",
     genres: "female lead,animals,médicale,moderne,surnaturel",
     date: "2020",
-    dernierLecture: "2024-12-10",
-    status: "Complete",
+    dernierLecture: "2024-08-01",
+    status: "Complet",
     chTotal: "152",
     chLus: "88.",
-    chJade: 45,
+    chJade: "",
     externalLinks: {
       "Comick": "https://crunchyscan.fr/lecture-en-ligne/la-veterinaire-des-creatures-mythiques",
       "CrunchyScan": "https://mangaplus.shueisha.co.jp/titles/100020"
@@ -18,14 +18,16 @@ const mangaData = {
   },
   Sorryiamalsoabigshot: {
     title: "Sorry, I am also a bigshot",
-    otherTitles: [""],
+    otherTitles: ["Nip and Tuck / Kiss, Marry or Kill ?"],
     image: "image/Sorry-I-am-also-a-big-shot.jpeg",
     description: "Lire le manhua Désolé, je suis aussi un gros bonnet / Li Yuan, qui était poursuivie après s'être réveillée à l'hôpital, a découvert qu'elle avait perdu la mémoire. Au moment critique, un homme prétendant être son mari est apparu et a tué le dernier tueur.",
-    genres: "female lead",
+    genres: "female lead,psychologique,moderne,drame,romance",
     date: "2023",
-    status: "Complete",
+    dernierLecture: "2024-08-01",
+    status: "Complet",
     chTotal: "50",
-    chLus: ".27",
+    chLus: "27.",
+    chJade: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/sorry-i-am-also-a-big-shot",
     }
@@ -35,11 +37,13 @@ const mangaData = {
     otherTitles: ["Here come the queen / Bow to your queen"],
     image: "https://meo.comick.pictures/jx3vym.jpg",
     description: "Xie Ran était une actrice de la liste D. La rumeur veut qu'elle se soit noyée dans la mer, mais quand elle est soudainement revenue, elle n'était plus la fille qu'ils connaissaient... Au nom de sa sœur jumelle décédée, Sylvia est déterminée à se venger. Elle n'aura aucune pitié de ceux qui ont maltraité sa chère sœur. Le jeu de la chasse et du meurtre vien de commencer, car quand elle vient, vous devez vous incliner devant votre reine !",
-    genres: "acting,badass,comedie,drame,female lead,modern,romance,secret identity",
+    genres: "acting,badass,comedie,drame,female lead,moderne,romance,secret identity",
     date: "2020",
+    dernierLecture: "2025-02-01",
     status: "En cours",
     chTotal: "341",
     chLus: ".138.340",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/she-is-coming-please-get-down?page=6#chapter-header",
       "Bato": "https://bato.to/series/96382"
@@ -50,11 +54,13 @@ const mangaData = {
     otherTitles: ["Your Fake Facade Failed Again, Ma'am / Ma'am You Have Been Uncovered / Ma'am, Your Mask Has Fallen Off Again "],
     image: "https://meo.comick.pictures/v8p2xa.png",
     description: "Mère disait toujours à Qinran : « Ton beau-père est issu d'une famille célèbre, ton frère aîné est un génie et ta sœur est une excellente élève de son lycée. Toi, un paysan, ne les embarrasse pas. » Tous les gens de la capitale qui avaient un statut reçurent un avertissement de la part de M. Juan de la famille Cheng : « La femme de M. Juan est de la campagne et ne comprend pas notre situation actuelle, et elle a un mauvais caractère. Bref, tout le monde devrait être très patient. » Jusqu'au jour où, alors que Maître Juan enquêtait sur un certain grand patron, ses hommes tombèrent dans un silence confus en regardant l'un des gilets de sa belle-sœur qui prétendait ne rien savoir…",
-    genres: "female lead,romance,badas",
+    genres: "female lead,romance,badass,school life,secret identity,moderne",
     date: "2024",
+    dernierLecture: "2024-08-01",
     status: "En cours",
     chTotal: "82",
     chLus: "..27",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/beneath-the-lady-s-mask",
       "Snow": "https://snowmtl.ru/comics/beneath-the-lady-s-mask"
@@ -62,14 +68,16 @@ const mangaData = {
   },
   Provingthemwrongeveryday: {
     title: "Proving them wrong everyday",
-    otherTitles: ["Cool madam proves others wrong online"],
+    otherTitles: ["Cool madam proves others wrong online / Madam and Her Daily Online Face-Slapping"],
     image: "https://meo.comick.pictures/Nrqxpo.jpg",
     description: "La famille Gu, chef du continent Jijing, a été victime d'un complot et la famille a été séparée. Le chef de la jeune famille, Gu Mang, a emmené son jeune frère, Gu Si, en se déguisant, pour reprendre le pouvoir, vaincre le méchant, venger la famille, gagner en gloire et récupérer le plus beau président en cours de route.",
     genres: "badass,female lead,moderne,romance,secret identity",
     date: "2022",
+    dernierLecture: "2025-03-01",
     status: "En cours",
-    chTotal: "",
+    chTotal: "144",
     chLus: ".178.99",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/madam-and-her-daily-online-face-slapping",
       "Bato": "https://bato.to/series/158565",
@@ -81,11 +89,13 @@ const mangaData = {
     otherTitles: ["The Daughter of a Wealthy Family Went Crazy After Being Reborn / A Wealthy Young Lady "],
     image: "https://cdn.mangaupdates.com/image/i439634.jpg",
     description: "Un grand incendie lui a fait comprendre le cœur humain. Après avoir renaître, elle est déterminée à changer sa vie misérable ! Elle a combattu sa sœur maléfique et a rompu les liens familiaux, la fille riche de la famille Bai est maintenant invincible ! La nature arrogante, l'identité de l'étudiant du médecin miracle, du chef de hacker, du génie des mathématiques... Tout n'était qu'un masque. La chose la plus importante était qu'il était le cœur du maître du manoir Lu.",
-    genres: "female lead,",
+    genres: "female lead,return,secret identity,badass,drame,moderne",
     date: "2024",
+    dernierLecture: "",
     status: "En cours",
     chTotal: "47",
     chLus: ".47",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/reborn-the-savage-heiress",
     }
@@ -93,13 +103,15 @@ const mangaData = {
   Sealedwithlips: {
     title: "Sealed with lips",
     otherTitles: [" Kiss Me: Seal Lips Tightly / Lip Seal / Sealed Lips / Scellé par tes lèvres / Mit Lippen besiegelt"],
-    image: "",
+    image: "image/Sealed-With-Lips.jpg",
     description: "Elle a été exploitée, maltraitée par sa belle-mère et sa demi-sœur. Elle est devenue un outil pour le succès de sa sœur. Après être morte d'une mort douloureuse, elle renaît. Dans sa vie antérieure, elle avait un fiancé qu'elle admirait et aimait pendant longtemps, mais il était froid et ressentait du dégoût envers elle, ce qui lui a apporté de la douleur et l'a rendue désespérée. Mais maintenant, face à nouveau face à lui, elle a dit en souriant :  Brisons les fiançailles, je ne veux plus de ce mariage! Cependant, cet homme veut rester en relation avec elle.",
-    genres: "female lead,romance,badass,drame,médicale",
-    date: "",
-    status: "Complete",
+    genres: "female lead,romance,badass,drame,médicale,seconde chance,drame,abuse,moderne",
+    date: "2019",
+    dernierLecture: "",
+    status: "Complet",
     chTotal: "150",
-    chLus: "",
+    chLus: "2.150",
+    chJade: "",
     externalLinks: {
       "Bato": "https://bato.to/series/83612/sealed-with-lips"
     }
@@ -109,11 +121,13 @@ const mangaData = {
     otherTitles: [" The Madam Has Became The Favourite of The Big Bosses / The Madam Has Become Big Shots’ Favorite One"],
     image: "https://cdn.mangaupdates.com/image/i448935.png",
     description: "Lorsque Lan Jin est retournée dans son propre monde trois ans plus tard, elle a découvert que sa réputation était ruinée. De plus, elle avait cinq fiancés et cinq fils qui venaient de cinq mondes de voyage dans le temps.",
-    genres: "badass,female lead,romance",
-    date: "Juin 2025",
-    chTotal: "Complete",
+    genres: "badass,female lead,romance,return,moderne,secret identity",
+    date: "2022",
+    dernierLecture: "2025-06-01",
+    status: "Complet",
     chtotal: "142",
-    chLus: "",
+    chLus: ".139.16",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/all-the-heroes-love-me?chap-order=0&date-order=",
       "Happy": "https://m.happymh.com/manga/furentachengledalaomendetuanchong"
@@ -124,11 +138,13 @@ const mangaData = {
     otherTitles: ["The Return of My Love / The Big Shot’s Conscience Has Penetrated Back / the Godfather’s Character has Pierced Back "],
     image: "https://cdn.mangaupdates.com/image/i357249.jpg",
     description: "Jun Qing transmigre enfin vers son monde d'origine, mais découvre que son propre corps avait été repris par un autre transmigrateur pendant 2 ans. même le quatrième frère, qu'elle recherche secrètement depuis de nombreuses années, la traite froidement. Faire face aux problèmes laissés par le transmigrant précédent, et récupérer simultanément le cœur de son quatrième frère.",
-    genres: "romance,female lead",
-    date: "Février 2025",
-    status: "Complete",
+    genres: "romance,female lead,drame,return,moderne",
+    date: "2021",
+    dernierLecture: "2025-02-1",
+    status: "Complet",
     chTotal: "214",
-    chLus: "",
+    chLus: "13.5.70",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/the-big-shot-s-darling-returns",
       "Discord": "Discord : Lollÿ"
@@ -139,11 +155,13 @@ const mangaData = {
     otherTitles: ["The Almighty Daughter Burns the Heavens "],
     image: "https://cdn.mangaupdates.com/image/i448904.png",
     description: "Après avoir voyagé dans le temps et l'espace, Ye Zhuo est devenue une fausse fille d'une famille riche et un bâtard notoire que tout le monde dédaignait. Mais et alors ? Bien que Ye Zhuo ait reçu une mauvaise main, elle gagnerait toujours. Ye Zhuo a rapidement fait de la place pour la vraie fille de la riche famille, puis a aidé sa vraie mère et son oncle à s'enrichir du jour au lendemain.",
-    genres: "badass,female lead,romance",
-    date: "Février 2025",
+    genres: "badass,female lead,romance,transmigration,moderne,secret identity",
+    date: "2023",
+    dernierLecture: "2025-02-01",
     status: "En cours",
     chTotal: "166",
-    chLus: "",
+    chLus: ".141",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/the-almighty-daughter-runs-the-world",
     }
@@ -153,11 +171,13 @@ const mangaData = {
     otherTitles: ["Spicy Wife’s Reborn Word / Don’t Mess With Mistress / Rebirth: The Journey of a Wife Spoiling Her Husband / Space for rebirth: a spoiled wife / Sweet and Spice from from the Reborn Wife "],
     image: "https://cdn.mangaupdates.com/image/i452117.jpg",
     description: "Elle a été le successeur d'un grand guérisseur, mais sa réincarnation est une ombre d'une fille. La appeler stupide ? Ses compétences en alchimie et en médecine étourdiront les sceptiques ! Rire de son malheur ? Elle traitera avec sa belle-mère et sa sœur vicieuses d'un signe de la main ! Tout ce qu'elle veut après sa réincarnation, c'est se venger et vivre sa vie, mais elle ne sait pas qu'elle a attiré l'attention de l'homme le plus noble du pays. Son plan d'embrasser et de courir est contrecarré parce qu'elle a été capturée contre sa volonté. Toutes les actions ont des conséquences, ma fille. Personne ne t'a appris ça ?",
-    genres: "",
-    date: "Février 2025",
-    status: "Complete",
+    genres: "female lead,romance,moderne,badass,drame,médicale,transmigration",
+    date: "2019",
+    dernierLecture: "2025-02-01",
+    status: "Complet",
     chTotal: "442",
-    chLus: "",
+    chLus: "5.122",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/00-the-fiesty-wife-is-not-to-be-messed-with",
     }
@@ -167,11 +187,13 @@ const mangaData = {
     otherTitles: ["My Loyal Husband After Our Divorce / The Brightest Galaxy / The Most Shinning Galaxy "],
     image: "https://cdn.mangaupdates.com/image/i396337.jpg",
     description: "Après un divorce, Xia Xinghe est devenue une vieille femme - sans argent, sans maison ou beau visage. Mais elle a soudainement tout changé. Xia Xinghe s'est transformée en une riche hacker de haut niveau.",
-    genres: "",
-    date: "Février 2025",
-    status: "Complete",
+    genres: "female lead,romance,moderne,badass,abuse,drame,secret identity",
+    date: "2022",
+    dernierLecture: "2025-02-01",
+    status: "Complet",
     chTotal: "170",
-    chLus: "",
+    chLus: ".115",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/brilliant-galaxy",
     }
@@ -181,11 +203,13 @@ const mangaData = {
     otherTitles: [" In Nancheng to wait for the Returning Moon / Heartstealer in Disguise "],
     image: "https://cdn.mangaupdates.com/image/i364178.jpg",
     description: "Déterminée à démolir le faussaire angélique et le démolleur de maison, Shen Yugui, une professionnelle de retour, un maître hacker et une artiste martiale d'élite, ferait tout ce qu'elle peut pour faire l'idiot, gagner le cœur du PDG glacé et grimper vers le sommet de sa vie",
-    genres: "",
-    date: "Février 2025",
-    status: "Complete",
+    genres: "female lead,romance,moderne,secret identity",
+    date: "2021",
+    dernierLecture: "2025-02-01",
+    status: "Complet",
     chTotal: "146",
-    chLus: "",
+    chLus: ".146",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/nancheng-waits-for-the-moon",
     }
@@ -195,11 +219,13 @@ const mangaData = {
     otherTitles: ["Melodramatic Novel’s Side Character Quits "],
     image: "https://cdn.mangaupdates.com/image/i409250.png",
     description: "Jiang Mo, une travailleuse à temps partiel, se transmigre en un roman mélodramatique (cliché), reçoit de façon inattendue un système qui lui demande de promouvoir l'harmonie entre les protagonistes masculins et féminins au prix de sa vie. Après que Jiang Mo ait nonchalamment accompli ses tâches, le regard du patron méchant envers elle commence à devenir de plus en plus étrange",
-    genres: "female lead",
-    date: "Février 2025",
-    status: "Complete",
+    genres: "female lead,novel,transmigration,system,romance",
+    date: "2023",
+    dernierLecture: "2025-02-01",
+    status: "Complet",
     chtoTal: "55",
-    chLit: "",
+    chLus: ".55",
+    chJade: "",
     externalLinks: {
       "Comick": "https://comick.io/comic/melodramatic-novels-side-character-quits",
     }
@@ -209,11 +235,13 @@ const mangaData = {
     otherTitles: ["She-Ancestor, Dazzling and Dashing / As the Chief, She Is Beautiful and Sassy / Matriarch is Pretty and Cool"],
     image: "https://cdn.mangaupdates.com/image/i422680.jpg",
     description: "Bai Chuwei a attendu cinq mille ans avant d'entrer dans l'intrigue originale, faisant ses débuts en tant qu'ancêtre de toute l'humanité. La richesse ? Les plus grands actifs du monde qu'elle possède. Les huit familles aristocratiques ? Toutes ses servantes. Alors que tout le monde vénère son ancêtre, Bai Chuwei, le quatrième jeune maître de la famille Duan à Haicheng, la tient dans ses bras. Que diable ! Bai Chuwei essayait juste d'absorber l'énergie spirituelle de ce type, dont elle avait été témoin en grandissant.",
-    genres: "",
-    date: "Octobre 2024",
-    status: "Complete",
+    genres: "female lead,romance,secret identity,system,novel,isekai,long life",
+    date: "2023",
+    dernierLecture: "2024-08-01",
+    status: "Complet",
     chTotal: "120",
-    chLit: "",
+    chLus: "119.",
+    chJade: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/ancestor-she-s-beautiful-and-sassy",
     }
@@ -223,11 +251,13 @@ const mangaData = {
     otherTitles: [""],
     image: "https://cdn.mangaupdates.com/image/i411591.png",
     description: "Employée du bureau de gestion de l’espace-temps, elle va dans différents monde pour élever des enfants à la demande d’enfants qui ont vécu des enfance difficile.",
-    genres: "",
-    date: "Décembre 2024",
-    status: "Complete",
+    genres: "female lead,enfant,system,caretaker",
+    date: "2021",
+    dernierLecture: "2024-12-01",
+    status: "Complet",
     chTotal: "250",
-    chLit: "",
+    chLus: ".36",
+    chJade: "",
     externalLinks: {
       "Snow": "https://snowmtl.ru/comics/quick-transmigration-i-am-the-god-by-raising-cubs",
     }
@@ -237,11 +267,13 @@ const mangaData = {
     otherTitles: [" Cannon Fodder’s Record of Counterattacks"],
     image: "https://cdn.mangaupdates.com/image/i315950.png",
     description: "Ning Shu est morte. Mais heureusement, elle est devenue une chargée de contre-attaquer pour de la chair à canon pitoyable. Ainsi, Ning Shu a joué divers types de rôles dans la vie dans divers mondes, rencontrant de nombreuses personnes qui causaient des problèmes sans raison. Protagoniste transmigrée, protagoniste renaissante. Ning Shu n'avait d'autre choix que de collecter péniblement la morale l'intégrité dans différents mondes. ",
-    genres: "",
-    date: "Octobre 2024",
-    status: "Cancelled",
+    genres: "female lead,abuse,drame,transmigration",
+    date: "2020",
+    dernierLecture: "2024-08-01",
+    status: "abandonné",
     chTotal: "31",
-    chLit: "",
+    chLus: "4..31",
+    chJade: "",
     externalLinks: {
       "Scan-manga": "https://m.scan-manga.com/11042/Quick-Transmigration-Cannon-Fodder-s-Record-of-Counterattacks.html",
       "Mangapark": "https://mangapark.net/title/99910-en-cannon-fodder-s-record-of-counterattacks"
@@ -404,9 +436,9 @@ const mangaData = {
     description: "Aventures d’un homme venant d’une lointaine contrée orientale, se retrouvant dans un univers « fantastique » à l’occidentale. Il y rencontra elfes, nains, mages et dragons.",
     genres: "male lead",
     date: "2002",
-    status: "Completer",
+    status: "Complet",
     chTotal: "188",
-    chLit: "188.",
+    chLus: "188.",
     externalLinks: {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/id"
     }
@@ -657,275 +689,296 @@ const mangaData = {
       "CrunchyScan": ""
     }
   },
-  La5: {
+  BadWife: {
+    title: "Bad Wife",
+    otherTitles: ["The Wicked Wife of a Scheming CEO"],
+    image: "https://cdn.mangaupdates.com/image/i418622.jpg",
+    description: "Ham Eunsang est une jeune femme vivant une idylle avec son collègue et petit copain, Hangyung, depuis maintenant 3 ans. Hélas, son histoire d'amour prend fin quand elle et son patron le surprennent au bureau, en pleins ébats sexuels avec une de ses collègues. Eunsang décide alors de se venger avec l’aide de son patron. ",
+    genres: "female lead,moderne,romance",
+    date: "2022",
+    dernierLecture: "2024-08-01",
+    status: "complet",
+    chTotal: "65",
+    chLus: "15.",
+    chJade: "",
+    externalLinks: {
+      "Discord:Fantasy Trad": "",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/bad-wife"
+    }
+  },
+   LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La6: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La3: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
-    status: "",
-    chtoTal: "",
-    chLit: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La4: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La5: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La6: {
+     LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La3: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
-    status: "",
-    chtoTal: "",
-    chLit: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La4: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La5: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La6: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La3: {
+   LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
-    status: "",
-    chtoTal: "",
-    chLit: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La0: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La1: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La2: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La3: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
-    status: "",
-    chtoTal: "",
-    chLit: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  La4: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La5: {
+     LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
-  La6: {
+  LA: {
     title: "",
     otherTitles: [""],
     image: "",
     description: "",
     genres: "",
     date: "",
+    dernierLecture: "",
     status: "",
     chTotal: "",
-    chLit: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  LA: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  LA: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
     externalLinks: {
       "Comick": "",
       "CrunchyScan": ""
     }
   },
 };
+
+
 
