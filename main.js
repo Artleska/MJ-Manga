@@ -380,6 +380,9 @@ document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
   document.getElementById("sortSidebar").classList.remove("open");
 });
 
+document.getElementById("popupDescription").innerHTML = manga.description.replace(/\n/g, "<br><br>");
+
+
 
 
 
