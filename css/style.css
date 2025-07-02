@@ -97,18 +97,15 @@ header {
 .manga h3 {
   font-size: 16px;
   margin: 8px 0 4px 0;
-  height: 3.9em; /* 3 lignes × 1.3em */
-  line-height: 1.3em; /* Interligne réduite */
+  line-height: 1.3em;
+  height: calc(1.3em * 3); /* Assure la hauteur exacte pour 3 lignes */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
   font-weight: 600;
   color: rgb(201, 27, 53);
 }
-
-
 
 .manga-genres {
   font-size: 13px;
