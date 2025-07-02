@@ -444,16 +444,13 @@ img, .manga, .popup-content {
   z-index: 9999;
   overflow-y: auto;
   transition: transform 0.3s ease-in-out;
-  height: 100vh;
+  overflow-y: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 /* État fermé sur mobile ET desktop */
 #genreSidebar, #sortSidebar {
-  transform: translateY(-100%);
-  top: 0;
-  left: 0;
-  width: 100%;
+  transform: translateX(100%);
 }
 
 /* Ouvert sur mobile */
@@ -477,6 +474,40 @@ img, .manga, .popup-content {
   #genreSidebar.open,
   #sortSidebar.open {
     transform: translateX(0);
+  }
+}
+
+.close-btn {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Ouverte sur grand écran (affichée à droite) */
+@media (min-width: 768px) {
+  .sidebar {
+    top: 0;
+    right: 0;
+    width: 33.33%; /* 1/3 de l'écran */
+    height: 100%;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Ouverte sur mobile (depuis le haut, pleine largeur) */
+@media (max-width: 767px) {
+  .sidebar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 66.66vh; /* 2/3 de la hauteur */
+    transform: translateY(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateY(0);
   }
 }
 

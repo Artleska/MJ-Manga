@@ -603,9 +603,9 @@ const mangaData = {
       "Comick": "https://comick.io/comic/02-seven-years-later",
     }
   },
-  La3: {
-    title: "Horror Romance: Cheoyong",
-    otherTitles: [" Un amour horrifique / Cheoyong: A Ghostly Romance / Romance in Horror, Cheoyoug "],
+  Unamourhorrifique: {
+    title: "Un amour horrifique",
+    otherTitles: [" Horror Romance: Cheoyong / Cheoyong: A Ghostly Romance / Romance in Horror, Cheoyoug "],
     image: "https://cdn.mangaupdates.com/image/i362061.jpg",
     description: "Lee Yeojin est somnambule et ça ne lui rend vraiment pas la vie facile, surtout quand il s’agit de trouver un petit ami. Alors quand Won Jaehee, un inconnu beau comme un dieu, la réveille au milieu d’une de ses crises avec un air compatissant, elle croit trouver l'homme de sa vie ! Ce qu’elle ne sait pas, c’est que Jaehee est un chasseur de fantômes, qu’elle les attire comme un aimant, et que c’est la raison de son intérêt pour elle !",
     genres: "romance,female lead,moderne",
@@ -706,51 +706,50 @@ const mangaData = {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/bad-wife"
     }
   },
-   LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+   AccidentalLove: {
+    title: "Accidental Love",
+    otherTitles: ["Only for Love / Beautiful Mistake / Flirting by Mistake"],
+    image: "https://cdn.mangaupdates.com/image/i438968.jpg",
+    description: "Le superbe journaliste financier, Zheng Shuyi, sort avec un salaud? Comment pourrait-elle reculer et ne rien faire à propos de ces tourtereaux : le bâtard infidèle et son lotus blanc de maîtresse. En voyant le numéro de plaque de la Rolls-Royce de l'oncle de la maîtresse, qui était une plaque d'immatriculation numérique directe, Zheng Shuyi a pris sa décision. Le tricheur ne prévoit-il pas d'épouser des riches pour prendre sa retraite vingt ans plus tôt, en empruntant la voie risible du PDG ? Alors je deviendrai à la fois toi et la tante de ta maîtresse !",
+    genres: "female lead,romance,moderne",
+    date: "2024",
+    dernierLecture: "2025-02-01",
+    status: "pause",
+    chTotal: "55",
+    chLus: ".44",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/accidental-love",
+    }
+  },
+  SheisMine: {
+    title: "She is Mine",
+    otherTitles: ["Take Possession of Jiangxi"],
+    image: "https://cdn.mangaupdates.com/image/i387701.png",
+    description: "Min Jiang Xi, professeur particulier pour l'élite, réussit à prouver au PDG Qin Zhan qu'elle serait le professeur parfait à embaucher. Mais cet homme voue une profonde aversion aux femmes qui s'accrochent à lui et la prévient qu'il lui manque simplement une tutrice et non pas une petite amie. Elle s'y attèle en ne franchissant jamais les limites. Mais un an plus tard, Qin Zhan ivre, lui déclare son amour. Elle, qui ne croit pas à l'amour, pourra-t-elle le trouver avec lui ?",
+    genres: "female lead,romance,moderne",
+    date: "2020",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "pause",
+    chTotal: "52",
     chLus: "",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/00-she-is-mineWXYP",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/she-is-mine/"
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
+  ManualforUsingFierceBeast: {
+    title: "Manual for Using Fierce Beast",
+    otherTitles: ["Reasoning With A Beast / How to Tame a Beast / Comment dompter une bête"],
+    image: "https://cdn.mangaupdates.com/image/i474878.jpg",
+    description: "Le secrétaire Seo Yujin reçoit un appel soudain à son président, on lui demande de s'occuper pleinement du frère cadet du président et du troisième fils d'un conglomérat inconnu, Jin Taeoh. Vous avez juste besoin de le garder à l'égard des médias.La première fois qu'elle se rend à l'aéroport pour le rencontrer, sa première impression était qu'il était une assez belle... bête ? Apprivoiser la bête psychotique sans cœur du monde qui ne sait pas où aller !",
     genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    date: "2024",
+    dernierLecture: "2025-02-01",
+    status: "complet",
+    chTotal: "66",
+    chLus: "62",
     chJade: "",
     externalLinks: {
       "Comick": "",
