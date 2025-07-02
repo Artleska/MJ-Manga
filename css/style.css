@@ -104,7 +104,7 @@ header {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   font-weight: 600;
-  color: rgb(201, 27, 53);
+  color: rgb(201, 27, 53)!important;
 }
 
 .manga-genres {
