@@ -146,7 +146,7 @@ function displayGroupedByStatus(items) {
       line.textContent = `— ${capitalizeFirstLetter(item.title)} —`;
       container.appendChild(line);
     } else {
-      const id = Object.keys(mangaData).find(key => mangaData[key] === item);
+     const id = item.id || Object.keys(mangaData).find(key => mangaData[key] === item);
       const imageSrc = item.image && item.image.trim() !== '' ? item.image : 'image/fond.jpg';
 
       const card = document.createElement('div');
@@ -205,7 +205,7 @@ function openPopup(id) {
   <div class="row">
     <div class="col-4"><strong>Status:</strong> ${manga.status || '—'}</div>
     <div class="col-4"><strong>Date:</strong> ${manga.date || '—'}</div>
-    <div class="col-4"><strong>Dernière lecture:</strong> ${manga.dernierLecture || '—'}</div>
+    <div class="col-4"><strong>Last read:</strong> ${manga.dernierLecture || '—'}</div>
   </div>
 `;
 
@@ -269,11 +269,14 @@ window.addEventListener("click", (e) => {
   const genreSidebar = document.getElementById("genreSidebar");
   const sortSidebar = document.getElementById("sortSidebar");
 
-  if (!genreSidebar.contains(e.target) && e.target.id !== "openSidebarBtn") {
+  const clickedOutsideGenre = !genreSidebar.contains(e.target) && e.target.id !== "openSidebarBtn";
+  const clickedOutsideSort = !sortSidebar.contains(e.target) && e.target.id !== "openSortSidebarBtn";
+
+  if (genreSidebar.classList.contains("open") && clickedOutsideGenre) {
     genreSidebar.classList.remove("open");
   }
 
-  if (!sortSidebar.contains(e.target) && e.target.id !== "openSortSidebarBtn") {
+  if (sortSidebar.classList.contains("open") && clickedOutsideSort) {
     sortSidebar.classList.remove("open");
   }
 
@@ -283,6 +286,9 @@ window.addEventListener("click", (e) => {
   }
 });
 
+// Empêche la propagation du clic dans les sidebars
+document.getElementById("genreSidebar").addEventListener("click", (e) => e.stopPropagation());
+document.getElementById("sortSidebar").addEventListener("click", (e) => e.stopPropagation());
 
 searchInput.addEventListener('input', afficherAvecFiltres);
 checkboxes.forEach(cb => cb.addEventListener('change', afficherAvecFiltres));
@@ -397,10 +403,12 @@ function trierParGenresSimilaires() {
   const allMangas = Object.values(mangaData);
   
   // Normalise les genres pour chaque manga
-  const normalizedMangas = allMangas.map(m => ({
-    ...m,
-    genresNorm: normalizeGenresArray(m.genres || [])
-  }));
+const normalizedMangas = Object.entries(mangaData).map(([id, m]) => ({
+  ...m,
+  id,
+  genresNorm: normalizeGenresArray(m.genres || [])
+}));
+
 
   // Séparer en 3 groupes : female lead, male lead, autres
   const groupes = {

@@ -1054,103 +1054,103 @@ const mangaData = {
   // section a jade
 
  
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+  abeastlyscandal: {
+    title: "Un scandale bestial",
+    otherTitles: ["Le scandale / Un Parfum de scandale"],
+    image: "https://cdn.mangaupdates.com/image/i377073.jpg",
+    description: "L'actrice la plus populaire du pays, Yeo Goeun, symbole de la pureté, et Seo Beomi, la scandaleuse et perverse. En réalité, elles partagent un secret : elles se comportent comme les meilleures amies grâce à une ruse de leur entreprise. Elles semblent extrêmement proches et affectueuses dans l'émission de télé-réalité « The BFF Special », mais tout cela n'est qu'une mise en scène !\n« Je n'ai pas l'intention de devenir ami avec toi ! Jamais. »\n« Je n'ai pas l'intention d'être ami avec toi non plus. »\nAu début, ils étaient très hostiles l'un envers l'autre dès qu'ils se rencontraient. Mais au fil du tournage, ils se sont rapprochés, et Goeun, qui auparavant détestait Beomi, a légèrement changé d'avis…\nBeomi continue d'approcher Goeun, et on ne sait pas s'il comprend ses sentiments. L'image de Beomi qui apparaît à Goeun chaque fois qu'elle a désespérément besoin de quelqu'un et celle qu'elle a aperçue au pub avant le tournage de l'émission se superposent, semant le chaos dans son esprit. Elle pensait qu'il n'était pas sérieux, mais elle est de plus en plus bouleversée lorsqu'il lui révèle sa sincérité…\nParviendront-ils à résoudre leurs malentendus et à passer du statut de « faux meilleurs amis » à celui de « vrais amants » ",
+    genres: "romance,female lead,acting,moderne",
+    date: "2020",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "73",
     chLus: "",
-    chJade: "",
+    chJade: "11",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
+  alegendofthewind: {
+    title: "A Legend of the Wind",
     otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    image: "https://cdn.mangaupdates.com/image/i312839.jpg",
+    description: "An ordinary young man's bloody journey of ascension from ordinary to extraordinary, and from the trough to the peak. In the 16th generation of the Shangguan family of Shangguan Xu, he is ever-changing and looks like a ghost. He comes and goes without a trace. He discovered the correct method of practicing the family martial arts, and changed his life.",
+    genres: "action,arts martiaux,male lead",
+    date: "2016",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "221",
     chLus: "",
-    chJade: "",
+    chJade: "35",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+  astarrebornthequeensreturn: {
+    title: "A Star Reborn: The Queen's Return",
+    otherTitles: ["Reborn: The Diva Is Back / The Queen's Return: A Star Reborn"],
+    image: "https://cdn.mangaupdates.com/image/i297540.jpg",
+    description: "She was the Queen of Song, but she died during her greatest years.\nAfter she was reincarnated, she became a simple trainee. She lost her former glory? It doesn't matter—no one can compete with her beautiful singer's voice. She's mocked for her lowly birth? It doesn't matter—her true identity is enough to make the whole world tremble. She owes huge debts? It doesn't matter...\nA powerful boss whispered to her: The debt will disappear if you would become my woman.\nBut she is proud: I'm sorry. I would sell my art, but not my whole self.",
+    genres: "transmigration,romance,female lead,moderne,abuse,idol",
+    date: "2019",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "200",
     chLus: "",
-    chJade: "",
+    chJade: "200",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+  aidin: {
+    title: "Aidin",
+    otherTitles: ["Aideen / Aydin / Les Ailes de la Chouette"],
+    image: "https://cdn.mangaupdates.com/image/i385190.jpg",
+    description: "Aideen, the esteemed daughter of Duke Glandya, is the Emperor’s assassin and the leader of ‘Owl.’\nFor giving everything and serving her Lord faithfully, she was betrayed and sentenced to death by guillotine.\n“I will take revenge on you. I will never forgive you even in death!”\nAbandoned by her Lord, her life came to an end, yet the moment she opened her eyes again, she realized she had returned to a time when she was still only 17. In order to get her revenge, she decided to destroy her home country Perdi that the Emperor cherished more than his life.\nYou are beautiful, Milady. Especially those red eyes of yours.\nThe man who personally sent the order to have Aideen executed, the Prince from the enemy country, Diceon,unexpectedly began to interfere with her life!\nThe story of Aideen, the woman who was abandoned by the Emperor and was given a second chance at life to get her revenge and to destroy her home country, now unfolds!",
+    genres: "romance,female lead,revenge,seconde chance,drame,action",
+    date: "2020",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "87",
     chLus: "",
-    chJade: "",
+    chJade: "35",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+  akenotobari: {
+    title: "Ake no Tobari",
+    otherTitles: ["Dawn of Tobari / Tobari of the Dawn"],
+    image: "https://cdn.mangaupdates.com/image/i371931.jpg",
+    description: "Is there a land of paradise where goblins and humans can coexist in harmony? Goblins and humans join in the fight to make this dream come true.",
+    genres: "action,fantasy,drama",
+    date: "2014",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "337",
     chLus: "",
-    chJade: "",
+    chJade: "108",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+  allheavenlyday: {
+    title: "All Heavenly Days",
+    otherTitles: ["Chaotic Lof World / Metempsychosis Record / Record of the Heavens"],
+    image: "https://cdn.mangaupdates.com/image/i359533.jpg",
+    description: "10,000 years ago in the world of Luofu, the banished immortal was born and the evil emperor was resurrected. Their grievances of tens of thousands years erupted overnight. The head master of Sword Exploration School went deep into the Dark Abyss and never be heard of since then... 10,000 years later, he got reborn again...",
+    genres: "action,arts martiaux,male lead,cultivation,transmigration,",
+    date: "2018",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "Complet",
+    chTotal: "404",
     chLus: "",
-    chJade: "",
+    chJade: "177",
     externalLinks: {
       "": "",
       "": ""
