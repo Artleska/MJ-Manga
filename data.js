@@ -1195,7 +1195,7 @@ const mangaData = {
     otherTitles: ["The Omnipotent / The Peak Master of the City"],
     image: "https://cdn.mangaupdates.com/image/i379190.jpg",
     description: "Qin Mo was an orphan raised by five guardians who were the best in their respective disciplines. With the skillsets he had learned from them, he moved to the city to find out the truth about his parents' death. Nonetheless, there were many obstacles in his quest. In the end, would he be able to uncover the mystery behind his parents' death?",
-    genres: "",
+    genres: "arts martiaux,action,male lead",
     date: "2019",
     dernierLecture: "",
     status: "Complet",

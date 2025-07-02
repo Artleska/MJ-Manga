@@ -68,7 +68,7 @@ header {
 }
 
 .manga {
-  width: 100%;
+  max-width: 100%;
   background-color: #131313;
   border-radius: 10px;
   padding: 10px;
@@ -450,7 +450,7 @@ img, .manga, .popup-content {
 /* Mobile : 3 cartes côte à côte */
 @media (max-width: 767px) {
   #mangaContainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 6px;
     padding: 8px;
   }
@@ -484,26 +484,30 @@ img, .manga, .popup-content {
 
 @media (max-width: 768px) {
   .sidebar {
-    top: auto;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    top: auto;
     width: 100%;
-    height: 66vh; /* 2/3 de la hauteur */
+    height: 66vh;
+    background-color: #fff;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(100%);
+    overflow-y: auto;
   }
   .sidebar.open {
     transform: translateY(0);
   }
-}
-  html, body {
-    max-width: 100vw;
+  /* désactive le scroll horizontal */
+  body {
     overflow-x: hidden;
   }
-
+}
 
 @media (max-width: 767px) {
   .sidebar .close-btn {
