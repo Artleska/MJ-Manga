@@ -531,4 +531,29 @@ img, .manga, .popup-content {
   }
 }
 
+@media (max-width: 767px) {
+  .sidebar.open {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 66vh; /* ✅ 2/3 de l'écran */
+    transform: translateY(0);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #popup .row > .col-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #popup .row > .col-4 strong {
+    margin-bottom: 4px;
+  }
+}
+
 

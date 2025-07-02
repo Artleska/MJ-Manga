@@ -13,7 +13,7 @@ function setSort(type) {
     currentSort = type;
   }
 
-  // Visuel bouton actif
+  // Boutons actifs
   document.querySelectorAll('.sort-buttons button').forEach(btn => {
     btn.classList.remove('active');
     if (btn.textContent.toLowerCase().includes(type)) {
@@ -21,8 +21,18 @@ function setSort(type) {
     }
   });
 
+if (type === 'genres') {
+  trierParGenresSimilaires();
+} else {
   afficherAvecFiltres();
 }
+
+
+
+}
+
+
+
 
 
 
@@ -380,9 +390,79 @@ document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
   document.getElementById("sortSidebar").classList.remove("open");
 });
 
-document.getElementById("popupDescription").innerHTML = manga.description.replace(/\n/g, "<br><br>");
 
 
+
+function trierParGenresSimilaires() {
+  const allMangas = Object.values(mangaData);
+  
+  // Normalise les genres pour chaque manga
+  const normalizedMangas = allMangas.map(m => ({
+    ...m,
+    genresNorm: normalizeGenresArray(m.genres || [])
+  }));
+
+  // Séparer en 3 groupes : female lead, male lead, autres
+  const groupes = {
+    'female lead': [],
+    'male lead': [],
+    'autres': []
+  };
+
+  normalizedMangas.forEach(m => {
+    const genres = m.genresNorm;
+    if (genres.includes('female lead')) {
+      groupes['female lead'].push(m);
+    } else if (genres.includes('male lead')) {
+      groupes['male lead'].push(m);
+    } else {
+      groupes['autres'].push(m);
+    }
+  });
+
+  // Fonction pour compter les genres communs avec tous les autres
+  function computeSimilarityScore(manga, group) {
+    return group.reduce((sum, other) => {
+      if (manga === other) return sum;
+      const common = manga.genresNorm.filter(g => other.genresNorm.includes(g)).length;
+      return sum + common;
+    }, 0);
+  }
+
+  // Trier chaque groupe selon le score de similarité
+  Object.keys(groupes).forEach(groupe => {
+    groupes[groupe].forEach(m => {
+      m.similarityScore = computeSimilarityScore(m, groupes[groupe]);
+    });
+
+    groupes[groupe].sort((a, b) => b.similarityScore - a.similarityScore);
+  });
+
+  // Fusionner les groupes avec des séparateurs
+  const resultatFinal = [];
+
+  for (const groupe of ['female lead', 'male lead', 'autres']) {
+    if (groupes[groupe].length > 0) {
+      resultatFinal.push({ isTitle: true, title: `Protagoniste : ${groupe}` });
+      resultatFinal.push(...groupes[groupe]);
+    }
+  }
+
+  displayGroupedByStatus(resultatFinal);
+}
+
+function allerA(groupe) {
+  const sections = document.querySelectorAll('.status-divider');
+
+  for (const section of sections) {
+    if (section.textContent.toLowerCase().includes(groupe.toLowerCase())) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      section.style.backgroundColor = "#fffae6";
+      setTimeout(() => section.style.backgroundColor = "", 1000);
+      break;
+    }
+  }
+}
 
 
 
