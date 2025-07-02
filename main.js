@@ -12,8 +12,18 @@ function setSort(type) {
   } else {
     currentSort = type;
   }
+
+  // Visuel bouton actif
+  document.querySelectorAll('.sort-buttons button').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.textContent.toLowerCase().includes(type)) {
+      btn.classList.add('active');
+    }
+  });
+
   afficherAvecFiltres();
 }
+
 
 
 function normalizeGenresArray(genres) {
@@ -69,7 +79,6 @@ function filterByStatus(status) {
   if (status && status !== 'tous') {
     filtered = allMangas.filter(m => (m.status || 'inconnu').toLowerCase() === status.toLowerCase());
     displayMangas(filtered);
-    filterMangas();
     return;
   }
 
@@ -246,37 +255,24 @@ function resetFilters() {
   afficherAvecFiltres();
 }
 
-
-
-document.getElementById("openSidebarBtn").addEventListener("click", () => {
-  document.getElementById("genreSidebar").classList.add("open");
-});
-
-document.getElementById("closeSidebarBtn").addEventListener("click", () => {
-  document.getElementById("genreSidebar").classList.remove("open");
-});
-
 window.addEventListener("click", (e) => {
-  const sidebar = document.getElementById("genreSidebar");
-  if (!sidebar.contains(e.target) && e.target.id !== "openSidebarBtn") {
-    sidebar.classList.remove("open");
-  }
-});
-
-document.getElementById("openSortSidebarBtn").addEventListener("click", () => {
-  document.getElementById("sortSidebar").classList.add("open");
-});
-
-document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
-  document.getElementById("sortSidebar").classList.remove("open");
-});
-
-window.addEventListener("click", (e) => {
+  const genreSidebar = document.getElementById("genreSidebar");
   const sortSidebar = document.getElementById("sortSidebar");
+
+  if (!genreSidebar.contains(e.target) && e.target.id !== "openSidebarBtn") {
+    genreSidebar.classList.remove("open");
+  }
+
   if (!sortSidebar.contains(e.target) && e.target.id !== "openSortSidebarBtn") {
     sortSidebar.classList.remove("open");
   }
+
+  const dropdown = document.querySelector(".sort-dropdown");
+  if (dropdown && !dropdown.contains(e.target)) {
+    dropdown.classList.remove("open");
+  }
 });
+
 
 searchInput.addEventListener('input', afficherAvecFiltres);
 checkboxes.forEach(cb => cb.addEventListener('change', afficherAvecFiltres));
@@ -368,6 +364,21 @@ window.addEventListener('click', () => {
 
 document.getElementById("lectureFilter").addEventListener("change", afficherAvecFiltres);
 
+document.getElementById("openSidebarBtn").addEventListener("click", () => {
+  document.getElementById("genreSidebar").classList.add("open");
+});
+
+document.getElementById("closeSidebarBtn").addEventListener("click", () => {
+  document.getElementById("genreSidebar").classList.remove("open");
+});
+
+document.getElementById("openSortSidebarBtn").addEventListener("click", () => {
+  document.getElementById("sortSidebar").classList.add("open");
+});
+
+document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
+  document.getElementById("sortSidebar").classList.remove("open");
+});
 
 
 
