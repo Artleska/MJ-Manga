@@ -52,12 +52,14 @@ const genreImportance = {
   "novel": 2,
   "omegaverse": 3,
   "power": 1,
+  "prof": 2,
   "psychologique": 2,
   "réincarnation": 4,
   "return": 3,
   "revenge": 1,
   "rich": 3,
   "romance": 1,
+  "saint": 1,
   "school life": 1,
   "seconde chance": 3,
   "secret identity": 4,
@@ -69,6 +71,7 @@ const genreImportance = {
   "system": 5,
   "time travel": 2,
   "tower": 4,
+  "tyrant": 4,
   "transmigration": 3,
   "transformation": 2,
   "vampire": 2,
@@ -107,7 +110,6 @@ function setSort(type) {
   }
 }
 
-
 function normalizeGenresArray(genres) {
   if (!genres) return [];
 
@@ -117,7 +119,6 @@ function normalizeGenresArray(genres) {
     g.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim()
   );
 }
-
 
 
 function countCommonGenres(mangaGenres, selectedGenres) {
@@ -294,7 +295,12 @@ function openPopup(id) {
   const manga = mangaData[id];
   document.getElementById('popupTitle').innerText = manga.title;
   document.getElementById('popupImg').src = manga.image || 'image/fond.jpg';
-  document.getElementById('popupDescription').innerText = manga.description;
+  const formattedDescription = (manga.description || '')
+  .split('\n')
+  .map(p => `<p>${p.trim()}</p>`)
+  .join('');
+document.getElementById('popupDescription').innerHTML = formattedDescription;
+
   document.getElementById('popupGenres').innerText = formatGenres(manga.genres || "");
   document.getElementById('popupOtherTitles').innerText = manga.otherTitles?.join(', ') || "Aucun";
 
@@ -549,22 +555,24 @@ document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
 
 
 function trierParGenresSimilaires() {
-  const allMangas = Object.values(mangaData);
+  let mangasFiltres = Object.values(mangaData);
 
-  // Normalise les genres pour chaque manga
-  const normalizedMangas = Object.entries(mangaData).map(([id, m]) => ({
+  // Appliquer tous les filtres
+  afficherAvecFiltres(); // ça met à jour l'affichage mais on veut récupérer les données filtrées
+
+  // Récupérer les mangas actuellement affichés
+  const cards = Array.from(document.querySelectorAll('.manga'));
+  const idsAffiches = cards.map(card => card.getAttribute('data-id'));
+  mangasFiltres = idsAffiches.map(id => mangaData[id]);
+
+  // Normalise les genres
+  const normalizedMangas = mangasFiltres.map(m => ({
     ...m,
-    id,
     genresNorm: normalizeGenresArray(m.genres || [])
   }));
 
-
-  // Séparer en 3 groupes : female lead, male lead, autres
-  const groupes = {
-    'female lead': [],
-    'male lead': [],
-    'autres': []
-  };
+  // Grouper
+  const groupes = { 'female lead': [], 'male lead': [], 'autres': [] };
 
   normalizedMangas.forEach(m => {
     const genres = m.genresNorm;
@@ -577,35 +585,23 @@ function trierParGenresSimilaires() {
     }
   });
 
-  // Fonction pour compter les genres communs avec tous les autres
   function computeWeightedSimilarityScore(manga, group) {
     return group.reduce((sum, other) => {
       if (manga === other) return sum;
-
       const common = manga.genresNorm.filter(g => other.genresNorm.includes(g));
-      const weightedScore = common.reduce((score, g) => {
-        return score + (genreImportance[g] || 1);
-      }, 0);
-
-      return sum + weightedScore;
+      return sum + common.reduce((score, g) => score + (genreImportance[g] || 1), 0);
     }, 0);
   }
 
-
-  // Trier chaque groupe selon le score de similarité
-  // Trier chaque groupe selon le score de similarité pondéré
   Object.keys(groupes).forEach(groupe => {
     groupes[groupe].forEach(m => {
       m.similarityScore = computeWeightedSimilarityScore(m, groupes[groupe]);
     });
-
     groupes[groupe].sort((a, b) => b.similarityScore - a.similarityScore);
   });
 
-
-  // Fusionner les groupes avec des séparateurs
+  // Fusionner
   const resultatFinal = [];
-
   for (const groupe of ['female lead', 'male lead', 'autres']) {
     if (groupes[groupe].length > 0) {
       resultatFinal.push({ isTitle: true, title: `Protagoniste : ${groupe}` });
@@ -615,6 +611,7 @@ function trierParGenresSimilaires() {
 
   displayGroupedByStatus(resultatFinal);
 }
+
 
 function allerA(groupe) {
   const sections = document.querySelectorAll('.status-divider');
@@ -630,6 +627,21 @@ function allerA(groupe) {
 }
 
 document.getElementById("jadeFilter").addEventListener("change", afficherAvecFiltres);
+
+function convertirDescriptionsEnParagraphes(codeSource) {
+  return codeSource.replace(
+    /description:\s*"((?:[^"\\]|\\.)*?)"/gs,
+    (_, contenu) => {
+      const blocsParagraphe = contenu
+        .replace(/\\n/g, '\n')
+        .split('\n')
+        .map(l => `<p>${l.trim()}</p>`)
+        .join('');
+      const safe = blocsParagraphe.replace(/`/g, '\\`');
+      return `description: \`${safe}\``;
+    }
+  );
+}
 
 
 

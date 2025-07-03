@@ -105,7 +105,7 @@ const mangaData = {
     otherTitles: [" Kiss Me: Seal Lips Tightly / Lip Seal / Sealed Lips / Scellé par tes lèvres / Mit Lippen besiegelt"],
     image: "image/Sealed-With-Lips.jpg",
     description: "Elle a été exploitée, maltraitée par sa belle-mère et sa demi-sœur. Elle est devenue un outil pour le succès de sa sœur. Après être morte d'une mort douloureuse, elle renaît. Dans sa vie antérieure, elle avait un fiancé qu'elle admirait et aimait pendant longtemps, mais il était froid et ressentait du dégoût envers elle, ce qui lui a apporté de la douleur et l'a rendue désespérée. Mais maintenant, face à nouveau face à lui, elle a dit en souriant :  Brisons les fiançailles, je ne veux plus de ce mariage! Cependant, cet homme veut rester en relation avec elle.",
-    genres: "female lead,romance,badass,drame,médicale,seconde chance,drame,abuse,moderne",
+    genres: "female lead,romance,badass,drame,médicale,seconde chance,drame,abu,moderne",
     date: "2019",
     dernierLecture: "",
     status: "Complet",
@@ -187,7 +187,7 @@ const mangaData = {
     otherTitles: ["My Loyal Husband After Our Divorce / The Brightest Galaxy / The Most Shinning Galaxy "],
     image: "https://cdn.mangaupdates.com/image/i396337.jpg",
     description: "Après un divorce, Xia Xinghe est devenue une vieille femme - sans argent, sans maison ou beau visage. Mais elle a soudainement tout changé. Xia Xinghe s'est transformée en une riche hacker de haut niveau.",
-    genres: "female lead,romance,moderne,badass,abuse,drame,secret identity",
+    genres: "female lead,romance,moderne,badass,abu,drame,secret identity",
     date: "2022",
     dernierLecture: "2025-02-01",
     status: "Complet",
@@ -267,7 +267,7 @@ const mangaData = {
     otherTitles: [" Cannon Fodder’s Record of Counterattacks"],
     image: "https://cdn.mangaupdates.com/image/i315950.png",
     description: "Ning Shu est morte. Mais heureusement, elle est devenue une chargée de contre-attaquer pour de la chair à canon pitoyable. Ainsi, Ning Shu a joué divers types de rôles dans la vie dans divers mondes, rencontrant de nombreuses personnes qui causaient des problèmes sans raison. Protagoniste transmigrée, protagoniste renaissante. Ning Shu n'avait d'autre choix que de collecter péniblement la morale l'intégrité dans différents mondes. ",
-    genres: "female lead,abuse,drame,transmigration,multi word",
+    genres: "female lead,abu,drame,transmigration,multi word",
     date: "2020",
     dernierLecture: "2024-08-01",
     status: "abandonné",
@@ -951,7 +951,7 @@ const mangaData = {
     genres: "female lead,moderne,transmigration,novel",
     date: "2022",
     dernierLecture: "",
-    status: "abandonné",
+    status: "Abandonné",
     chTotal: "25",
     chLus: "25",
     chJade: "",
@@ -1014,7 +1014,7 @@ const mangaData = {
     otherTitles: [" I Am the Precious Daughter of the Greatest Villain in the Fantasy World / Je suis la précieuse fille du roi démon / I Am the Precious Daughter of the Greatest Villain in a Martial Arts Novel"],
     image: "https://meo.comick.pictures/1ljGz-s.jpg",
     description: "Je pensais m'être réincarnée en tant que fille d'une famille riche, mais au lieu de cela, je suis née en tant que fille du plus grand méchant dans un roman d'arts martiaux ?! Un père indifférent et un frère aîné qui finit par me tuer. J'ai besoin d'apprendre rapidement les arts martiaux pour pouvoir survivre... ! Mais ces deux-là... Pourquoi continuent-ils à me suivre?!",
-    genres: "female lead,child lead,arts martiaux,father",
+    genres: "female lead,child lead,arts martiaux,father,réincarnation",
     date: "2021",
     dernierLecture: "",
     status: "pause",
@@ -1044,274 +1044,276 @@ const mangaData = {
   },
   SurvivingasaTyrantsDaughterA: {
     title: "Surviving as a Tyrant’s Daughter",
-    otherTitles: ["Survival Methods of the Cannon Fodder Daughter / Au Secours, mon père est un tyrant! / Cannon Fodder Girl’s Way to Survive "],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: ["Survival Methods of the Cannon Fodder Daughter / Au Secours, mon père est un tyrant! / Cannon Fodder Girl’s Way to Survive / Cannon Fodder Girl's Way to Survive Hard to Dismantle / Survival Mode of the Cannon Fodder Maiden / The Survival Strategies of the Cannon Fodder Girl"],
+    image: "https://cdn.mangaupdates.com/image/i436962.jpg",
+    description: "Alors qu'elle passe un test de maths, Yeyul se retrouve réincarnée dans un livre fantastique où elle incarne la septième princesse, fille d'un empereur tyran qui la déteste. Sachant qu'elle doit se faire exécuter par son père, Yeyul fait tout pour qu'il l'apprécie et qu'il change d'avis. Petit à petit, elle y parvient en lui ayant promis qu'elle deviendrait une femme respectueuse. Son seul objectif : changer le cours de l'histoire et survivre.",
+    genres: "female lead,child lead,réincarnation,father,novel,historical",
+    date: "2021",
+    dernierLecture: "2024-11-01",
+    status: "en cours",
+    chTotal: "427",
+    chLus: "10..62",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/au-secours-mon-pere-est-un-tyran/",
+      "MangaPark": "https://mangapark.net/title/341044-en-survival-methods-of-the-cannon-fodder-daughter"
     }
   },
    ITamedtheTyrant: {
     title: "I Tamed the Tyrant",
     otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    image: "https://cdn.mangaupdates.com/image/i366741.jpg",
+    description: "En raison de la mort tragique de son homme de manga préféré, la fille était en colère contre l'auteur demain soir, et elle est accidentellement entrée dans le livre. 'Ne paniquez pas ! Maintenant que je suis ici, laissez-moi sauver le destin de son dieu masculin. » C'est juste... « Qui peut me dire, comment ce petit gars mignon et adorable devant moi peut-il être le futur tyran qui a tué le dieu masculin ? »",
+    genres: "female lead,child lead,novel,romance,historical,réincarnation",
+    date: "2021",
+    dernierLecture: "2025-01-01",
+    status: "complet",
+    chTotal: "110",
+    chLus: ".20",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/i-tamed-the-tyrantpd7M",
+      "": ""
     }
   },
   IllPayforyourLifeLetsBothGoCrazyTogether: {
     title: "I'll Pay for your Life, Let's Both Go Crazy Together!",
     otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    image: "https://cdn.mangaupdates.com/image/i423288.png",
+    description: "Moi, Luo Yinyou, je suis un joli bébé de trois ans tombé du ciel. J'ai vécu deux vies ridicules . Dans la troisième vie, un seau vicieux a été placé en moi ; Je ne survivrais pas trois ans à moins que cela ne soit défait. Mais heureusement j’ai un système, et j’ai aussi trouvé un « papa » qui semble être très puissant. ",
+    genres: "female lead,child lead,comedy,réincarmation,father,fantasy",
+    date: "2023",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "complet",
+    chTotal: "292",
+    chLus: "..33",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "Comick": "https://comick.io/comic/i-ll-pay-for-your-life-lets-both-go-crazy-together",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/ill-pay-for-your-life-lets-both-go-crazy-together/?asgtbndr=1&cid=2092965"
     }
   },
     TheChickClassHunterIsFilial : {
     title: "The Chick-Class Hunter Is Filial! ",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: ["The Chick Class Hunter Is Being Filial! / The Chick Hunter Is Being Filial! / Chick Class Hunter is Doing The Duty!"],
+    image: "https://cdn.mangaupdates.com/image/i474958.jpg",
+    description: "Dans un monde où des individus dotés de pouvoirs spéciaux émergent grâce au système, Goru, une enfant de 4 ans de la classe des poussins de la maternelle Saebom, s’éveille en tant que chasseuse de rang S. [Quête : Une enfant a besoin d’un protecteur fiable !] La raison pour laquelle elle a besoin d’un protecteur ? C’est parce que Goru n’a ni maman ni papa. Rassembler des tuteurs permet une croissance accélérée ? « Mais c’est génial ! » Très bien, je vais recruter tous les tuteurs de rang S ! ",
+    genres: "female lead,child lead,dungeon,father",
+    date: "2025",
+    dernierLecture: "2025-06-01",
+    status: "en cours",
+    chTotal: "37",
+    chLus: "17.37",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/chick-class-hunter-is-doing-the-duty",
+      "Comick": "https://comick.io/comic/byeongariban-heonteoneun-hyodo-jung",
+      "Snow": "https://snowmtl.ru/comics/byeongariban-heonteoneun-hyodo-jung"
     }
   },
   TheColdPresidentsLittleCutie: {
     title: "The Cold President’s Little Cutie",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: ["The Cold CEO's Little Sweetheart / The Fickle President's Exclusive Cutie Pie"],
+    image: "https://cdn.mangaupdates.com/image/i453458.png",
+    description: "Gu Chu, une brillante hackeuse, se retrouve dans un roman d'amour tragique en tant que mignonne petite fille de cinq ans. Ma mère est la naïve et douce protagoniste d'un roman d'amour tragique. Ma mère est aussi l'amante de substitution qui a échappé au président autoritaire.",
+    genres: "female lead,chil lead,novel,moderne,romance,secret identity,réincarnation",
+    date: "2024",
+    dernierLecture: "2024-10-0",
+    status: "en cours",
+    chTotal: "47",
+    chLus: ".23",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "Bato": "https://bato.ing/title/164474-the-cold-president-s-little-cutie",
+      "Snow": "https://snowmtl.ru/comics/the-cold-president-s-little-cutie"
     }
   },
    MyFiveProminentDaddies: {
     title: "My Five Prominent Daddies",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: [" I Have Five Big Boss Daddies / I Have Five Magnate Dads / My Big Boss Daddies"],
+    image: "https://cdn.mangaupdates.com/image/i355139.png",
+    description: "Lorsque la petite religieuse Ji Anruan qui a été élevée par son maître a atteint l'âge de cinq ans, elle a été descendue de la montagne par son maître pour rencontrer ses pères. Au début, ses cinq pères ont tous été choqués lorsqu'elle les a appelés Papa d'une voix douce. Mais ensuite, ils ont été progressivement impressionnés par elle et l'ont beaucoup aimée !",
+    genres: "female lead,child lead,moderne,father",
+    date: "2021",
+    dernierLecture: "2024-12-01",
+    status: "complet",
+    chTotal: "186",
+    chLus: ".63",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/i-have-five-big-boss-daddies",
+      "": ""
     }
   },
   EightUnclesSpoilLittleBao: {
     title: "Eight Uncles Spoil Little Bao",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: [" The Three and a Half Years Old Treasure of Furtune / Spoiled Rotten by My Uncles / Guardians of the Princess "],
+    image: "https://cdn.mangaupdates.com/image/i475841.jpg",
+    description: "L'innocente, mignonne et intelligente Snowpea était sur le point d'être battue à mort par son père adoptif lorsqu'elle entendit la voix de son maître. Cela la poussa à appeler son plus jeune oncle, ce qui poussa ses huit oncles les plus importants à arriver avec vengeance ! Maintenant, menant une nouvelle vie, Snowpea veut juste être nourrie, mais de manière inattendue, ses huit oncles veulent tous la gâter !",
+    genres: "female lead,child lead,comedy,drame,father",
+    date: "2023",
+    dernierLecture: "2025-02-01",
+    status: "en cours",
+    chTotal: "97",
+    chLus: ".81",
     chJade: "",
     externalLinks: {
-      "": "",
+      "Snow": "https://snowmtl.ru/comics/eight-uncles-spoil-little-bao",
       "": ""
     }
   },
    TheBelovedThreeAndAHalfYearoldLittleLuckyGirl: {
     title: "The Beloved Three-And-A-Half-Year-old Little Lucky Girl",
     otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    image: "https://cdn.mangaupdates.com/image/i423295.png",
+    description: "Après que MiaoMiao, âgé de trois ans et demi, ait été sauvée des trafiquants de personnes, toute la très riche famille Wen a placé la petite princesse qu'ils avaient presque perdue dans leur cœur.",
+    genres: "female lead,child lead,drame,moderne",
+    date: "2023",
+    dernierLecture: "2024-12-01",
+    status: "complet",
+    chTotal: "212",
+    chLus: ".27",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Snow": "https://snowmtl.ru/comics/the-beloved-three-and-a-half-year-old-little-lucky-girl",
+      "": ""
     }
   },
   TheVillainessIsMe: {
     title: "The Villainess Is Me",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["They Said I Am the Villain’s Eldest Daughter / They Say I’m the Villainess Young Miss / Apparently, I’m the Villainess? "],
+    image: "https://cdn.mangaupdates.com/image/i413718.jpg",
+    description: "J'ai travaillé comme artiste manhua, puis je suis mort en tirant toute la nuit. Je me suis réveillé en tant que méchante Emi Morwen de mon webcomic ! Emi était un personnage séduisant mais cruel qui s'est séparé de l'histoire en mettant fin à sa propre vie. Cependant, je ne suis pas le vrai Emi !",
+    genres: "female lead,child lead,novel,villainess,",
+    date: "2022",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "complet",
+    chTotal: "34",
+    chLus: "15..22",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/the-villainess-is-me/?asgtbndr=1&cid=2091945",
+      "Comick": "https://comick.io/comic/they-say-i-m-the-villainess-young-miss"
     }
   },
    LafilleadoréeduDémon : {
     title: "La fille adorée du Démon ",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: ["The Demon's Darling Daughter / I Am a Daughter Loved by the Devil / I Am the Beloved Daughter of the Devil / I'm a Daughter Loved by the Devil / I'm the Devil's Beloved Daughter"],
+    image: "https://meo.comick.pictures/YXoDr-s.jpg",
+    description: "Mia n’a jamais quitté la pièce exiguë dans laquelle sa tante et son oncle la gardent enfermée. Une nuit, elle fait plusieurs rêves prémonitoires et apprend que son père pourrait être le grand duc démoniaque. Elle décide alors de s’échapper, coûte que coûte, et de partir trouver son père pour lui demander de l’aide financière. Mais, une fois qu’ils se rencontrent, son père ne veut plus la laisser partir.",
+    genres: "fantasy,female lead,child lead,father,abu",
+    date: "2022",
+    dernierLecture: "2024-07-01",
+    status: "en cours",
+    chTotal: "98",
+    chLus: "57.",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "": "",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/la-fille-adoree-du-demon/"
     }
   },
  TheMonsterDukesDaughter : {
     title: "The Monster Duke’s Daughter ",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["La fille du duc monstrueux"],
+    image: "https://meo.comick.pictures/8zOZz-s.jpg",
+    description: "Jusqu'à l'âge de 5 ans, elle a vécu isolée du monde puis a été récupérée par son père, surnommé Monster Duke et a obtenu une chambre. Un jour elle s'est faufilée dans le bureau de son père et à ouvert un livre de l'avenir qui expliquait qu'à ses 10 ans une maladie serait la cause de sa fin. Elle ne sait pas comment elle a compris ça mais elle est bien déterminée à vivre sa vie comme elle l'entend jusqu'au jour de sa mort. Cependant, plus les années passent, plus son envie de vivre et son attachement aux autres augmentent. ",
+    genres: "female lead,child lead,father,fantasy",
+    date: "2021",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "complet",
+    chTotal: "190",
+    chLus: "102.",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/the-monster-dukes-daughter/",
+      "Comick": "https://comick.io/comic/00-monster-duke-s-daughter48IX"
     }
   },
     MyFatherthePossessiveDemiGod: {
     title: "My Father,the Possessive Demi-God",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["Mon père demi-dieu tombé du ciel"],
+    image: "https://cdn.mangaupdates.com/image/i472351.jpg",
+    description: "Dans un monde où sont tombés du ciel des Astariols, demi-dieux envoyés pour lutter contre le mal, la petite Claire est une enfant dont la maturité d'esprit et les pouvoirs surnaturels la démarquent des autres enfants de son âge. Elle vit avec sa sœur jumelle Rashel et sa mère Charlotte, de village en village au fil de leurs déménagements inopinés. Mais tout change lorsque le duc Arshel Constantine Disandos débarque subitement dans leur vie.",
+    genres: "female lead,child lead,romance,fantasy",
+    date: "2022",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "en cours",
+    chTotal: "96",
+    chLus: "..47",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/01-my-father-the-possessive-demi-god",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/mon-pere-demi-dieu-tombe-du-ciel/"
     }
   },
   IllProtectYouDaddy: {
     title: "I’ll Protect You, Daddy!",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: ["How to Protect My Sub Male Lead Dad / Sauver mon Papa, Mode D’Emploi!"],
+    image: "https://meo.comick.pictures/8yD5On-s.jpg",
+    description: "Jiyoo, une lycéenne ordinaire, se réveille dans le corps de Hanelope, une protagoniste de roman. Ce roman raconte l'histoire d'une vilaine, Asta Afel, qui décide de se ranger du côté du bien en prenant le rôle d'une sainte pour assouvir une vengeance. Pour arriver à ses fins, elle utilise Hart Von Reinhard, le fils ainé du roi, en le rendant complètement aliéné à elle. Lorsque Hanelope apprend que Hart, son personnage préféré, est son père biologique, elle comprend qu'elle n’avait en réalité jamais existé, et qu'elle venait de s’ajouter dans l’histoire originale. Connaissant le récit du bout des doigts, Hanelope décide de lui venir en aide et de changer le destin cruel qui lui a été réservé.",
+    genres: "female lead,child lead,villainess,fantasy,réincarnation,father",
+    date: "2023",
+    dernierLecture: "2025-05-01",
+    status: "complet",
+    chTotal: "67",
+    chLus: "21..47",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/sauver-mon-papa-mode-demploi?asgtbndr=1&cid=2091945",
+      "Comick": "https://comick.io/comic/00-how-to-protect-my-sub-male-lead-dad"
     }
   },
   TheBabyPrisonerOfTheWinterCastle: {
     title: "The Baby Prisoner Of The Winter Castle",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["La petite prisonnière du Palais d’Hiver"],
+    image: "https://meo.comick.pictures/ez3xOX-s.jpg",
+    description: "Le jour où son pays s'est effondré et que tous les membres de la famille royale ont été exécutés, l'enfant illégitime de la famille royale, qui avait été abusé, est devenu de manière inattendue leur dernier membre. Nous ne pouvons pas condamner à mort une personne de moins de dix-huit ans.Grand frère avait dit qu'il me tuerait avant que je n'atteigne l'âge de 12 ans. Mais quand je pense que je peux vivre jusqu'à 18 ans, je suis si heureuse.",
+    genres: "abu,female lead,child lead,fantasy",
+    date: "2024",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "en cours",
+    chTotal: "68",
+    chLus: "..12",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/please-lock-me-in-male-lead",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/baby-prisoner-of-the-winter-castle/"
     }
   },
   TheResourcefulLittleConsort: {
     title: "The Resourceful Little Consort",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    otherTitles: ["The Baby Concubine Wants to Live Quietly"],
+    image: "https://meo.comick.pictures/ED7KG-s.jpg",
+    description: "La petite concubine veut vivre tranquillement. Je me suis réincarnée en personnage secondaire dans un roman d'harem inversé. En tant que jeune concubine qui a gagné l'intérêt de l'empereur. Les concubines et les seigneurs l'ont tué pour trahison. Heureusement, je le me suis réincarnée au moment où elle entrait dans le palais impérial. Tout le monde au palais impérial se méfiait de moi, mais ils ne me détestaient pas encore. Je n'ai pas besoin ni envie d'être aimé par l'empereur.  Viens dans ma chambre ce soir. Je vais te lire un conte de fées !  Wow, ne pleure pas. Je vais te donner ça.  Mais pourquoi tout le monde est si doux envers moi ? Je ne comprends pas.",
+    genres: "réincarnation,female lead,child lead,villainess,fantasy",
+    date: "2023",
+    dernierLecture: "2025-02-01",
+    status: "complet",
+    chTotal: "126",
+    chLus: "49..50",
     chJade: "",
     externalLinks: {
-      "": "",
-      "": ""
+      "Comick": "https://comick.io/comic/01-baby-concubine-wants-to-live-quietly",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/the-baby-concubine-wants-to-live-quietly/",
+      "ScanManga": "https://m.scan-manga.com/9220-35284/The-Baby-Concubine-Wants-to-Live-Quietly.html"
     }
   },
     Réincarnéeenbêtedivine: {
     title: "Réincarnée en bête divine",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["The Baby divine Beast / I Was Reincarnated as Baby Fox God / I Was Reincarnated as a Divine Baby Fox God"],
+    image: "https://meo.comick.pictures/D8MKL-s.jpg",
+    description: "Entourée d'une famille aimante, la princesse Yanelle de Roahim ne peut qu'être aux anges. Jusqu'au jour où elle est poignardée par son frère Agris ! Et elle n'est pas la seule, le corps de son père gît à ses pieds. Agonisante, trahie et condamnée à une mort certaine, Yanelle ferme lentement les yeux… Avant de les ouvrir à nouveau ! Elle est vivante ?! « Nyaaa », voilà tout ce qu'elle sait dire à présent. Une seule explication : elle est devenue une bête divine ! Sa vengeance ne fait que commencer…",
+    genres: "réincarnation,female lead,child lead,revenge,fantasy,transformation,romance",
+    date: "2022",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "en cours",
+    chTotal: "98",
+    chLus: "28.",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/reincarnee-en-bete-divine/",
+      "Comick": "https://comick.io/comic/01-i-was-reincarnated-as-a-baby-fox-god"
     }
   },
   TheSClassBabyPrincessIsTooPowerful: {
@@ -1469,35 +1471,36 @@ const mangaData = {
   },
    DifferentWorldFoundation: {
     title: "Different World Foundation",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["Isekai Kenkokuki / Otherworld Nation Founding Chronicles"],
+    image: "https://meo.comick.pictures/ZJLo3-s.jpg",
+    description: "Un protagoniste renaît dans un autre monde. Apparemment, il s’était réincarné en enfant abandonné. Devant ses yeux, des enfants comme lui, seuls. Pour survivre, il leur a appris l’agriculture. Peu à peu, plusieurs orphelins se sont rassemblés, et en entendant des rumeurs sur un village, d’autres ont commencé à les rejoindre. Le groupe qui n’était rien d’autre que des enfants, était devenu un village avant qu’on ne s’en rende compte. C’est l’histoire de l’homme, qui sera plus tard connu comme l’Empereur Divin. ",
+    genres: "manga,male lead,isekai,child lead",
+    date: "2017",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "En cours",
+    chTotal: "74",
+    chLus: "68.",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/01-isekai-kenkokuki",
+      "RaijinScans":"https://raijinscans.net/manga/isekai-kenkokuki-01/",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/isekai-kenkokuki/?asgtbndr=1&cid=2091945"
     }
   },
  Laviedefermierdansunautremonde: {
     title: "La vie de fermier dans un autre monde",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
+    otherTitles: ["Isekai Nonbiri Noukac / Farming Life in Another World / Carefree Farmer in a Different Dimension "],
+    image: "image/La-vie-de-fermier-dans-un-autre-monde.webp",
+    description: "Après être mort de maladie à l'âge de 39 ans, Machio Hiraku a l'occasion d'aller dans un autre monde. Lorsqu'on lui demande quel est son souhait par Dieu dans l'intention de lui donner de la force, il demande d'avoir un corps sain, a fait un deuxième souhait, il choisit de vivre paisiblement, un troisième souhait de pouvoir connaître la langue locale, et pour un dernier souhait, de pouvoir être agriculteur.",
+    genres: "manga,male lead,isekai,badass",
+    date: "2017",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
+    status: "En cours",
+    chTotal: "295",
+    chLus: "21.",
     chJade: "",
     externalLinks: {
-      "": "",
+      "Comick": "https://comick.io/comic/01-isekai-nonbiri-nouka",
       "": ""
     }
   },
@@ -2134,25 +2137,229 @@ const mangaData = {
     }
   },
   aidoctor: {
-    title: "A.I. Doctor ",
-    otherTitles: [""],
-    image: "https://cdn.mangaupdates.com/image/i459120.jpgion:",
-    description: "",
-    genres: "",
-    date: "",
+    title: "A.I. Doctor",
+    otherTitles: ["AI Doctor"],
+    image: "https://cdn.mangaupdates.com/image/i459120.jpg",
+    description: "Pariant sur l'avenir du groupe TaeHwa, une IA créée pour le diagnostic nommée Baruda !\nLee Soohyuk, interne en première année de neurochirurgie, travaillait avec Baruda lorsqu'il fut frappé par une mystérieuse explosion et perdit connaissance. Après avoir repris connaissance, il rencontra l'IA Baruda dans son esprit. Déjà inséparables, ils se retrouvent confrontés à une situation où ils doivent s'entraider.\nBaruda, qui, grâce à un apprentissage approfondi, vise à devenir le meilleur diagnostiqueur, et Soohyuk, qui vise toujours à s'épanouir, travaillent ensemble pour devenir le meilleur neurochirurgien du monde.",
+    genres: "médicale,male lead,surnaturel,moderne",
+    date: "2021",
     dernierLecture: "",
-    status: "",
-    chTotal: "",
+    status: "En cours",
+    chTotal: "199",
     chLus: "",
-    chJade: "",
+    chJade: "103",
     externalLinks: {
       "": "",
       "": ""
     }
   },
-  LA: {
-    title: "",
+  anothertypicalfantasyromance: {
+    title: "Another Typical Fantasy Romance",
+    otherTitles: ["Une romance fantastique typique"],
+    image: "https://cdn.mangaupdates.com/image/i489282.jpg",
+    description: "Après que les dieux l'aient plongée dans l'univers de son roman d'amour fantastique préféré, Lithera a vite compris que les fins heureuses n'étaient jamais faciles à obtenir. Si elle a une nouvelle chance de connaître le bonheur, elle est désormais déterminée à éviter les erreurs de sa vie passée, en commençant par rencontrer le doux et attentionné Grand-Duc avec qui elle a échangé des lettres pendant des années… Un autre personnage féminin typique, avec un autre Duc typique, promis au mariage. Cette histoire suivra-t-elle le chemin habituel que nous attendons tous ?",
+    genres: "seconde chance,transmigration,female lead,romance,novel,drame,fantasy,action,",
+    date: "2021",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "132",
+    chLus: "",
+    chJade: "80",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  amazingjijiri: {
+    title: "Amazing Ji Jiri",
     otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i376453.jpg",
+    description: "Même si Ji Jiri est la personne la plus puissante du monde, il vit pour être le plus faible.\nSa mère, dotée d'un pouvoir immense, et son père, issu d'une famille de gangsters, sont à l'origine de Jiri. Dès sa naissance, il a fait preuve d'une force herculéenne en détruisant sa propre maison, ses meubles et même son père.\nPour lui permettre de vivre une vie normale, ses parents lui ont fait subir un lavage de cerveau.\n« Tu es le pire être qui ait jamais marché sur terre. »\n« Ne vous approchez jamais de qui que ce soit. »\nC'est l'histoire de la croissance personnelle de Ji Jiri et de son dépassement des traumatismes, l'homme le plus fort de la terre.",
+    genres: "comédie,male lead,drama,action,psychological,badass",
+    date: "2021",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "60",
+    chLus: "",
+    chJade: "19",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  astepmothersmarchen: {
+    title: "A Stepmother's Märchen",
+    otherTitles: ["The Fantasie of a Stepmother / A Stepmother's Fairy Tale / Merveilleuse marâtre"],
+    image: "https://cdn.mangaupdates.com/image/i484133.jpg",
+    description: "On la surnommait la Veuve de Fer. À la mort de son mari, il la laissa gérer non seulement ses vastes propriétés, mais aussi ses quatre enfants. Jeune et inexpérimentée, Shuri fit néanmoins de son mieux pour les élever, malgré leur amertume. Elle est enfin libre de vivre sa vie grâce au mariage de son fils aîné… et se retrouve mystérieusement ramenée sept ans plus tôt, le soir des funérailles de son mari. Shuri trouvera-t-elle le bonheur grâce à cette seconde chance vers un nouveau destin ?",
+    genres: "female lead,drama,seconde chance,mother",
+    date: "2019",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "146",
+    chLus: "",
+    chJade: "109",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  anightwiththeemperor: {
+    title: "A Night With the Emperor",
+    otherTitles: ["His Majesty's Proposal / One Night With Emperor / One Night With the Emperor / Overnight With the Emperor / Une nuit avec l'Empereur"],
+    image: "https://cdn.mangaupdates.com/image/i411425.jpg",
+    description: "Des fiançailles rompues et un verre de trop sont les catalyseurs d'une erreur qui changera à jamais la vie de Penelope Zecalion, lorsqu'elle se retrouve au lit avec l'empereur ! Pénélope, grincheuse et grossière, hésite à laisser l'empereur entrer dans son cœur après le drame de ses premières fiançailles. L'empereur parviendra-t-il à la faire changer d'avis et à la conquérir ?",
+    genres: "comédie,romance,fantasy,female, lead,réincarnation",
+    date: "2021",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "103",
+    chLus: "",
+    chJade: "103",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  arafookenjanoisekaiseikatsunikki: {
+    title: "The Diary of a Sage Around 40 Living in Another World",
+    otherTitles: ["Arafo Kenja no Isekai Seikatsu Nikki / Arafoo Kenja no Isekai Seikatsu Nikki / Around 40 Kenja no Isekai Seikatsu Nikki"],
+    image: "https://cdn.mangaupdates.com/image/i474856.jpg",
+    description: "Satoshi Osako était un joueur du jeu de rôle virtuel Sword and Sorcery qui a vaincu le Dieu maléfique et est mort pour ses actes. À son réveil, il s'est retrouvé dans une étrange forêt inconnue. De plus, il possédait le corps et les capacités de son avatar. En d'autres termes, c'était un tricheur. Un DT de 40 ans peut-il vivre en paix dans ce monde ?",
+    genres: "action,aventure,fantasy,jeux vidéo,male lead,isekai,badass,prof",
+    date: "2018",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "76",
+    chLus: "",
+    chJade: "44",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  adonisnestdoor: {
+    title: "Adonis Next Door",
+    otherTitles: ["God-Looking Neighbor / OMG! Super Hot Guy / Piss Off, Prince Charming! / The Cute Neighbor"],
+    image: "https://cdn.mangaupdates.com/image/i226193.jpg",
+    description: "Su Shuang Shuang rentre un jour chez elle et découvre que quelqu'un a emménagé dans l'appartement voisin. Pris de curiosité, elle va retrouver son voisin. Un beau gosse sort de la douche ? Et il appelle la police ?",
+    genres: "romance,female lead,comédie,moderne",
+    date: "2016",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "95",
+    chLus: "",
+    chJade: "95",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  arecordofamortalsjourneytoimmortality: {
+    title: "A Record Of A Mortal’s Journey To Immortality-Immortal World Arc",
+    otherTitles: ["Mortal's Cultivation: Immortal World Arc / Mortal's Cultivation: Journey to Immortality / Mortal's Cultivation: To the Realm of Immortals / Mortal's Journey to Immortality / A Record of a Mortal's Journey to Immortality: Immortal World Arc"],
+    image: "https://cdn.mangaupdates.com/image/i360605.jpg",
+    description: "Dix mille ans après le début de l'histoire, dans le royaume des esprits, le clan de la jeune fille-renarde Liu Le'er fut anéanti par la secte du sabre de sang, et elle-même fut traquée. Traumatisée et blessée, Liu Le'er se cacha sous un gros rocher. Alors que les trois cultivateurs immortels qui la poursuivaient s'apprêtaient à la tuer, le rocher explosa soudainement et un homme d'apparence ordinaire en émergea…",
+    genres: "action,aventure,fantasy,arts martiaux,male lead",
+    date: "2020",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "141",
+    chchLus: "",
+    chJade: "106",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  anaerobiclovedeepseaprisoner: {
+    title: "Anaerobic Love: Deep Sea Prisoner",
+    otherTitles: ["Breathless / Deep Sea Prisoner"],
+    image: "https://cdn.mangaupdates.com/image/i352373.jpg",
+    description: "Bin He éprouve un amour non partagé pour son meilleur ami, Hai. Lors de leur voyage de fin d'études, Bin He se sent déprimé car son meilleur ami va enfin séduire la fille qu'il aime. Ils décident d'organiser une compétition amicale de plongeon. En plongeant, Bin He aperçoit un homme enchaîné à une épave au fond de la mer. Sous l'eau, un amour anaérobie naît. Que va-t-il naître de cette rencontre fatidique ?",
+    genres: "romance,yaoi,surnaturel,moderne,male lead,vampire",
+    date: "2019",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "120",
+    chLus: "",
+    chJade: "72",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aftertenyearsofchoppingwoodimmortalsbeggedtobecomemydisciple :{
+    title: "After Ten Years of Chopping Wood, Immortals Begged to Become My Disciples",
+    otherTitles: ["Ten Years After Chopping Wood, The Fairy Knelt Down and Begged Me to Accept Her as a Disciple / After Chopping Wood for 10 Years, All the Immortals Want to Become My Disciple"],
+    image: "https://cdn.mangaupdates.com/image/i456346.jpg",
+    description: "Après 10 ans à couper du bois, les immortelles (l'une après l'autre) se sont agenouillées et m'ont supplié de les accepter comme disciples ",
+    genres: "action,arts martial,fantasy,male lead,cultivation,disciple",
+    date: "2022",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "112",
+    chLus: "",
+    chJade: "28",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  attributextor: {
+    title: "Attribute Extractor",
+    otherTitles: ["I Can Extract Attributes"],
+    image: "https://cdn.mangaupdates.com/image/i419648.png",
+    description: "Moi, Gu Shaoyang, j'ai le pouvoir d'extraire les attributs fusionnés. Tirant les racines astucieuses d'innombrables génies, je suis le plus grand enchanteur maléfique, un arrogant sans égal. En combinant d'innombrables pierres primordiales de qualité inférieure et des élixirs inférieurs, je peux créer les meilleures pierres primordiales et des élixirs divins. Maintenant, je veux juste demander : quand serai-je invincible ? ! !",
+    genres: "action,aventure,male lead,fantasy,cultivation",
+    date: "2021",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "90",
+    chLus: "",
+    chJade: "35",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  apocalypse100dropra :{
+    title: "Apocalypse 100% Drop Rate",
+    otherTitles: ["Cheat Code To Revenge: System of The Apocalypse / I Have A Cheat System In The Apocalypse"],
+    image: "https://cdn.mangaupdates.com/image/i410135.jpg",
+    description: "Lin Ziluo est né de nouveau et est revenu à la veille du début du jeu d'apocalypse, trahi par sa petite amie, s'est lié au « système de triche du jeu d'apocalypse », a obtenu un taux de chute d'objets de 100 % et s'est lancé sur la voie de la vengeance.\nMais… cette apocalypse semble être différente de ce qu’il pensait…?",
+    genres: "apocalypse,male lead,drame,fantasy,actioon,badass,seconde chance,system,revenge",
+    date: "2022",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "380",
+    chLus: "",
+    chJade: "59",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  }, 
+  astralpetstore: {
+    title: "Astral Pet Store",
+    otherTitles:  ["Super God Pet Shop"],
+    image: "https://cdn.mangaupdates.com/image/i448930.png",
+    description: "À l'ère des animaux de compagnie astraux, seule la puissance des animaux de compagnie était essentielle ! Cependant, rendre les animaux de compagnie plus forts a toujours été un processus lent et ardu pour les guerriers animaux de compagnie.\nC'était jusqu'à l'apparition d'une mystérieuse animalerie qui a tout changé ! Le squelette le plus faible pourrait tuer un grand dragon doré avec un seul coup après l'entraînement dans cette animalerie! Même l'humble chien de garde du magasin possédait dix compétences légendaires, et la travailleuse dans le magasin prétendait être une déesse...\nEn ce qui qui est du magasin Su Ping, je ne fais que dresser ces animaux mignons pour qu'ils deviennent des bêtes exceptionnelles. Quoi ? N'est-ce pas normal ?",
+    genres: "action,animals,male lead,system,moderne,fantasy,transmigration,",
+    date: "2022",
+    dernierLecture: "",
+    status: "en cours",
+    chTotal: "179",
+    chLus: "",
+    chJade: "150",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2167,9 +2374,9 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
+  a: {
     title: "",
-    otherTitles: [""],
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2184,9 +2391,9 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
+  a: {
     title: "",
-    otherTitles: [""],
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2201,9 +2408,9 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
+  a: {
     title: "",
-    otherTitles: [""],
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2218,9 +2425,9 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
+  a: {
     title: "",
-    otherTitles: [""],
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2235,9 +2442,9 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
+  a: {
     title: "",
-    otherTitles: [""],
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2252,9 +2459,9 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
+  a: {
     title: "",
-    otherTitles: [""],
+    otherTitles: ["r"],
     image: "",
     description: "",
     genres: "",
@@ -2269,6 +2476,872 @@ const mangaData = {
       "": ""
     }
   },
-
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  a: {
+    title: "",
+    otherTitles: ["r"],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
 
 }
