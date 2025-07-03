@@ -1,10 +1,89 @@
+const genreImportance = {
+  "abuse": 1,
+  "academy": 3,
+  "acting": 3,
+  "action": 1,
+  "adopted": 2,
+  "androgine": 1,
+  "animals": 3,
+  "apocalypse": 4,
+  "art": 2,
+  "arts-martiaux": 2,
+  "aventure": 1,
+  "badass": 5,
+  "beast world": 5,
+  "business": 3,
+  "caretaker": 3,
+  "child lead": 4,
+  "comédie": 1,
+  "cooking": 5,
+  "crossdressing": 2,
+  "cultivation": 4,
+  "drame": 2,
+  "disciple": 2,
+  "dungeon": 5,
+  "enfant": 3,
+  "fantasy": 5,
+  "father": 4,
+  "female lead": 1,
+  "food": 3,
+  "jeux vidéo": 3,
+  "ghosts": 2,
+  "harem": 2,
+  "historical": 5,
+  "horreur": 3,
+  "isekai": 3,
+  "idol": 4,
+  "long life": 2,
+  "magie": 2,
+  "male lead": 1,
+  "manga": 4,
+  "mature": 2,
+  "mécanique": 2,
+  "médicale": 4,
+  "militaire": 2,
+  "moderne": 5,
+  "monstre": 1,
+  "mother": 3,
+  "murim": 4,
+  "multi world": 5,
+  "musique": 3,
+  "mystère": 5,
+  "novel": 2,
+  "omegaverse": 3,
+  "power": 1,
+  "psychologique": 2,
+  "réincarnation": 4,
+  "return": 3,
+  "revenge": 1,
+  "rich": 3,
+  "romance": 1,
+  "school life": 1,
+  "seconde chance": 3,
+  "secret identity": 4,
+  "sick": 5,
+  "sport": 1,
+  "suicide":1,
+  "superhero": 1,
+  "surnaturel": 2,
+  "system": 5,
+  "time travel": 2,
+  "tower": 4,
+  "transmigration": 3,
+  "transformation": 2,
+  "vampire": 2,
+  "villainess": 1,
+  "yaoi": 5
+  // Tous les genres non listés vaudront 1
+};
+
+
 // DOM elements
 const container = document.getElementById('mangaContainer');
 const searchInput = document.getElementById('searchInput');
 const checkboxes = document.querySelectorAll('.sidebar-genres input[type="checkbox"]');
 
 let currentSort = null;
-
 
 function setSort(type) {
   if (currentSort === type) {
@@ -21,19 +100,12 @@ function setSort(type) {
     }
   });
 
-if (type === 'genres') {
-  trierParGenresSimilaires();
-} else {
-  afficherAvecFiltres();
+  if (type === 'genres') {
+    trierParGenresSimilaires();
+  } else {
+    afficherAvecFiltres();
+  }
 }
-
-
-
-}
-
-
-
-
 
 
 function normalizeGenresArray(genres) {
@@ -56,6 +128,11 @@ function countCommonGenres(mangaGenres, selectedGenres) {
 
 
 function displayMangas(mangas) {
+  const countDiv = document.getElementById("mangaCount");
+  if (countDiv) {
+    countDiv.textContent = `${mangas.length} manga${mangas.length > 1 ? 's' : ''} affiché${mangas.length > 1 ? 's' : ''}`;
+  }
+
   container.innerHTML = '';
   mangas.forEach(manga => {
     const id = Object.keys(mangaData).find(key => mangaData[key] === manga);
@@ -65,6 +142,7 @@ function displayMangas(mangas) {
     card.classList.add('manga');
     card.setAttribute('data-id', id);
     card.setAttribute('data-title', manga.title.toLowerCase());
+
     const genresStr = Array.isArray(manga.genres)
       ? manga.genres.map(g => g.toLowerCase().trim()).join(',')
       : (manga.genres || '').toLowerCase().trim();
@@ -72,15 +150,26 @@ function displayMangas(mangas) {
     card.setAttribute('data-othertitles', (manga.otherTitles || []).join(',').toLowerCase());
 
     card.innerHTML = `
-  <img src="${imageSrc}" alt="Couverture de ${manga.title || 'Manga'}">
-  <h3>${manga.title || 'Sans titre'}</h3>
-`;
-
+      <img src="${imageSrc}" alt="Couverture de ${manga.title || 'Manga'}">
+      <h3>${manga.title || 'Sans titre'}</h3>
+    `;
 
     card.addEventListener('click', () => openPopup(id));
     container.appendChild(card);
   });
+
+  const countBar = document.getElementById("mangaCountBar");
+if (countBar) {
+  if (mangas.length > 0) {
+    countBar.textContent = `${mangas.length} manga${mangas.length > 1 ? 's' : ''}`;
+  } else {
+    countBar.textContent = 'Aucun manga trouvé';
+  }
 }
+document.getElementById("mangaCountBar").innerHTML = `${mangas.length} mangas`;
+
+}
+
 
 function filterByStatus(status) {
   const allMangas = Object.values(mangaData);
@@ -132,9 +221,30 @@ function filtrerParLecture(mangas) {
 
     return true; // Si "tous"
   });
-
-  
 }
+
+function filtrerParJade(mangas) {
+  const filterValue = document.getElementById("jadeFilter")?.value;
+  if (!filterValue || filterValue === "tous") return mangas;
+
+  return mangas.filter(m => {
+    const chTotal = parseInt(m.chTotal) || 0;
+    const jade = parseInt(m.chJade) || 0;
+
+    if (filterValue === "nonCommence") {
+      return jade === 0;
+    } else if (filterValue === "enCours") {
+      return jade > 0 && jade < chTotal;
+    } else if (filterValue === "termine") {
+      const status = (m.status || "").toLowerCase();
+      return jade === chTotal && (status === "complet" || status === "abandonné");
+    }
+
+
+    return true;
+  });
+}
+
 
 function displayGroupedByStatus(items) {
   container.innerHTML = '';
@@ -146,7 +256,7 @@ function displayGroupedByStatus(items) {
       line.textContent = `— ${capitalizeFirstLetter(item.title)} —`;
       container.appendChild(line);
     } else {
-     const id = item.id || Object.keys(mangaData).find(key => mangaData[key] === item);
+      const id = item.id || Object.keys(mangaData).find(key => mangaData[key] === item);
       const imageSrc = item.image && item.image.trim() !== '' ? item.image : 'image/fond.jpg';
 
       const card = document.createElement('div');
@@ -297,28 +407,54 @@ function afficherAvecFiltres() {
   let mangas = Object.values(mangaData);
 
   // 1. Lecture : non commencé / en cours / terminé
-  const filterValue = document.getElementById("lectureFilter")?.value;
-  if (filterValue) {
-    mangas = mangas.filter(m => {
-      const chTotal = parseInt(m.chTotal || m.chapitresTotal || 0);
-      const lusArray = (m.chLus || "")
-        .replace(/[^\d.]/g, '')
-        .split('.')
-        .filter(x => x !== '')
-        .map(Number);
+  const lectureVal = document.getElementById("lectureFilter")?.value || "tous";
+  const jadeVal = document.getElementById("jadeFilter")?.value || "tous";
 
-      const maxLu = Math.max(...lusArray, 0);
+  mangas = mangas.filter(m => {
+    const chTotal = parseInt(m.chTotal || 0);
 
-      if (filterValue === "nonCommence") {
-        return lusArray.length === 0;
-      } else if (filterValue === "enCours") {
-        return lusArray.length > 0 && maxLu < chTotal;
-      } else if (filterValue === "termine") {
-        return maxLu === chTotal && m.status?.toLowerCase() === "complet";
-      }
-      return true;
-    });
-  }
+    const lusArray = (m.chLus || "")
+      .replace(/[^\d.]/g, '')
+      .split('.')
+      .filter(x => x !== '')
+      .map(Number);
+    const maxLu = Math.max(...lusArray, 0);
+
+    const jade = parseInt(m.chJade) || 0;
+
+    let lectureOK = true;
+    let jadeOK = true;
+
+    // Lecture Filter
+    if (lectureVal === "nonCommence") lectureOK = lusArray.length === 0;
+    else if (lectureVal === "enCours") lectureOK = lusArray.length > 0 && maxLu < chTotal;
+    else if (lectureVal === "termine") {
+      const status = (m.status || "").toLowerCase();
+      lectureOK = maxLu === chTotal && (status === "complet" || status === "abandonné");
+    }
+
+
+    // Jade Filter
+    if (jadeVal === "nonCommence") jadeOK = jade === 0;
+    else if (jadeVal === "enCours") jadeOK = jade > 0 && jade < chTotal;
+    else if (jadeVal === "termine") {
+      const status = (m.status || "").toLowerCase();
+      jadeOK = jade === chTotal && (status === "complet" || status === "abandonné");
+    }
+
+
+    // S’ils sont tous les deux sélectionnés, il faut que les deux soient vrais
+    if (lectureVal !== "tous" && jadeVal !== "tous") {
+      return lectureOK && jadeOK;
+    }
+
+    // Sinon on applique seulement celui qui est activé
+    if (lectureVal !== "tous") return lectureOK;
+    if (jadeVal !== "tous") return jadeOK;
+
+    return true; // Aucun des deux actifs
+  });
+
 
   // 2. Genre cochés
   const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
@@ -331,14 +467,22 @@ function afficherAvecFiltres() {
   }
 
   // 3. Mot-clé dans la recherche
-  const search = searchInput.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  if (search) {
-    mangas = mangas.filter(m => {
-      const title = (m.title || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      const other = (m.otherTitles || []).join(',').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      return title.includes(search) || other.includes(search);
-    });
-  }
+// 3. Mot-clé dans la recherche (avec Fuse.js)
+const search = searchInput.value.trim();
+if (search) {
+  const options = {
+    keys: ['title', 'otherTitles'],
+    threshold: 0.4, // 0 = strict, 1 = très tolérant
+    ignoreLocation: true,
+    minMatchCharLength: 2
+  };
+
+  const fuse = new Fuse(mangas, options);
+  const results = fuse.search(search);
+  mangas = results.map(r => r.item);
+}
+
+
 
   // 4. Chapitres minimum
   const minInput = document.getElementById("minChapitresInput");
@@ -351,13 +495,18 @@ function afficherAvecFiltres() {
   }
 
   // 5. Tri (si activé)
+  // 5. Tri (si activé) ou mélanger si aucun tri
   if (currentSort === 'alphabetique') {
     mangas.sort((a, b) => a.title.localeCompare(b.title));
   } else if (currentSort === 'date') {
     mangas.sort((a, b) => new Date(b.date || "2000-01-01") - new Date(a.date || "2000-01-01"));
   } else if (currentSort === 'chapitresMin') {
     mangas.sort((a, b) => (parseInt(b.chTotal || 0)) - (parseInt(a.chTotal || 0)));
+  } else {
+    // Mélange aléatoire si aucun tri activé
+    mangas.sort(() => Math.random() - 0.5);
   }
+
 
   // 6. Affichage final
   displayMangas(mangas);
@@ -401,13 +550,13 @@ document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
 
 function trierParGenresSimilaires() {
   const allMangas = Object.values(mangaData);
-  
+
   // Normalise les genres pour chaque manga
-const normalizedMangas = Object.entries(mangaData).map(([id, m]) => ({
-  ...m,
-  id,
-  genresNorm: normalizeGenresArray(m.genres || [])
-}));
+  const normalizedMangas = Object.entries(mangaData).map(([id, m]) => ({
+    ...m,
+    id,
+    genresNorm: normalizeGenresArray(m.genres || [])
+  }));
 
 
   // Séparer en 3 groupes : female lead, male lead, autres
@@ -429,22 +578,30 @@ const normalizedMangas = Object.entries(mangaData).map(([id, m]) => ({
   });
 
   // Fonction pour compter les genres communs avec tous les autres
-  function computeSimilarityScore(manga, group) {
+  function computeWeightedSimilarityScore(manga, group) {
     return group.reduce((sum, other) => {
       if (manga === other) return sum;
-      const common = manga.genresNorm.filter(g => other.genresNorm.includes(g)).length;
-      return sum + common;
+
+      const common = manga.genresNorm.filter(g => other.genresNorm.includes(g));
+      const weightedScore = common.reduce((score, g) => {
+        return score + (genreImportance[g] || 1);
+      }, 0);
+
+      return sum + weightedScore;
     }, 0);
   }
 
+
   // Trier chaque groupe selon le score de similarité
+  // Trier chaque groupe selon le score de similarité pondéré
   Object.keys(groupes).forEach(groupe => {
     groupes[groupe].forEach(m => {
-      m.similarityScore = computeSimilarityScore(m, groupes[groupe]);
+      m.similarityScore = computeWeightedSimilarityScore(m, groupes[groupe]);
     });
 
     groupes[groupe].sort((a, b) => b.similarityScore - a.similarityScore);
   });
+
 
   // Fusionner les groupes avec des séparateurs
   const resultatFinal = [];
@@ -472,30 +629,7 @@ function allerA(groupe) {
   }
 }
 
-// Swipe vers le bas pour fermer la sidebar sur mobile
-function enableSwipeToClose(sidebarId) {
-  const sidebar = document.getElementById(sidebarId);
-  let startY = 0;
-
-  sidebar.addEventListener('touchstart', (e) => {
-    startY = e.touches[0].clientY;
-  });
-
-  sidebar.addEventListener('touchend', (e) => {
-    const endY = e.changedTouches[0].clientY;
-    const diffY = endY - startY;
-
-    // Si l'utilisateur glisse vers le bas d'au moins 50px
-    if (diffY > 50) {
-      sidebar.classList.remove('open');
-    }
-  });
-}
-
-// Applique aux deux sidebars
-enableSwipeToClose('genreSidebar');
-enableSwipeToClose('sortSidebar');
-
+document.getElementById("jadeFilter").addEventListener("change", afficherAvecFiltres);
 
 
 

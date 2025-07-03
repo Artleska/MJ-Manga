@@ -10,7 +10,7 @@ const mangaData = {
     status: "Complet",
     chTotal: "152",
     chLus: "88.",
-    chJade: "",
+    chJade: "49",
     externalLinks: {
       "Comick": "https://crunchyscan.fr/lecture-en-ligne/la-veterinaire-des-creatures-mythiques",
       "CrunchyScan": "https://mangaplus.shueisha.co.jp/titles/100020"
@@ -125,7 +125,7 @@ const mangaData = {
     date: "2022",
     dernierLecture: "2025-06-01",
     status: "Complet",
-    chtotal: "142",
+    chTotal: "142",
     chLus: ".139.16",
     chJade: "",
     externalLinks: {
@@ -223,7 +223,7 @@ const mangaData = {
     date: "2023",
     dernierLecture: "2025-02-01",
     status: "Complet",
-    chtoTal: "55",
+    chTotal: "55",
     chLus: ".55",
     chJade: "",
     externalLinks: {
@@ -306,7 +306,7 @@ const mangaData = {
     date: "2018",
     dernierLecture: "2024-08-01",
     status: "Complet",
-    chtoTal: "811",
+    chTotal: "811",
     chLus: "75.289",
     chJade: "",
     externalLinks: {
@@ -390,7 +390,7 @@ const mangaData = {
     date: "2019",
     dernierLecture: "2024-08-01",
     status: "abandonné",
-    chtoTal: "108",
+    chTotal: "108",
     chLus: "3..34",
     chJade: "",
     externalLinks: {
@@ -475,7 +475,7 @@ const mangaData = {
     date: "2024",
     dernierLecture: "2025-02-01",
     status: "En cours",
-    chtoTal: "52",
+    chTotal: "52",
     chLus: ".47",
     chJade: "",
     externalLinks: {
@@ -559,7 +559,7 @@ const mangaData = {
     date: "2019",
     dernierLecture: "2024-05-01",
     status: "Complet",
-    chtoTal: "530",
+    chTotal: "530",
     chLus: "145..264",
     chJade: "",
     externalLinks: {
@@ -640,7 +640,7 @@ const mangaData = {
     date: "2020",
     dernierLecture: "",
     status: "Complet",
-    chtoTal: "45",
+    chTotal: "45",
     chLus: "",
     chJade: "",
     externalLinks: {
@@ -705,7 +705,7 @@ const mangaData = {
     date: "2022",
     dernierLecture: "2024-10-01",
     status: "Complet",
-    chtoTal: "60",
+    chTotal: "60",
     chLus: "60",
     chJade: "",
     externalLinks: {
@@ -725,8 +725,7 @@ const mangaData = {
     chLus: "..54",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "Comick": "https://comick.io/comic/00-honey-i-want-to-eat-up-your-money",
     }
   },
   BadWife: {
@@ -742,7 +741,6 @@ const mangaData = {
     chLus: "15.",
     chJade: "",
     externalLinks: {
-      "Discord:Fantasy Trad": "",
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/bad-wife"
     }
   },
@@ -818,11 +816,11 @@ const mangaData = {
     otherTitles: ["Mon anti-fan!,My Anti-Fan!,So I Married My Anti-Fan"],
     image: "https://cdn.mangaupdates.com/image/i296477.png",
     description: "Jusqu'où iriez-vous pour abattre la personne que vous détestez le plus ? Sans maison, sans travail et sans rien à perdre, Geunyeong Lee est prêt à tout risquer pour faire tomber le trésor national du pays, la superstar coréenne Who Joon. Mais une fois que les deux ont vraiment appris à se connaître, le faire tomber devient soudainement beaucoup plus difficile. Sera-t-elle capable de le ruiner une fois pour toutes après avoir appris la vérité sur l'homme derrière la pop star ?",
-    genres: "female leado",
+    genres: "female lead,idol,moderne,romance",
     date: "2018",
     dernierLecture: "",
     status: "complet",
-    chTotal: "",
+    chTotal: "86",
     chLus: "",
     chJade: "",
     externalLinks: {
@@ -830,7 +828,578 @@ const mangaData = {
       "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/mon-anti-fan/"
     }
   },
+  ActLikeYouLoveMe: {
+    title: "Act Like You Love Me!",
+    otherTitles: ["My Butler, not Lover / Do As I Say! / Obedience, Not Purity"],
+    image: "https://cdn.mangaupdates.com/image/i334709.jpg",
+    description: "Ji-eon, 25 ans, est stressée, surmenée et sans le sou. Lorsqu'un malentendu dans un travail d'intérimaire lui fait passer une journée comme assistante personnelle du célèbre acteur Doyun Nam, elle passe sa colère sur une poupée... qui s'avère avoir la capacité magique de le contrôler selon ses moindres désirs. Maintenant, c'est à elle d'être le patron.",
+    genres: "female lead,romance,moderne,comedy,surnaturel",
+    date: "2020",
+    dernierLecture: "",
+    status: "complet",
+    chTotal: "150",
+    chLus: "48..139",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/00-my-butler-not-lover",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/act-like-you-love-me/?asgtbndr=1&cid=2091945"
+    }
+  },
+  BeTheButler: {
+    title: "Be The Butler ",
+    otherTitles: ["Please Be My Servant! / Kiss Meow"],
+    image: "https://cdn.mangaupdates.com/image/i394700.jpg",
+    description: "Sara est morte dans un accident de voiture et est ramenée à la vie par la grâce du Dieu des Chats, mais se transforme en chat les jours de pluie. Il n'y a qu'une seule façon de se débarrasser de cette magie, de trouver le majordome du destin qui aime et se soucie sincèrement des chats, tomber amoureux et embrasser. Un jour, alors qu'elle lutte pour trouver le majordome du destin, Sara est témoin de quelqu'un tuer un chat et est maintenant poursuivie par le tueur. Comme si se transformer en chat n'était pas assez mauvais, Sara est également poursuivie par un meurtrier.",
+    genres: "female lead,romance,transformation,moderne",
+    date: "2022",
+    dernierLecture: "",
+    status: "complet",
+    chTotal: "60",
+    chLus: "..22",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/01-be-the-butler",
+    }
+  },
+  ComplicatedCohabitation: {
+    title: "Complicated Cohabitation",
+    otherTitles: ["Impure Cohabitation"],
+    image: "https://cdn.mangaupdates.com/image/i384584.jpg",
+    description: "Yoo-gyeong est obligée de vivre avec Lee-jun, un ami de son petit frère. Elle proteste au début, mais finit par se dire que ce n'est pas si mal quand Lee-jun s'avère être doué pour les tâches ménagères. Il est aussi là pour consoler Yoo-gyeong quand son petit ami devient froid et distant, mais les choses se compliquent quand il semble avoir des sentiments pour elle.",
+    genres: "female lead,drame,comedy,romance,moderne",
+    date: "2021",
+    dernierLecture: "",
+    status: "complet",
+    chTotal: "80",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/01-complicated-cohabitation",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/complicated-cohabitation/"
+    }
+  },
+  Interdictiondestalker: {
+    title: "Interdiction de stalker! ",
+    otherTitles: ["No Snooping, Please / In-House Stalking Is Prohibited / Office Stalking Is Prohibited "],
+    image: "https://cdn.mangaupdates.com/image/i463533.jpg",
+    description: "Bel homme et CEO d’une grande entreprise, tout semble réussir à Park Shi-an. Ou du moins, c’est ce qu’il laisse transparaître ! En effet, depuis quelques mois, il se fait harceler par une stalkeuse qui se dit éperdument amoureuse de lui. Mais après avoir mené son enquête, la principale suspecte n’est autre que Da-min, une de ses fidèles employés. Shi-an ne compte pas en rester là et souhaite se venger ! Mais… plus il la côtoie, plus il semble faire fausse route… Da-min, est-elle réellement la coupable ?",
+    genres: "female lead,moderne,romance,comedy,drame",
+    date: "2021",
+    dernierLecture: "",
+    status: "complet",
+    chTotal: "76",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/00-no-snooping-please",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/interdiction-de-stalker/"
+    }
+  },
+  TheDukesCuteandToughSweetheart: {
+    title: "The Duke’s Cute and Tough Sweetheart",
+    otherTitles: ["My Cute Wife Is Not Easy to Bully"],
+    image: "https://meo.comick.pictures/3COXdy5Yk88t8.jpeg",
+    description: "",
+    genres: "female lead,moderne,romance",
+    date: "2022",
+    dernierLecture: "",
+    status: "abandonné",
+    chTotal: "94",
+    chLus: "..61",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/the-duke-s-cute-and-tough-sweetheart"
+    }
+  },
+  AnotherLove: {
+    title: "Another Love",
+    otherTitles: ["Just Another Love"],
+    image: "https://cdn.mangaupdates.com/image/i372763.jpg",
+    description: "Lorsque l'architecte Jae se lance en vacances en solo en Espagne, il peut sembler qu'elle fuit son passé, loin de son ex-petit ami violent qui cherchait à contrôler sa vie. Pour Jae, cependant, le voyage représente un nouveau chapitre alors qu'elle apprend à se tenir à nouveau seule. Ses vacances prennent une tournure intéressante lorsqu'elle est affectée par erreur à la même chambre d'hôtel que Joff, un homme d'affaires beau et prospère qui est intrigué par la nature gentille et indépendante de Jae. Pendant ce temps, une sinistre figure du passé de Jae commence à la hanter une fois de plus…",
+    genres: "female leade,moderne,romance,drame,psychologique",
+    date: "2021",
+    dernierLecture: "2025-02-01",
+    status: "complet",
+    chTotal: "55",
+    chLus: ".47",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/01-another-love"
+    }
+  },
+  TheDawninMoscow: {
+    title: "The Dawn in Moscow",
+    otherTitles: ["Moscow’s Dawn"],
+    image: "https://cdn.mangaupdates.com/image/i437377.jpg",
+    description: "Lee Shi Yoon est un pianiste du 21e siècle. Après avoir eu un accident qui l'a empêché de jouer du piano, il choisit la mort, pour se réveiller comme la fille d'une famille riche qui utilise une langue inconnue, nommée Tatiana. Qui s'en soucie si j'ai changé de sexe ! Tant que mes mains sont bien, je peux jouer du piano ! Puisque les choses en sont arrivées là, je vais poursuivre les rêves que je n'ai pas pu avoir grâce à Tatiana!",
+    genres: "transmirgration,moderne,musique,School life",
+    date: "2021",
+    dernierLecture: "",
+    status: "complet",
+    chTotal: "130",
+    chLus: "..103",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/01-the-dawn-in-moscow",
+    }
+  },
+  SheBrokeThePlotAgain: {
+    title: "She Broke The Plot Again",
+    otherTitles: ["The Hostess Collapse the Plots Again"],
+    image: "https://cdn.mangaupdates.com/image/i403340.jpg",
+    description: "Yu Yao, une étudiante, a été transportée dans un autre monde après un accident. Elle a été chargée par un programme de jouer le rôle d'une méchante afin de créer des scénarios pour que les personnages masculins tombent amoureux d'une femme. Si elle réussit à faire en sorte que le personnage principal atteigne l'apogée de la vie, elle sera ramenée à la vie dans le monde réel.",
+    genres: "female lead,moderne,transmigration,novel",
+    date: "2022",
+    dernierLecture: "",
+    status: "abandonné",
+    chTotal: "25",
+    chLus: "25",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/she-broke-the-plot-again",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/she-broke-the-plot-again/?asgtbndr=1&cid=2091945"
+    }
+  },
+  TheMedicalFairyIsAThreeAndAHalfYearOldCutie : {
+    title: "The Medical Fairy Is A Three-And-A-Half-Year-Old Cutie ",
+    otherTitles: ["Meng Bao Yi Xian San Sui Ban"],
+    image: "https://cdn.mangaupdates.com/image/i388879.jpg",
+    description: "L'alchimiste le plus célèbre du monde de la culture, Xuan Tianji, s'est transformée en enfant à partir du contrecoup de sa tentative de sceller le système qui l'avait manipulée. Depuis lors, son ami d'enfance, son ex-petit ami, son disciple, son ennemi juré, etc. a commencé à chercher leur femme en vain. Au lieu de cela, ils se retrouvent heureux à devenir Papa.",
+    genres: "female lead,child lead,arts martiaux,system",
+    date: "2021",
+    dernierLecture: "2024-12-01",
+    status: "complet",
+    chTotal: "64",
+    chLus: ".28",
+    chJade: "",
+    externalLinks: {
+      "MangaPark": "https://mangapark.net/title/412812-en-the-medical-fairy-is-a-three-and-a-half-year-old-cutie"
+    }
+  },
+  YoungestDaughteroftheUltimateMartialMasterNamgungFamily: {
+    title: "Youngest Daughter of the Ultimate Martial Master Namgung Family",
+    otherTitles: ["I Am the Youngest Daughter of Murim's Strongest, the Namgung Clan / Moorim's Strongest Namgung-se Is the Youngest Daughter / The Namgung Clan's Youngest Daughter"],
+    image: "https://meo.comick.pictures/R82bDM.jpg",
+    description: "Tout le monde dans la famille Namgung me méprisait. Ma vie était celle où même mes frères et sœurs me tournaient le dos. Mais au moment où la famille a été anéantie, le choix que mes frères et sœurs a fait... n'était pas la famille, mais moi.Je suis retourné dans le passé ! Serait-ce de la magie noire du culte du sang ? Ma... ma vengeance ? Mon repos paisible ?! Et pourquoi les frères et sœurs de Namgung s'accrochent-ils à nouveau à moi ?!",
+    genres: "seconde chance,child lead,arts martiaux",
+    date: "2024",
+    dernierLecture: "2024-12-01",
+    status: "pause",
+    chTotal: "41",
+    chLus: ".30",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/i-am-the-youngest-daughter-of-murim-s-strongest-the-namgung-clan",
+    }
+  },
+   IBecametheDespisedGranddaughterofthePowerfulMartialArtsFamily: {
+    title: "I Became the Despised Granddaughter of the Powerful Martial Arts Family",
+    otherTitles: ["The Baengri Clan's Unwanted Granddaughter / Yeon L'indésirée / I Became the Despised Granddaughter of the Murim Clan / I Became the Despised Granddaughter of the Murim Family"],
+    image: "https://meo.comick.pictures/8yk8bz-s.jpg",
+    description: "Yeon, dernière née du puissant clan Baengri, a toujours été traitée comme une paria. Rejetée de tous, elle ne survit que grâce à la réputation de son père. Mais la mort soudaine de celui-ci signe également sa perte… Lâchement assassinée et croyant sa fin arrivée, elle se réveille dix ans plus tôt, le jour de son adoption par le clan ! Yeon a désormais une chance de tout rattraper, et elle ne la laissera pas filer. Son père est le seul qui l'ai jamais aimée, et c'est à son tour de le sauver !",
+    genres: "female lead,child lead,arts martiaux,father,seconde chance",
+    date: "2023",
+    dernierLecture: "",
+    status: "pause",
+    chTotal: "90",
+    chLus: "..44",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/00-i-became-the-despised-granddaughter-of-the-powerful-martial-arts-family",
+      "CrunchyScan": "https://crunchyscan.fr/lecture-en-ligne/the-baengri-clans-unwanted-granddaughter/"
+    }
+  },
+  PreciousDaughteroftheGreatestMartialArtsVillain: {
+    title: "Precious Daughter of the Greatest Martial Arts Villain",
+    otherTitles: [" I Am the Precious Daughter of the Greatest Villain in the Fantasy World / Je suis la précieuse fille du roi démon / I Am the Precious Daughter of the Greatest Villain in a Martial Arts Novel"],
+    image: "https://meo.comick.pictures/1ljGz-s.jpg",
+    description: "Je pensais m'être réincarnée en tant que fille d'une famille riche, mais au lieu de cela, je suis née en tant que fille du plus grand méchant dans un roman d'arts martiaux ?! Un père indifférent et un frère aîné qui finit par me tuer. J'ai besoin d'apprendre rapidement les arts martiaux pour pouvoir survivre... ! Mais ces deux-là... Pourquoi continuent-ils à me suivre?!",
+    genres: "female lead,child lead,arts martiaux,father",
+    date: "2021",
+    dernierLecture: "",
+    status: "pause",
+    chTotal: "160",
+    chLus: "50.",
+    chJade: "",
+    externalLinks: {
+      "Comick": "https://comick.io/comic/00-i-am-the-precious-daughter-of-the-greatest-villain-in-a-martial-arts-novel",
+    }
+  },
+    ThetyrantsFamilySurvivedbyListeningtoHerVoice: {
+    title: "The tyrant’s Family Survived by Listening to Her Voice",
+    otherTitles: ["The Tyrant's Family Lasts Thanks to Her Inner Voice"],
+    image: "https://cdn.mangaupdates.com/image/i458564.jpg",
+    description: "Après avoir été frappé à mort par quelqu'un qui est tombé du ciel, Jiu Jiu a provoqué une scène au palais du roi de l'enfer. Afin de régler les choses, le roi de l'enfer l'a laissée entrer dans la dimension d'un livre et devenir la princesse. Cependant, elle était une princesse dans un palais froid. Au début, à cause de la calomnie de l'héroïne, son père qui était le tyran voulait lui accorder la mort. Jiu Jiu était sans voix dans son cœur : Pas étonnant que le pays de Xi Chu s'effondre 10 ans plus tard. Une fois qu'elle a entendu cette voix intérieure, le tyran a soudainement cessé de tuer des gens sans discernement.",
+    genres: "réincarnation,female lead,child lead,father,historical",
+    date: "2024",
+    dernierLecture: "2025-06-01",
+    status: "en cours",
+    chTotal: "48",
+    chLus: "52",
+    chJade: "",
+    externalLinks: {
+      "Snow": "https://snowmtl.ru/comics/the-tyrant-s-family-survived-by-listening-to-her-voice",
+      "ManhwaClan": "https://manhwaclan.com/manga/the-tyrants-family-lasts-thanks-to-her-inner-voice/"
+    }
+  },
+  SurvivingasaTyrantsDaughterA: {
+    title: "Surviving as a Tyrant’s Daughter",
+    otherTitles: ["Survival Methods of the Cannon Fodder Daughter / Au Secours, mon père est un tyrant! / Cannon Fodder Girl’s Way to Survive "],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+   ITamedtheTyrant: {
+    title: "I Tamed the Tyrant",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  IllPayforyourLifeLetsBothGoCrazyTogether: {
+    title: "I'll Pay for your Life, Let's Both Go Crazy Together!",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+    TheChickClassHunterIsFilial : {
+    title: "The Chick-Class Hunter Is Filial! ",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  TheColdPresidentsLittleCutie: {
+    title: "The Cold President’s Little Cutie",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+   MyFiveProminentDaddies: {
+    title: "My Five Prominent Daddies",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  EightUnclesSpoilLittleBao: {
+    title: "Eight Uncles Spoil Little Bao",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+   TheBelovedThreeAndAHalfYearoldLittleLuckyGirl: {
+    title: "The Beloved Three-And-A-Half-Year-old Little Lucky Girl",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  TheVillainessIsMe: {
+    title: "The Villainess Is Me",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+   LafilleadoréeduDémon : {
+    title: "La fille adorée du Démon ",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+ TheMonsterDukesDaughter : {
+    title: "The Monster Duke’s Daughter ",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+    MyFatherthePossessiveDemiGod: {
+    title: "My Father,the Possessive Demi-God",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  IllProtectYouDaddy: {
+    title: "I’ll Protect You, Daddy!",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  TheBabyPrisonerOfTheWinterCastle: {
+    title: "The Baby Prisoner Of The Winter Castle",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  TheResourcefulLittleConsort: {
+    title: "The Resourceful Little Consort",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+    Réincarnéeenbêtedivine: {
+    title: "Réincarnée en bête divine",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  TheSClassBabyPrincessIsTooPowerful: {
+    title: "The S-Class Baby Princess Is Too Powerful",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  MyThreeTyrantBrothers: {
+    title: "My Three Tyrant Brothers",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
+  ItsMyFirstTimeBeingLoved: {
+    title: "It’s My First Time Being Loved",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+    YouveGottheWrongGirl: {
+    title: "You’ve Got the Wrong Girl",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "Comick": "",
+      "CrunchyScan": ""
+    }
+  },
   LA: {
+    title: "",
+    otherTitles: [""],
+    image: "",
+    description: "",
+    genres: "",
+    date: "",
+    dernierLecture: "",
+    status: "",
+    chTotal: "",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+   LA: {
     title: "",
     otherTitles: [""],
     image: "",
@@ -860,11 +1429,11 @@ const mangaData = {
     chLus: "",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "": "",
+      "": ""
     }
   },
-  LA: {
+    LA: {
     title: "",
     otherTitles: [""],
     image: "",
@@ -894,12 +1463,12 @@ const mangaData = {
     chLus: "",
     chJade: "",
     externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
+      "": "",
+      "": ""
     }
   },
-  LA: {
-    title: "",
+   DifferentWorldFoundation: {
+    title: "Different World Foundation",
     otherTitles: [""],
     image: "",
     description: "",
@@ -915,110 +1484,8 @@ const mangaData = {
       "CrunchyScan": ""
     }
   },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
-    otherTitles: [""],
-    image: "",
-    description: "",
-    genres: "",
-    date: "",
-    dernierLecture: "",
-    status: "",
-    chTotal: "",
-    chLus: "",
-    chJade: "",
-    externalLinks: {
-      "Comick": "",
-      "CrunchyScan": ""
-    }
-  },
-  LA: {
-    title: "",
+ Laviedefermierdansunautremonde: {
+    title: "La vie de fermier dans un autre monde",
     otherTitles: [""],
     image: "",
     description: "",
@@ -1053,7 +1520,7 @@ const mangaData = {
 
   // section a jade
 
- 
+
   abeastlyscandal: {
     title: "Un scandale bestial",
     otherTitles: ["Le scandale / Un Parfum de scandale"],
@@ -1075,7 +1542,7 @@ const mangaData = {
     title: "A Legend of the Wind",
     otherTitles: [""],
     image: "https://cdn.mangaupdates.com/image/i312839.jpg",
-    description: "An ordinary young man's bloody journey of ascension from ordinary to extraordinary, and from the trough to the peak. In the 16th generation of the Shangguan family of Shangguan Xu, he is ever-changing and looks like a ghost. He comes and goes without a trace. He discovered the correct method of practicing the family martial arts, and changed his life.",
+    description: "Le parcours sanglant d'un jeune homme ordinaire, de l'ordinaire à l'extraordinaire, du creux à l'apogée. Issu de la 16e génération de la famille Shangguan de Shangguan Xu, il est en perpétuelle mutation et ressemble à un fantôme. Il va et vient sans laisser de trace. Il a découvert la bonne méthode de pratique des arts martiaux familiaux et a changé sa vie.",
     genres: "action,arts martiaux,male lead",
     date: "2016",
     dernierLecture: "",
@@ -1092,16 +1559,16 @@ const mangaData = {
     title: "A Star Reborn: The Queen's Return",
     otherTitles: ["Reborn: The Diva Is Back / The Queen's Return: A Star Reborn"],
     image: "https://cdn.mangaupdates.com/image/i297540.jpg",
-    description: "She was the Queen of Song, but she died during her greatest years.\nAfter she was reincarnated, she became a simple trainee. She lost her former glory? It doesn't matter—no one can compete with her beautiful singer's voice. She's mocked for her lowly birth? It doesn't matter—her true identity is enough to make the whole world tremble. She owes huge debts? It doesn't matter...\nA powerful boss whispered to her: The debt will disappear if you would become my woman.\nBut she is proud: I'm sorry. I would sell my art, but not my whole self.",
+    description: "Elle était la Reine du Chant, mais elle est morte durant ses plus belles années.\nAprès sa réincarnation, elle est devenue une simple apprentie. Elle a perdu sa gloire passée ? Peu importe, personne ne peut rivaliser avec sa belle voix de chanteuse. On se moque d'elle pour sa basse naissance ? Peu importe, sa véritable identité suffit à faire trembler le monde entier. Elle a d'énormes dettes ? Peu importe…\nUn puissant patron lui a murmuré : « La dette disparaîtra si tu deviens ma femme. »\nMais elle est fière : « Je suis désolée. Je vendrais mon art, mais pas toute ma personne. »",
     genres: "transmigration,romance,female lead,moderne,abuse,idol",
     date: "2019",
     dernierLecture: "",
     status: "Complet",
     chTotal: "200",
-    chLus: "",
+    chLus: "130.",
     chJade: "200",
     externalLinks: {
-      "": "",
+      "Comick": "https://comick.io/comic/00-a-star-reborn-the-queen-s-return",
       "": ""
     }
   },
@@ -1109,7 +1576,7 @@ const mangaData = {
     title: "Aidin",
     otherTitles: ["Aideen / Aydin / Les Ailes de la Chouette"],
     image: "https://cdn.mangaupdates.com/image/i385190.jpg",
-    description: "Aideen, the esteemed daughter of Duke Glandya, is the Emperor’s assassin and the leader of ‘Owl.’\nFor giving everything and serving her Lord faithfully, she was betrayed and sentenced to death by guillotine.\n“I will take revenge on you. I will never forgive you even in death!”\nAbandoned by her Lord, her life came to an end, yet the moment she opened her eyes again, she realized she had returned to a time when she was still only 17. In order to get her revenge, she decided to destroy her home country Perdi that the Emperor cherished more than his life.\nYou are beautiful, Milady. Especially those red eyes of yours.\nThe man who personally sent the order to have Aideen executed, the Prince from the enemy country, Diceon,unexpectedly began to interfere with her life!\nThe story of Aideen, the woman who was abandoned by the Emperor and was given a second chance at life to get her revenge and to destroy her home country, now unfolds!",
+    description: "Aideen, la fille estimée du duc Glandya, est l'assassin de l'empereur et la cheffe du groupe « Owl ».\nPour avoir tout donné et servi fidèlement son seigneur, elle fut trahie et condamnée à mort par guillotine.\n« Je me vengerai de toi. Je ne te pardonnerai jamais, même dans la mort ! »\nAbandonnée par son Seigneur, sa vie prit fin, mais au moment où elle ouvrit à nouveau les yeux, elle réalisa qu'elle était revenue à une époque où elle n'avait que 17 ans. Afin de se venger, elle décida de détruire son pays natal, Perdi, que l'Empereur chérissait plus que sa vie.\n« Vous êtes belle, Madame. Surtout vos yeux rouges. »\nL'homme qui a personnellement envoyé l'ordre d'exécuter Aideen, le prince du pays ennemi, Diceon,a commencé de manière inattendue à interférer dans sa vie !\nL'histoire d'Aideen, la femme qui a été abandonnée par l'Empereur et à qui on a donné une seconde chance dans la vie pour se venger et détruire son pays d'origine, se dévoile maintenant !",
     genres: "romance,female lead,revenge,seconde chance,drame,action",
     date: "2020",
     dernierLecture: "",
@@ -1126,7 +1593,7 @@ const mangaData = {
     title: "Ake no Tobari",
     otherTitles: ["Dawn of Tobari / Tobari of the Dawn"],
     image: "https://cdn.mangaupdates.com/image/i371931.jpg",
-    description: "Is there a land of paradise where goblins and humans can coexist in harmony? Goblins and humans join in the fight to make this dream come true.",
+    description: "Existe-t-il un paradis où gobelins et humains peuvent cohabiter en harmonie ? Gobelins et humains s'unissent pour concrétiser ce rêve.",
     genres: "action,fantasy,drama",
     date: "2014",
     dernierLecture: "",
@@ -1143,7 +1610,7 @@ const mangaData = {
     title: "All Heavenly Days",
     otherTitles: ["Chaotic Lof World / Metempsychosis Record / Record of the Heavens"],
     image: "https://cdn.mangaupdates.com/image/i359533.jpg",
-    description: "10,000 years ago in the world of Luofu, the banished immortal was born and the evil emperor was resurrected. Their grievances of tens of thousands years erupted overnight. The head master of Sword Exploration School went deep into the Dark Abyss and never be heard of since then... 10,000 years later, he got reborn again...",
+    description: "Il y a 10 000 ans, dans le monde de Luofu, naquit l'immortel banni et ressuscita l'empereur maléfique. Leurs rancœurs vieilles de plusieurs dizaines de milliers d'années éclatèrent du jour au lendemain. Le directeur de l'École d'Exploration de l'Épée s'enfonça dans les profondeurs des Abysses Obscurs et disparut définitivement… 10 000 ans plus tard, il renaît…",
     genres: "action,arts martiaux,male lead,cultivation,transmigration,fantasy",
     date: "2018",
     dernierLecture: "",
@@ -1160,7 +1627,7 @@ const mangaData = {
     title: "Alluring Doctress Wang Fei Wants a Divorce",
     otherTitles: ["I Want a Divorce! / Medical Concubine: This Princess Wants a Divorce / The Princess Doctor's Revenge"],
     image: "https://cdn.mangaupdates.com/image/i309687.jpg",
-    description: "Transporting back in time, she almost met her death because of a bowl of heart blood! What’s worse, the playboy and the basic b*tch tortured her together, not only her body, but also her heart, and they even tried to refine her into medication to cure the basic b*tch. Damn it! I’m a sleeping tiger, not a sick cat! Fighting the playboy and getting back at the basic b*tch, I’ll make them know who I am step by step. But... why does the His Royal Highness climbs onto my bed every night?",
+    description: "Transportée dans le temps, elle a failli mourir à cause d'un bol de sang de cœur ! Pire encore, le playboy et la garce basique l'ont torturée ensemble, non seulement physiquement, mais aussi cardiaquement, et ils ont même essayé de la transformer en médicament pour guérir la garce basique. Bon sang ! Je suis un tigre endormi, pas un chat malade ! En combattant le playboy et en me vengeant de la garce basique, je leur ferai savoir qui je suis petit à petit. Mais… pourquoi Son Altesse Royale grimpe-t-elle sur mon lit chaque nuit ?",
     genres: "rommance,female lead,historical,médicale,transmigration",
     date: "2019",
     dernierLecture: "",
@@ -1177,7 +1644,7 @@ const mangaData = {
     title: "Almight Network",
     otherTitles: [""],
     image: "https://cdn.mangaupdates.com/image/i454990.jpg",
-    description: "When Fang Lin bought a new smart phone, he found out the phone app gave him a special social network with the immortals. In a dog eat dog world, Lin is taking a stairway to heaven with this special social network.",
+    description: "Lorsque Fang Lin a acheté un nouveau smartphone, il a découvert que l'application lui offrait un réseau social privilégié avec les immortels. Dans un monde où la loi du plus fort est de mise, Lin prend le chemin du paradis grâce à ce réseau social.",
     genres: "cultivation,moderne,male lead,",
     date: "2018",
     dernierLecture: "",
@@ -1194,8 +1661,8 @@ const mangaData = {
     title: "Almighty Master",
     otherTitles: ["The Omnipotent / The Peak Master of the City"],
     image: "https://cdn.mangaupdates.com/image/i379190.jpg",
-    description: "Qin Mo was an orphan raised by five guardians who were the best in their respective disciplines. With the skillsets he had learned from them, he moved to the city to find out the truth about his parents' death. Nonetheless, there were many obstacles in his quest. In the end, would he be able to uncover the mystery behind his parents' death?",
-    genres: "arts martiaux,action,male lead",
+    description: "Qin Mo était un orphelin élevé par cinq tuteurs, les meilleurs dans leurs disciplines respectives. Fort des compétences acquises auprès d'eux, il s'installa en ville pour découvrir la vérité sur la mort de ses parents. Cependant, sa quête se heurta à de nombreux obstacles. Parviendra-t-il finalement à percer le mystère de la mort de ses parents ?",
+    genres: "arts martiaux,action,male lead,cultivation,badass,moderne",
     date: "2019",
     dernierLecture: "",
     status: "Complet",
@@ -1207,10 +1674,469 @@ const mangaData = {
       "": ""
     }
   },
-  LA: {
-    title: "",
+  anexorbitantwife: {
+    title: "An Exorbitant Wife ",
+    otherTitles: ["President's Wife Don't Run Away / Sir Please Be Gentle / Sky-high spoiled wife: the president's wife can't escape / Trapped With the CEO"],
+    image: "https://cdn.mangaupdates.com/image/i415601.jpg",
+    description: "Son ex-petit ami et meilleur ami l'a droguée pour se venger, mais, contre toute attente, un homme mystérieux est entré dans son monde. Pour se venger, elle a épousé cet homme impitoyable, et l'histoire mystérieuse de sa naissance a été révélée...",
+    genres: "female lead,romance,revenge,drama",
+    date: "2018",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "327",
+    chLus: "",
+    chJade: "34",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  antigodsdragonsystem: {
+    title: "Anti-Gods Dragon System ",
+    otherTitles: ["Invincible Divine Dragon System"],
+    image: "https://cdn.mangaupdates.com/image/i310896.jpg",
+    description: "Tian Ling, un jeune homme persécuté par son camarade de clan, décida de se débarrasser de lui d'une manière tragique qui le mena à la mort. À l'instant de sa mort, son sang réveilla les restes d'un dragon vieux de millions d'années, connu sous le nom de système du dragon. Il le ressuscita afin d'assouvir sa vengeance en détruisant les dieux et en devenant le maître suprême… lors d'un voyage d'entraînement visant à détruire les cieux !",
+    genres: "action,male lead,arts martiaux,system,drame",
+    date: "2020",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "91",
+    chLus: "",
+    chJade: "36",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  apotheosis: {
+    title: "Apotheosis",
+    otherTitles: ["Apotheosis - Ascension to Godhood / Apotheosis - Elevation to the Status of a God / Forged Success / Principles of Heavens - Zen's Cultivation of Immortality / The Endless Road to Divinity"],
+    image: "https://cdn.mangaupdates.com/image/i327379.jpg",
+    description: "Luo Zheng, désormais humble esclave, est né comme fils aîné d'une famille aisée. Suite au déclin de sa famille et à l'enlèvement de sa sœur par une force puissante, il ne peut plus être attaqué que par d'autres. Cependant, le ciel ne ferme jamais toutes les portes. Un livre ancien laissé par son père révèle une technique divine secrète, conférant au lecteur un immense pouvoir ! Mais que cache ce pouvoir ? Il s'agit d'une lutte contre le destin.",
+    genres: "cultivation,action,aventure,male lead,arts martiaux,",
+    date: "2015",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "1301",
+    chLus: "",
+    chJade: "561",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  autohunting: {
+    title: "Auto Hunting",
+    otherTitles: ["Only I Auto Hunt / Solo Auto-Hunting"],
+    image: "https://cdn.mangaupdates.com/image/i307276.png",
+    description: "Le monde est attaqué par des monstres qui surgissent de la « fracture ». Et les « chasseurs » qui traquent ces monstres sont actuellement le métier le plus convoité au monde. Un jour, Oh Yunsung, qui travaille d'arrache-pied dans un restaurant de viande, découvre la capacité de chasser automatiquement des monstres avec des techniques et des prouesses physiques parfaites, comme dans les MMORPG, lorsqu'il appuie sur le bouton « Chasse automatique » qui apparaît devant lui… !",
+    genres: "male lead,action,dungeon",
+    date: "2019",
+    dernierLecture: "",
+    status: "abandonné",
+    chTotal: "92",
+    chLus: "",
+    chJade: "92",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  alovecontactwiththedevil: {
+    title: "A Love Contract with the Devil",
+    otherTitles: ["Devil Number 4"],
+    image: "https://cdn.mangaupdates.com/image/i399721.jpg",
+    description: "Lorsqu'une étudiante malchanceuse se retrouve à court d'argent – ​​et d'espoir –, le diable fait son entrée et lui fait une offre qu'elle ne peut refuser. Mais ce diable a ses propres problèmes. Il est un rouage de l'échelle sociale de Satan, qui perd rapidement sa crédibilité parce que cette même jeune fille désespérée n'est pas prête à se séparer de son âme de son plein gré. Maintenant, elle travaille dans son café tandis qu'il tente de la convaincre qu'elle peut tout avoir. Et le prix à payer ? Simplement son âme mortelle…",
+    genres: "romance,femal lead,surnaturel,",
+    date: "2018",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "120",
+    chLus: "",
+    chJade: "113",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aoneononeyourhigness: {
+    title: "A One on One, Your Highness",
+    otherTitles: ["The Suspicious Queen / Un contre Un, Votre Altesse"],
+    image: "https://cdn.mangaupdates.com/image/i318284.jpg",
+    description: "Lorsqu'une fille moderne voyage dans le temps jusqu'aux temps anciens et se retrouve piégée dans le corps d'une concubine abandonnée, Yun XiangChang, et victime d'intimidation par d'autres concubines de la résidence du prince Qin, sa forte personnalité moderne éclate et renverse tout le harem.",
+    genres: "romance,historical,female lead,transmigration,fantasy",
+    date: "2018",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "218",
+    chLus: "",
+    chJade: "83",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aboveallgods: {
+    title: "Above All Gods",
+    otherTitles: ["Supreme Lord / Supreme Master / The True Path"],
+    image: "https://cdn.mangaupdates.com/image/i412600.png",
+    description: "« Penser qu'autrefois, j'ai massacré des immortels, puni des démons et pris le contrôle du monde souterrain... ! »\nGu TianLang était autrefois l'infâme empereur des Enfers, où il régnait sur les immortels comme sur les démons d'une main de fer. Le mot-clé ici, c'est « était ». Lorsqu'il encourt la colère du Dao Céleste – un ancien souverain ayant atteint l'immortalité et un pouvoir démoniaque supérieur – son peuple se retourne contre lui et assiège son château. Encerclé et dépassé en nombre, Gu TianLang est impitoyablement et publiquement dépouillé de ses pouvoirs, frappé et meurt.\nSeulement, grâce à un mystérieux jade, il se réveille 500 ans plus tard ! Parviendra-t-il à se venger du Dao Céleste et à reconquérir son royaume ?!",
+    genres: "cultivation,male lead,arts martiaux,return,action,aventure,badass",
+    date: "2018",
+    dernierLecture: "",
+    status: "abandonné",
+    chTotal: "514",
+    chLus: "",
+    chJade: "467",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aftertransformationmineandherwildfantasy: {
+    title: "After Transformation, Mine and Her Wild Fantasy",
     otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i296346.jpg",
+    description: "Lorsque d’autres personnes subissent une transformation corporelle, celle-ci se produit inévitablement soit d’homme à femme, soit de femme à homme.\nMoi ? Je me réveille et me retrouve transformé en deux corps différents.\nUn corps masculin et un corps féminin, une conscience qui gère deux corps, toutes sortes de moments embarrassants.\nMarcher ensemble fait normalement penser aux autres que je suis amoureux de moi-même, quelle tristesse.\nDe plus, toute l'affaire d'un héros sauvant la belle jeune fille, je l'appelle Bull.\nJe me fais trancher par une épée et mon corps de femme est enlevé, et il veut que je le remercie ?!?! Cela peut-il être moins tragique ?",
+    genres: "comédie,aventure,action,magie,arts martiaux",
+    date: "2016",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "141",
+    chLus: "",
+    chJade: "54",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  anz: {
+    title: "Anz",
+    otherTitles: ["The Memory of Wind"],
+    image: "https://cdn.mangaupdates.com/image/i489099.jpg",
+    description: "À l'Académie Winfred, prestigieuse école de magie, les élèves n'ont qu'une idée en tête : devenir la prochaine Sorcière du Vent, l'une des quatre sorcières protégeant le continent. Au milieu de cette effervescence, une mystérieuse élève, Anz, s'efforce d'éviter les ennuis…",
+    genres: "academy,male lead,action,fantasy,magie",
+    date: "2015",
+    dernierLecture: "",
+    status: "abandonné",
+    chTotal: "298",
+    chLus: "",
+    chJade: "23",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  atasteoflove: {
+    title: "A Taste of Love",
+    otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i342609.jpg",
+    description: "La gourmande Xia Meng est sortie acheter un en-cas de minuit et a eu un accident de voiture qui l'a transportée dans le corps d'une servante d'un autre monde ! Ainsi commença officiellement sa vie de romance, de cuisine et d'aventure !",
+    genres: "comédie,romance,female lead,drame,fantasy,cooking,magie,transmigration",
+    date: "2018",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "80",
+    chLus: "",
+    chJade: "7",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  avillainisagoodmatchforatyrant: {
+    title: "A Villain Is a Good Match for a Tyrant",
+    otherTitles: ["A Villainess for the Tyrant"],
+    image: "https://cdn.mangaupdates.com/image/i416507.jpg",
+    description: "« Je préférerais simplement partir en beauté ! »\nPour la princesse Cécile, être mariée à l'empereur d'un empire voisin était inévitable. Mais attendez, n'est-ce pas le même empereur Estien, connu pour son sadique impitoyable ? Afin de préserver son dernier semblant de dignité, l'intrépide Cécile exige que son futur époux la porte du carrosse jusqu'à la chapelle nuptiale ! Si tel est son destin, autant se battre avant de mourir aux mains du bel empereur. Après tout, le seul moyen de combattre le feu, c'est par… encore du feu ?! Cécile deviendra-t-elle une méchante encore plus redoutable que son tyran de mari ?",
+    genres: "drame,female lead,romance,",
+    date: "2020",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "104",
+    chLus: "",
+    chJade: "52",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  awaytoprotectthelovableyou: {
+    title: "A Way to Protect the Lovable You",
+    otherTitles: ["A Way to Protect You, Sweetheart / Saving My Sweetheart / How to Keep Your Sweetheart / La sainte et le dragon / The Way to Protect the Lovable You"],
+    image: "https://cdn.mangaupdates.com/image/i480437.jpg",
+    description: "Bien qu'elle soit la fille du chef divin le plus vénéré du Saint-Empire, Leticia est réputée pour être une tyranne impitoyable et sanguinaire. Le fait est que… aucune de ces rumeurs n'est vraie ! Après avoir vécu des années comme le bouc émissaire de sa mère vindicative, Leticia est condamnée à mourir si elle ne tue pas son époux bien-aimé, le roi Ditrian, de ses propres mains. Mais lorsque l'horloge se remet miraculeusement à l'heure quelques jours avant leur mariage, elle obtient une seconde chance de sauver non seulement Ditrian, mais son royaume tout entier. Cette fois, le monde reconnaîtra-t-il la véritable Leticia avant qu'il ne soit trop tard, ou l'histoire est-elle condamnée à se répéter ",
+    genres: "romance,drame,fantasy,female lead,abuse,seconde chance",
+    date: "2021",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "152",
+    chLus: "",
+    chJade: "38",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  abductamommyandbringherhome: {
+    title: "Abduct a Mommy and Take Her Home",
+    otherTitles: ["Abduct a Mommy and Bring Her Home / Take Your Mommy Home / You Look Like My Son's Mommy"],
+    image: "https://cdn.mangaupdates.com/image/i311170.jpg",
+    description: "Quoi ? Il y a cinq ans, c'est toi qui m'as couchée ? Et pourquoi cinq ans plus tard, c'est encore toi ?\nBai Chu Xiao, furieux, saisit Jiang Cheng Yu par le col et lui dit : « J'ai traversé tant de moments difficiles, comment comptez-vous me dédommager ? » Le sourire maléfique de Jiang Cheng Yu le serra dans ses bras et lui dit :\n« Deux bébés et ma vie suffiront-ils pour te dédommager ? »",
+    genres: "romance,mother,drame,female lead,moderne",
+    date: "2019",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "423",
+    chLus: "",
+    chJade: "129",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  actuallyiwastherealone: {
+    title: "Actually, I Was the Real One",
+    otherTitles: ["Actually, I'm the Real One / I Am the Real One / La vraie, c'est moi !"],
+    image: "https://cdn.mangaupdates.com/image/i480428.jpg",
+    description: "Une prophétie prédisait que le Grand-Duc n'aurait qu'un seul élémentaliste de l'eau né de lui. Bien qu'elle ne bénéficie pas de l'affection de son père, Keira sait qu'elle est destinée à ces pouvoirs. Mais après des années à faire ce qui était juste et convenable pour une noble, elle est exécutée après l'apparition de la machiavélique Cosette, qui prétend être la vraie fille du Grand-Duc. Mais soudain, Keira se réveille avec un nouveau but : apporter des changements, se faire des alliés, et même des amis, avant qu'il ne soit trop tard. Cela suffira-t-il à empêcher Cosette de fomenter son complot ?",
+    genres: "drame,fantasy,romance,female lead,seconde chance",
+    date: "2020",
+    dernierLecture: "",
+    status: "Pause",
+    chTotal: "150",
+    chLus: "",
+    chJade: "93",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  airplanes: {
+    title: "Airplanes",
+    otherTitles: ["Avions"],
+    image: "https://res.mbbcdn.com/thumb/airplanes.png",
+    description: "Sora est une architecte renommée, célèbre pour de nombreux bâtiments à travers le monde. Pour une femme qui voyage si souvent pour son travail, son choix de carrière entre paradoxalement en conflit avec sa peur de l'avion. Si le monde entier connaît son travail et tout ce qu'elle a apporté au monde de l'architecture, sa personnalité reste un secret. Ses fans, ses employeurs et même ses proches sont impatients d'en savoir plus sur elle. Sora est une énigme, un mystère, qui refuse de révéler ses cicatrices… jusqu'à ce qu'un pilote nommé Taehyun entre dans sa vie. Pour Sora, il ouvre non seulement le ciel, mais aussi son cœur.",
+    genres: "drame,romance,female lead,moderne",
+    date: "2019",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "28",
+    chLus: "",
+    chJade: "28",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  arcanesniper: {
+    title: "Arcane Sniper",
+    otherTitles: ["Le Mousquetaire virtuel / The Freeshooter / The Marksman / Mystic Musketeer"],
+    image: "https://cdn.mangaupdates.com/image/i476076.jpg",
+    description: "L'ancien tireur d'élite paraplégique Ha Yiha prend un nouveau départ dans le jeu VR « Middle Earth ». Il espère devenir un joueur puissant et gagner assez d'argent pour se payer une opération, mais un petit problème survient… une déconnexion intempestive le contraint à jouer le rôle de mousquetaire, la classe la plus inefficace du jeu. Heureusement, il peut utiliser ses talents de tireur d'élite pour propulser le mousquetaire vers de nouveaux sommets. Alors que ses progrès sans précédent attirent l'attention et lui donnent lieu à de nouvelles quêtes, Yiha pense avoir une chance de réussir, mais il se trouve peut-être en plein danger.",
+    genres: "jeux vidéo,drame,aventure,male lead",
+    date: "2021",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "190",
+    chLus: "",
+    chJade: "42",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  arifuretashokugyoudesekaisaikou: {
+    title: "From Common Job Class to the Strongest in the World",
+    otherTitles: ["Arifureta Shokugyou de Sekai Saikyou / Arifureta - De zéro à Héros / Arifureta Shokugyou de Sekaisaikyou / Arifureta: From Commonplace to World's Strongest"],
+    image: "https://cdn.mangaupdates.com/image/i474580.jpg",
+    description: "Hajime Nagumo, 17 ans, est un otaku ordinaire. Cependant, sa vie simple, faite de nuits blanches et de sommeil à l'école, est soudainement bouleversée lorsqu'il est convoqué, avec le reste de sa classe, dans un monde fantastique. Alors que ses camarades sont dotés de pouvoirs divins et chargés de sauver l'humanité de l'extinction, Hajime, synergiste, ne possède qu'une seule compétence de transmutation. Parviendra-t-il à survivre dans ce monde dangereux peuplé de monstres et de démons avec la force d'un forgeron ?",
+    genres: "male lead,isekai,manga,drame,aventure,action,magie,fantasy,dungeon",
+    date: "2016",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "87",
+    chLus: "",
+    chJade: "64",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  ability: {
+    title: "Ability",
+    otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i154613.jpg",
+    description: "Un monde surnaturel où les forts s'attaquent aux faibles. Une Terre pas réservée aux humains… et une étrange capacité !",
+    genres: "male lead,moderne,arts martiaux,drame,actioon,power,surnaturel",
+    date: "2012",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "60",
+    chLus: "",
+    chJade: "",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  areturnersmagicshouldbespecial: {
+    title: "A Returner's Magic Should Be Special ",
+    otherTitles: ["Magician who Reversing Time / Returner's Special Magic"],
+    image: "https://cdn.mangaupdates.com/image/i486767.jpg",
+    description: "Depuis 10 ans, le prodige magique Désir et son groupe luttent dans le mystérieux Labyrinthe des Ombres, contre la fin du monde. Une grande partie de l'humanité a déjà péri et, alors qu'il est sur le point d'être tué, Désir est renvoyé 13 ans dans le passé. Malgré la connaissance du futur maudit qui l'attend, Désir renforce sa détermination, voyant là une occasion d'entraîner ses amis et de mieux se préparer à affronter l'Armageddon ensemble, sans perdre ceux qu'ils aiment.",
+    genres: "male lead,second chance,drame,action,magie,academy,aventure,fantasy",
+    date: "2018",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "268",
+    chLus: "",
+    chJade: "204",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  allhailthesectleader: {
+    title: "All Hail the Sect Leader",
+    otherTitles: ["The Greatest Sect Leader of All-Time"],
+    image: "https://cdn.mangaupdates.com/image/i344782.jpg",
+    description: "Tous les membres de ma secte sont exceptionnellement forts. Tous mes disciples se révèlent être de grands noms, et je deviendrai invincible dans ce monde !",
+    genres: "system,male lead,fantasy,cultivation,action,aventure,transmigration,disciple",
+    date: "2021",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "429",
+    chLus: "",
+    chJade: "221",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  anotheremperorreborn: {
+    title: "Another Emperor Reborn",
+    otherTitles: ["Different Kings / Rebirth of the Different Emperor"],
     image: "",
+    description: "Le Reiki est une résurrection, le monde entier est couvert d'une forte aura, et les créatures de la terre en sont affectées. Les humains ont vécu un récit selon lequel ils avaient des pouvoirs plus forts, et d'autres créatures en plus des humains ont également évolué rapidement sous l'influence d'Aura. Certaines races puissantes et mystérieuses sont apparues en silence. La légende dit que le pouvoir est resté : la famille dans un autre monde, par coïncidence, l'âme d'un autre prince royal mondial est entré dans le corps d'un jeune humain ordinaire.",
+    genres: "transmigration,male lead,fantasy,action,cultivation,arts martiaux",
+    date: "2018",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "368",
+    chLus: "",
+    chJade: "256",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  amiinvincible: {
+    title: "Am I Invincible",
+    otherTitles: ["When Did I Become Unbeatable?"],
+    image: "",
+    description: "Il a toujours pensé qu'il était un mortel, mais il ne savait pas que sa cour était pleine d'armes divines et que les poulets qu'il élevait ressemblaient plus à des phénix ! Ce n'est qu'après cinq ans de vie dans un village mortel que le système lui a finalement permis d'entrer en contact avec des cultivateurs. C'est alors qu'il a découvert que peu importe la force de quelqu'un, au moment où ils le voyaient, ils auraient tellement peur que leurs jambes devenaient engourdies et l'appellerait senior. Certains se sont même agenouillés et l'ont adoré…",
+    genres: "male lead,badass,comédie,action,cultivation,fantasy,transmigration",
+    date: "2021",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "315",
+    chLus: "",
+    chJade: "41",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  apocalypticthief: {
+    title: "Apocalyptic Thief",
+    otherTitles: ["Going Rogue in the Apocalypse / Rogue of Doom"],
+    image: "https://cdn.mangaupdates.com/image/i398696.jpg",
+    description: "Une tempête cosmique provoque la mutation des espèces. La ville est infestée de rôdeurs morts et de monstres rugissants qui se disputent la souveraineté du territoire. Les survivants s'éveillent à un pouvoir surnaturel appelé Pouvoir des Étoiles pour se défendre contre les envahisseurs. Zheng Zhou, dépourvu de Pouvoir des Étoiles, a migré vers ce monde apocalyptique et a utilisé son personnage comme un voyou pour dissiper les brumes obscures et traquer le pouvoir suprême.",
+    genres: "apocalypse,male lead,action,cultivation,transmigration",
+    date: "2021",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "163",
+    chLus: "",
+    chJade: "48",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  ahunterscourshipmethod: {
+    title: "A Hunter's Courtship Method",
+    otherTitles: ["The Huntress and Her Love Prey / La chasse à l'amour"],
+    image: "https://cdn.mangaupdates.com/image/i490119.jpg",
+    description: "Aria, une chasseuse sauvage qui a passé toute sa vie dans la forêt, rencontre un bel inconnu dans sa cabane. Qui est cet intrus et d'où vient-il ? Ce qui n'était au départ qu'une curiosité se transforme en attention, en amitié et bien plus encore. Apprenant peu à peu la véritable identité de cet inconnu, elle pénètre dans un monde nouveau dont elle ignorait l'existence. Aria est déjà la meilleure chasseuse de la ville, mais parviendra-t-elle à conquérir le cœur de sa nouvelle proie ? Quelles aventures l'attendent dans ce nouveau monde ?",
+    genres: "romance,female lead,action,fantasy,comédie",
+    date: "2020",
+    dernierLecture: "",
+    status: "Complet",
+    chTotal: "71",
+    chLus: "",
+    chJade: "55",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aftersigninginfor30daysicanannihilatestars: {
+    title: "After Signing in for 30 Days, I Can Annihilate Stars",
+    otherTitles: ["Log In With Max Level / OP After 30 Days of Sign-in / Sign in with Star-Blasting Punch / Signed 30 Days and I Can Destroy a Star With One Punch / The Savior's 30-Day Unstoppable Streak / Zero to Hero in 30 Days"],
+    image: "https://cdn.mangaupdates.com/image/i477370.jpg",
+    description: "L'invasion des Dieux d'un autre monde. Des milliers de sauveurs ont été sélectionnés pour pénétrer dans la zone secrète, une bataille sanglante contre les bêtes, retransmise en direct dans le monde entier. Chu Mo : Tu es fou ? Les autres sauveurs sont tous des cultivateurs immortels, sauf moi. Est-il raisonnable de demander à une personne ordinaire de combattre des bêtes au corps à corps ? Le système d'inscription démarre. Le premier jour d'inscription, la puissance d'une bête millénaire est récompensée. Le deuxième jour, l'expérience de combat du Dieu de la Guerre Légendaire est récompensée… Le trentième jour d'inscription, je peux détruire une planète d'un seul coup de poing !",
+    genres: "male lead,moderne,action,drame,arts martiaux,badass,system",
+    date: "2021",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "157",
+    chLus: "",
+    chJade: "49",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aqueenslawofsurvival: {
+    title: "A Queen's Law of Survival",
+    otherTitles: ["How to Be a Princess / A Princess' Law of Survival"],
+    image: "https://cdn.mangaupdates.com/image/i309424.jpg",
+    description: "Elle a renoncé à l'immortalité par amour, mais a finalement découvert que son amant l'avait trahie. Lorsqu'elle a la chance de renaître en princesse, elle doit affronter le danger d'être sacrifiée par son père pour sauver son jeune frère. Parviendra-t-elle à changer son destin ?",
+    genres: "drame,réincarnation,romance,child lead,cultivation",
+    date: "2019",
+    dernierLecture: "",
+    status: "abandonné",
+    chTotal: "183",
+    chLus: "",
+    chJade: "93",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  absoluteswordsense: {
+    title: "Absolute Sword Sense",
+    otherTitles: ["Le Sens de l'épée / Perfect Sword Sense"],
+    image: "https://cdn.mangaupdates.com/image/i483503.jpg",
+    description: "D'aussi loin qu'il se souvienne, Woonhwi So a toujours été le mouton noir de sa famille et de son clan. Son noyau spirituel ayant été détruit, il n'a d'autre choix que de servir d'espion de second ordre au Culte du Sang. Un jour, alors qu'il part à la recherche d'un légendaire Parchemin de Lame, il est tué et projeté dix ans en arrière. Lorsque Woonhwi reprend conscience, il réalise qu'il a été renvoyé au jour de son enlèvement par le Culte du Sang et qu'il a acquis le mystérieux pouvoir d'entendre la voix d'une dague.",
+    genres: "action,aventure,arts martiaux,male lead,cultivation,seconde chance,murim",
+    date: "2022",
+    dernierLecture: "",
+    status: "En cours",
+    chTotal: "136",
+    chLus: "",
+    chJade: "21",
+    externalLinks: {
+      "": "",
+      "": ""
+    }
+  },
+  aidoctor: {
+    title: "A.I. Doctor ",
+    otherTitles: [""],
+    image: "https://cdn.mangaupdates.com/image/i459120.jpgion:",
     description: "",
     genres: "",
     date: "",
@@ -1345,4 +2271,4 @@ const mangaData = {
   },
 
 
- }
+}
