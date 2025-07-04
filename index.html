@@ -50,6 +50,7 @@
       <input type="checkbox" id="badass" value="badass" /><label for="badass">Badass</label>
       <input type="checkbox" id="beast world" value="beast world" /><label for="beast world">Beast world</label>
       <input type="checkbox" id="business" value="business" /><label for="business">Business</label>
+      <input type="checkbox" id="brother" value="brother" /><label for="brother">Brother</label>
       <input type="checkbox" id="caretaker" value="caretaker" /><label for="caretaker">Caretaker</label>
       <input type="checkbox" id="child lead" value="child lead" /><label for="child lead">Child lead</label>
       <input type="checkbox" id="comédie" value="comédie" /><label for="comédie">Comédie</label>
@@ -126,11 +127,28 @@
       <span id="closeSortSidebarBtn" class="close-btn">×</span>
     </div>
 
-    <div class="sort-buttons sidebar-genres d-flex flex-column gap-2 mt-3">
-      <button onclick="setSort('alphabetique')" class="btn btn-outline-primary">Alphabétique (A-Z)</button>
-      <button onclick="setSort('date')" class="btn btn-outline-primary">Plus récent</button>
+ <div class="sort-buttons sidebar-genres d-flex flex-column gap-2 mt-3">
+  <div class="row">
+    <div class="col-9">
+      <button onclick="setSort('alphabetique')">Trier de A-Z</button>
+    </div>
+    <div class="col-3 sidebar-genres flex-column">
+      <div class="letter-dropdown">
+        <button onclick="toggleLetterDropdown()" class="dropdown-toggle">Lettre</button>
+        <div id="letterDropdownContent" class="dropdown-content">
+          <input type="text" id="letterSearchInput" placeholder="Rechercher une lettre..." oninput="filtrerLettres(this.value)">
+          <div id="letterButtonsContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="sort-buttons">
+  <button onclick="setSort('date')">Plus récent</button>
+  </div>
       <div class="sort-dropdown">
-        <button class="dropdown-toggle">Statut</button>
+        <button class="dropdown-toggle" onclick="toggleStatusDropdown()">Statut</button>
         <div class="dropdown-menu">
           <button onclick="filterByStatus('')">Tous</button>
           <button onclick="filterByStatus('complet')">Complet</button>
@@ -141,10 +159,13 @@
       </div>
 
       <div class="row">
-        <div class="d-flex flex-wrap gap-2 col-8">
-          <button onclick="setSort('genres')" class="btn btn-outline-primary">Genres similaires</button>
+        <div class="d-flex flex-wrap gap-2 col-8 sort-buttons sidebar-genres flex-column mt-2 ">
+         <div class="sort-buttons">
+  <button onclick="setSort('genres')">Genres similaires</button>
+</div>
+
         </div>
-        <div class="col-4">
+        <div class="col-4 d-flex flex-wrap gap-2 sort-buttons sidebar-genres flex-column mt-2">
           <select class="form-select" onchange="allerA(this.value)">
             <option value="">Aller à...</option>
             <option value="protagoniste : female lead">Protagoniste : Female Lead</option>
@@ -159,30 +180,31 @@
       <div class="mt-3">
         <label for="minChapitresInput" class="form-label">Nombre de chapitres minimum :</label>
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-8">
             <input type="number" id="minChapitresInput" placeholder="ex: 50" class="form-control mb-2" />
           </div>
-          <div class="col-md-4">
-            <button onclick="setSort('chapitresMin')" class="btn btn-outline-success">Filtrer</button>
+          <div class="col-4">
+            <button onclick="setSort('chapitresMin')" class="btn-sort">Filtrer</button>
           </div>
         </div>
       </div>
 
-      <select id="lectureFilter">
-        <option value="StatusArtles">Status Artles</option>
-        <option value="nonCommence">Non commencé</option>
-        <option value="enCours">En cours</option>
-        <option value="termine">Terminé</option>
-      </select>
+      <div class="mt-4">
+    <select id="lectureFilter">
+      <option value="tous">Artles</option>
+      <option value="nonCommence">Non commencé</option>
+      <option value="enCours">En cours</option>
+      <option value="termine">Terminé</option>
+    </select>
 
-      <select id="jadeFilter">
-        <option value="tous">Status Jay</option>
-        <option value="nonCommence">Non commencé</option>
-        <option value="enCours">En cours</option>
-        <option value="termine">Terminé</option>
-      </select>
-
-
+    
+    <select id="jadeFilter">
+      <option value="tous">Jay</option>
+      <option value="nonCommence">Non commencé</option>
+      <option value="enCours">En cours</option>
+      <option value="termine">Terminé</option>
+    </select>
+</div>
 
 
     </div>
@@ -223,6 +245,17 @@
 
           <p id="popupDescription"></p>
           <div id="popupExternalLinks" class="external-links" style="display: flex; flex-wrap: wrap; "></div>
+
+          <div id="popupSimilaires" class="popup-section text-center mt-4">
+  <h5>Mangas similaires</h5>
+  <div id="popupSimilairesContainer" class="popup-similaire-cards"></div>
+</div>
+
+          <!-- Page -->
+         <div id="popupPage" class="popup-section text-center mt-4">
+          <p><strong></strong> <span id="popupPageValue"></span></p>
+          </div>
+
         </div>
       </div>
     </div>

@@ -95,7 +95,6 @@ function setSort(type) {
     currentSort = type;
   }
 
-  // Boutons actifs
   document.querySelectorAll('.sort-buttons button').forEach(btn => {
     btn.classList.remove('active');
     if (btn.textContent.toLowerCase().includes(type)) {
@@ -105,10 +104,16 @@ function setSort(type) {
 
   if (type === 'genres') {
     trierParGenresSimilaires();
+  } else if (type === 'alphabetique') {
+    trierParAZAvecSections();
   } else {
+    // Supprime la barre alphabétique si présente
+    const nav = document.getElementById("alphabetNav");
+    if (nav) nav.remove();
     afficherAvecFiltres();
   }
 }
+
 
 function normalizeGenresArray(genres) {
   if (!genres) return [];
@@ -251,12 +256,26 @@ function displayGroupedByStatus(items) {
   container.innerHTML = '';
 
   items.forEach(item => {
-    if (item.isTitle) {
-      const line = document.createElement('div');
-      line.className = 'status-divider';
-      line.textContent = `— ${capitalizeFirstLetter(item.title)} —`;
-      container.appendChild(line);
-    } else {
+   if (item.isTitle) {
+  const line = document.createElement('div');
+  line.className = 'status-divider';
+  line.setAttribute('data-letter', item.title);      // ajoute la lettre
+  line.setAttribute('data-count', item.count || 0);  // ajoute le nombre
+
+  const mainTitle = document.createElement('div');
+  mainTitle.textContent = capitalizeFirstLetter(item.title);
+  mainTitle.className = 'divider-title';
+
+  const count = document.createElement('div');
+  count.textContent = `${item.count || 0} manga${item.count > 1 ? 's' : ''}`;
+  count.className = 'divider-count';
+
+  line.appendChild(mainTitle);
+  line.appendChild(count);
+  container.appendChild(line);
+}
+
+ else {
       const id = item.id || Object.keys(mangaData).find(key => mangaData[key] === item);
       const imageSrc = item.image && item.image.trim() !== '' ? item.image : 'image/fond.jpg';
 
@@ -295,14 +314,11 @@ function openPopup(id) {
   const manga = mangaData[id];
   document.getElementById('popupTitle').innerText = manga.title;
   document.getElementById('popupImg').src = manga.image || 'image/fond.jpg';
-  const formattedDescription = (manga.description || '')
-  .split('\n')
-  .map(p => `<p>${p.trim()}</p>`)
-  .join('');
-document.getElementById('popupDescription').innerHTML = formattedDescription;
-
+  document.getElementById('popupDescription').innerHTML = manga.description || '';
   document.getElementById('popupGenres').innerText = formatGenres(manga.genres || "");
   document.getElementById('popupOtherTitles').innerText = manga.otherTitles?.join(', ') || "Aucun";
+  document.getElementById('popupPageValue').textContent = manga.page || 'N/A';
+
 
   // Ch et Ch total
   const popupChContainer = document.getElementById('popupChContainer');
@@ -344,7 +360,11 @@ document.getElementById('popupDescription').innerHTML = formattedDescription;
     externalLinksContainer.innerHTML = "<em>Aucun lien externe disponible.</em>";
   }
 
-  document.getElementById('popup').style.display = 'flex';
+// À la fin de openPopup
+document.getElementById('popup').style.display = 'flex';
+afficherCartesSimilaires(manga);  // ✅ Corrigé ici
+
+
 }
 
 
@@ -360,26 +380,35 @@ function formatGenres(genres) {
 }
 
 function resetFilters() {
-  // Réinitialiser la recherche
+  // 1. Réinitialiser la recherche
   searchInput.value = '';
 
-  // Décoche tous les genres
+  // 2. Décoche tous les genres
   checkboxes.forEach(cb => cb.checked = false);
 
-  // Réinitialise le filtre de lecture
+  // 3. Réinitialise les filtres de lecture et jade
   const lectureFilter = document.getElementById("lectureFilter");
   if (lectureFilter) lectureFilter.value = 'tous';
 
-  // Vide le champ de chapitres minimum
+  const jadeFilter = document.getElementById("jadeFilter");
+  if (jadeFilter) jadeFilter.value = 'tous';
+
+  // 4. Vide le champ de chapitres minimum
   const minChapitresInput = document.getElementById("minChapitresInput");
   if (minChapitresInput) minChapitresInput.value = '';
 
-  // Réinitialise le tri
+  // 5. Supprime le tri actif
   currentSort = null;
+  document.querySelectorAll('.sort-buttons button').forEach(btn => btn.classList.remove('active'));
 
-  // Recharge avec tous les mangas
+  // 6. Supprime la barre alphabétique si elle existe
+  const nav = document.getElementById("alphabetNav");
+  if (nav) nav.remove();
+
+  // 7. Réaffiche tout
   afficherAvecFiltres();
 }
+
 
 window.addEventListener("click", (e) => {
   const genreSidebar = document.getElementById("genreSidebar");
@@ -533,6 +562,10 @@ window.addEventListener('click', () => {
   document.querySelector('.sort-dropdown').classList.remove('open');
 });
 
+document.querySelector('.sort-dropdown').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
 document.getElementById("lectureFilter").addEventListener("change", afficherAvecFiltres);
 
 document.getElementById("openSidebarBtn").addEventListener("click", () => {
@@ -612,6 +645,143 @@ function trierParGenresSimilaires() {
   displayGroupedByStatus(resultatFinal);
 }
 
+function displayGroupedByLetter(items) {
+  container.innerHTML = '';
+
+  items.forEach(item => {
+    if (item.isTitle) {
+      const line = document.createElement('div');
+      line.className = 'status-divider';
+      line.setAttribute('data-letter', item.title);      // ← utile pour scrollToLetter
+      line.setAttribute('data-count', item.count || 0);
+
+      const mainTitle = document.createElement('div');
+      mainTitle.textContent = item.title;
+      mainTitle.className = 'divider-title';
+
+      const count = document.createElement('div');
+      count.textContent = `${item.count || 0} manga${item.count > 1 ? 's' : ''}`;
+      count.className = 'divider-count';
+
+      line.appendChild(mainTitle);
+      line.appendChild(count);
+      container.appendChild(line);
+    } else {
+      const id = Object.keys(mangaData).find(key => mangaData[key] === item);
+      const imageSrc = item.image && item.image.trim() !== '' ? item.image : 'image/fond.jpg';
+
+      const card = document.createElement('div');
+      card.classList.add('manga');
+      card.setAttribute('data-id', id);
+      card.setAttribute('data-title', item.title.toLowerCase());
+
+      const genresStr = Array.isArray(item.genres)
+        ? item.genres.map(g => g.toLowerCase().trim()).join(',')
+        : (item.genres || '').toLowerCase().trim();
+      card.setAttribute('data-genres', genresStr);
+      card.setAttribute('data-othertitles', (item.otherTitles || []).join(',').toLowerCase());
+
+      card.innerHTML = `
+        <img src="${imageSrc}" alt="Couverture de ${item.title || 'Manga'}">
+        <h3>${item.title || 'Sans titre'}</h3>
+      `;
+
+      card.addEventListener('click', () => openPopup(id));
+      container.appendChild(card);
+    }
+  });
+}
+
+
+function trierParAZAvecSections() {
+  afficherAvecFiltres();
+  const cards = Array.from(document.querySelectorAll('.manga'));
+  const idsAffiches = cards.map(card => card.getAttribute('data-id'));
+  let mangas = idsAffiches.map(id => mangaData[id]);
+
+
+  // Appliquer tous les filtres existants
+  const lectureVal = document.getElementById("lectureFilter")?.value || "tous";
+  const jadeVal = document.getElementById("jadeFilter")?.value || "tous";
+  const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
+    .map(cb => cb.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+  const search = searchInput.value.trim();
+  const minInput = document.getElementById("minChapitresInput");
+  const minCh = parseInt(minInput?.value) || 0;
+
+  // Filtres combinés
+  mangas = mangas.filter(m => {
+    const chTotal = parseInt(m.chTotal || 0);
+    const lusArray = (m.chLus || "").replace(/[^\d.]/g, '').split('.').filter(x => x !== '').map(Number);
+    const jade = parseInt(m.chJade) || 0;
+    const maxLu = Math.max(...lusArray, 0);
+    const status = (m.status || "").toLowerCase();
+
+    let lectureOK = true, jadeOK = true;
+    if (lectureVal === "nonCommence") lectureOK = lusArray.length === 0;
+    else if (lectureVal === "enCours") lectureOK = lusArray.length > 0 && maxLu < chTotal;
+    else if (lectureVal === "termine") lectureOK = maxLu === chTotal && (status === "complet" || status === "abandonné");
+
+    if (jadeVal === "nonCommence") jadeOK = jade === 0;
+    else if (jadeVal === "enCours") jadeOK = jade > 0 && jade < chTotal;
+    else if (jadeVal === "termine") jadeOK = jade === chTotal && (status === "complet" || status === "abandonné");
+
+    if (lectureVal !== "tous" && !lectureOK) return false;
+    if (jadeVal !== "tous" && !jadeOK) return false;
+
+    if (selectedGenres.length > 0) {
+      const genres = normalizeGenresArray(m.genres);
+      if (!selectedGenres.every(g => genres.includes(g))) return false;
+    }
+
+    if (search) {
+      const haystack = [m.title, ...(m.otherTitles || [])].join(' ').toLowerCase();
+      if (!haystack.includes(search.toLowerCase())) return false;
+    }
+
+    if (minCh > 0 && chTotal < minCh) return false;
+
+    return true;
+  });
+
+  // Tri alphabétique
+  mangas.sort((a, b) => a.title.localeCompare(b.title));
+
+  // Grouper par lettre
+  const grouped = {};
+  mangas.forEach(m => {
+    const firstLetter = (m.title || "?").charAt(0).toUpperCase();
+    if (!grouped[firstLetter]) grouped[firstLetter] = [];
+    grouped[firstLetter].push(m);
+  });
+
+  // Fusionner en tableau final
+  const resultat = [];
+  Object.keys(grouped).sort().forEach(letter => {
+    resultat.push({ isTitle: true, title: letter, count: grouped[letter].length });
+    resultat.push(...grouped[letter]);
+  });
+displayGroupedByLetter(resultat);
+  // Mise à jour des boutons A-Z après affichage
+const btnContainer = document.getElementById("letterButtonsContainer");
+btnContainer.innerHTML = ''; // Vider l'ancien contenu
+
+const lettres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+lettres.forEach(lettre => {
+  const section = document.querySelector(`.status-divider[data-letter="${lettre}"]`);
+  const count = section ? parseInt(section.dataset.count || 0) : 0;
+
+  const btn = document.createElement("button");
+  btn.innerHTML = `
+    <span class="lettre">${lettre}</span>
+    <span class="count">${count > 0 ? count : ''}</span>
+  `;
+  btn.onclick = () => scrollToLetter(lettre);
+  btnContainer.appendChild(btn);
+});
+  
+}
+
 
 function allerA(groupe) {
   const sections = document.querySelectorAll('.status-divider');
@@ -628,20 +798,111 @@ function allerA(groupe) {
 
 document.getElementById("jadeFilter").addEventListener("change", afficherAvecFiltres);
 
-function convertirDescriptionsEnParagraphes(codeSource) {
-  return codeSource.replace(
-    /description:\s*"((?:[^"\\]|\\.)*?)"/gs,
-    (_, contenu) => {
-      const blocsParagraphe = contenu
-        .replace(/\\n/g, '\n')
-        .split('\n')
-        .map(l => `<p>${l.trim()}</p>`)
-        .join('');
-      const safe = blocsParagraphe.replace(/`/g, '\\`');
-      return `description: \`${safe}\``;
-    }
-  );
+function toggleLetterDropdown() {
+  const dropdown = document.getElementById("letterDropdownContent");
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
+
+function filtrerLettres(lettre) {
+  const buttons = document.querySelectorAll('#letterButtonsContainer button');
+  const lettreRecherche = lettre.trim().toUpperCase();
+
+  buttons.forEach(btn => {
+    if (!lettreRecherche || btn.textContent.includes(lettreRecherche)) {
+      btn.style.display = 'inline-block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+}
+
+function scrollToLetter(lettre) {
+  const section = document.querySelector(`.status-divider[data-letter="${lettre}"]`);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    section.style.backgroundColor = "#fffae6";
+    setTimeout(() => section.style.backgroundColor = "", 1000);
+  }
+
+  // Ferme le dropdown
+  const dropdown = document.getElementById("letterDropdownContent");
+  if (dropdown) dropdown.style.display = "none";
+}
+
+// Ouvre / ferme le menu des lettres
+function toggleLetterDropdown() {
+  const dropdown = document.getElementById("letterDropdownContent");
+  dropdown.classList.toggle("show");
+}
+
+// Ouvre / ferme le menu des statuts
+function toggleStatusDropdown() {
+  const statusMenu = document.querySelector(".sort-dropdown .dropdown-menu");
+  statusMenu.classList.toggle("show");
+}
+
+// Fermer les dropdowns quand on clique en dehors
+document.addEventListener("click", function (event) {
+  const letterBtn = document.querySelector(".letter-dropdown .dropdown-toggle");
+  const letterContent = document.getElementById("letterDropdownContent");
+  const statusBtn = document.querySelector(".sort-dropdown .dropdown-toggle");
+  const statusMenu = document.querySelector(".sort-dropdown .dropdown-menu");
+
+  if (!letterBtn.contains(event.target) && !letterContent.contains(event.target)) {
+    letterContent.classList.remove("show");
+  }
+
+  if (!statusBtn.contains(event.target) && !statusMenu.contains(event.target)) {
+    statusMenu.classList.remove("show");
+  }
+});
+
+function afficherCartesSimilaires(manga) {
+  const container = document.getElementById('popupSimilairesContainer');
+  container.innerHTML = '';
+
+  if (!manga.similaires || manga.similaires.length === 0) {
+    container.innerHTML = '<p>Aucun manga similaire.</p>';
+    return;
+  }
+
+  manga.similaires.forEach(id => {
+    const similaire = mangaData[id];
+    if (!similaire) return;
+
+    const card = document.createElement('div');
+    card.className = 'similaire-card';
+    card.setAttribute('data-id', id);
+
+    const imageSrc = similaire.image?.trim() || 'image/fond.jpg';
+
+    card.innerHTML = `
+      <img src="${imageSrc}" alt="${similaire.title}">
+      <div class="info">
+        <h5>${similaire.title}</h5>
+        <p>${similaire.chTotal || '?'} chapitres</p>
+      </div>
+    `;
+
+    // ✅ Important : délai pour bien ouvrir le nouveau popup
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closePopup();
+      setTimeout(() => openPopup(id), 100);
+    });
+
+    container.appendChild(card);
+  });
+}
+
+
+
+
+
+
+
+
+
 
 
 
