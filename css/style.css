@@ -751,25 +751,39 @@ select:focus {
   gap: 10px;
 }
 
-.similaire-card:hover {
-  transform: scale(1.03);
+.popup-similaire-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .similaire-card {
-  width: 120px;
-  margin: 0.5em;
-  cursor: pointer;
+  width: 100%;
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.5rem;
   text-align: center;
-  background-color: #181818;
-  border-radius: 5px;
-  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.similaire-card:hover {
+  transform: scale(1.02);
+}
+
+.similaire-card-title {
+  padding: 6px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #fff;
 }
 
 .similaire-card img {
   width: 100%;
   height: auto;
-  border-radius: 5px;
-  max-height: 7rem;
+  border-radius: 4px;
+  max-height: 5rem;
 }
 
 .similaire-card .info {
@@ -777,14 +791,76 @@ select:focus {
   margin-top: 0.3em;
 }
 
-.similaire-card p {
-  font-size: 0.75rem;
-  margin: 0 5px 5px 5px;
-  color: #aaa;
+.similaire-card p{
+  font-size: 0.8rem;
+  margin: 5px;
+  color: #e5e0e0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;    
+  line-clamp: 2;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.6em; 
 }
 
-.similaire-card h5 {
-  font-size: 0.8rem;
-  margin: 0 5px 5px 5px;
-  color: #e5e0e0;
+.similaires-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
+
+@media (max-width: 768px) {
+  .similaire-card {
+    flex: 1 1 calc(33.33% - 12px);
+    max-width: calc(33.33% - 12px);
+  }
+}
+
+.popup-genres-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#popupGenres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.popup-genres-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.popup-genres-line .label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.genres-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  flex:1;
+}
+
+.genre-tag {
+  background-color: #535151;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+

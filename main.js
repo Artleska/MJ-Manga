@@ -8,45 +8,45 @@ const genreImportance = {
   "animals": 3,
   "apocalypse": 4,
   "art": 2,
-  "arts-martiaux": 2,
+  "arts-martiaux": [5, 9],
   "aventure": 1,
   "badass": 5,
-  "beast world": 5,
+  "beast world": [5, 7],
   "business": 3,
   "caretaker": 3,
-  "child lead": 4,
+  "child lead": [5, 2],
   "comédie": 1,
   "cooking": 5,
   "crossdressing": 2,
   "cultivation": 4,
   "drame": 2,
   "disciple": 2,
-  "dungeon": 5,
+  "dungeon":[5, 10],
   "enfant": 3,
-  "fantasy": 5,
+  "fantasy": [5, 7],
   "father": 4,
   "female lead": 1,
   "food": 3,
   "jeux vidéo": 3,
   "ghosts": 2,
   "harem": 2,
-  "historical": 5,
+  "historical": [5, 5],
   "horreur": 3,
   "isekai": 3,
   "idol": 4,
   "long life": 2,
   "magie": 2,
   "male lead": 1,
-  "manga": 4,
+  "manga": [5, 1],
   "mature": 2,
   "mécanique": 2,
-  "médicale": 4,
+  "médicale": [5, 11],
   "militaire": 2,
-  "moderne": 5,
+  "moderne": [5, 4],
   "monstre": 1,
   "mother": 3,
   "murim": 4,
-  "multi world": 5,
+  "multi world": [5, 6],
   "musique": 3,
   "mystère": 5,
   "novel": 2,
@@ -63,12 +63,12 @@ const genreImportance = {
   "school life": 1,
   "seconde chance": 3,
   "secret identity": 4,
-  "sick": 5,
+  "sick": [5, 2],
   "sport": 1,
   "suicide":1,
   "superhero": 1,
   "surnaturel": 2,
-  "system": 5,
+  "system": [5, 12],
   "time travel": 2,
   "tower": 4,
   "tyrant": 4,
@@ -276,7 +276,9 @@ function displayGroupedByStatus(items) {
 }
 
  else {
-      const id = item.id || Object.keys(mangaData).find(key => mangaData[key] === item);
+const id = Object.keys(mangaData).find(key => mangaData[key] === item);
+if (!id) return;
+
       const imageSrc = item.image && item.image.trim() !== '' ? item.image : 'image/fond.jpg';
 
       const card = document.createElement('div');
@@ -315,7 +317,14 @@ function openPopup(id) {
   document.getElementById('popupTitle').innerText = manga.title;
   document.getElementById('popupImg').src = manga.image || 'image/fond.jpg';
   document.getElementById('popupDescription').innerHTML = manga.description || '';
-  document.getElementById('popupGenres').innerText = formatGenres(manga.genres || "");
+const popupGenres = document.getElementById('popupGenres');
+popupGenres.innerHTML = '';
+(manga.genres || []).forEach(genre => {
+  const span = document.createElement('span');
+  span.className = 'genre-tag';
+  span.textContent = genre.trim();
+  popupGenres.appendChild(span);
+});
   document.getElementById('popupOtherTitles').innerText = manga.otherTitles?.join(', ') || "Aucun";
   document.getElementById('popupPageValue').textContent = manga.page || 'N/A';
 
@@ -360,9 +369,24 @@ function openPopup(id) {
     externalLinksContainer.innerHTML = "<em>Aucun lien externe disponible.</em>";
   }
 
+if (
+  !Array.isArray(manga.similaires) ||
+  manga.similaires.length === 0 ||
+  manga.similaires.every(val => typeof val !== 'string' || val.trim() === "")
+) {
+  const autoSimilaires = trouverMangasSimilairesAuto(manga);
+  manga.similaires = autoSimilaires;
+  mangaData[id].similaires = autoSimilaires;
+}
+
+
+
+
+
+
 // À la fin de openPopup
 document.getElementById('popup').style.display = 'flex';
-afficherCartesSimilaires(manga);  // ✅ Corrigé ici
+afficherCartesSimilaires(manga);  
 
 
 }
@@ -545,12 +569,31 @@ if (search) {
 
   // 6. Affichage final
   displayMangas(mangas);
+
+
 }
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  // ✅ Ajoute l'ID aux mangas AVANT tout affichage
+  Object.entries(mangaData).forEach(([id, manga]) => {
+    manga.id = id;
+  });
+
+  // ✅ Ensuite on peut afficher
   afficherAvecFiltres();
+
+  // Lier le bouton après chargement complet du DOM
+  const btnSimilaires = document.getElementById("btnGenresSimilaires");
+  if (btnSimilaires) {
+    btnSimilaires.addEventListener("click", () => {
+      setSort("genres");
+    });
+  }
 });
+
+
+
 
 
 document.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
@@ -585,65 +628,128 @@ document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
 });
 
 
+function trierParSimilariteLocale(mangas) {
+  return mangas
+    .map(manga => {
+      const score = mangas.reduce((acc, other) => {
+        if (manga === other) return acc;
+        return acc + calculerSimilariteGenres(manga, other);
+      }, 0);
+      return { manga, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .map(obj => obj.manga);
+}
 
 
 function trierParGenresSimilaires() {
-  let mangasFiltres = Object.values(mangaData);
+  const regroupes = {
+    female: [],
+    male: [],
+    autres: []
+  };
 
-  // Appliquer tous les filtres
-  afficherAvecFiltres(); // ça met à jour l'affichage mais on veut récupérer les données filtrées
+  const mangasFiltres = Object.values(mangaData).filter(manga => {
+    const genres = normalizeGenresArray(manga.genres || []);
+    return !genres.includes("doujinshi");
+  });
 
-  // Récupérer les mangas actuellement affichés
-  const cards = Array.from(document.querySelectorAll('.manga'));
-  const idsAffiches = cards.map(card => card.getAttribute('data-id'));
-  mangasFiltres = idsAffiches.map(id => mangaData[id]);
-
-  // Normalise les genres
-  const normalizedMangas = mangasFiltres.map(m => ({
-    ...m,
-    genresNorm: normalizeGenresArray(m.genres || [])
-  }));
-
-  // Grouper
-  const groupes = { 'female lead': [], 'male lead': [], 'autres': [] };
-
-  normalizedMangas.forEach(m => {
-    const genres = m.genresNorm;
-    if (genres.includes('female lead')) {
-      groupes['female lead'].push(m);
-    } else if (genres.includes('male lead')) {
-      groupes['male lead'].push(m);
+  // Séparation par type de protagoniste
+  mangasFiltres.forEach(manga => {
+    const genres = normalizeGenresArray(manga.genres || []);
+    if (genres.includes("female lead")) {
+      regroupes.female.push(manga);
+    } else if (genres.includes("male lead")) {
+      regroupes.male.push(manga);
     } else {
-      groupes['autres'].push(m);
+      regroupes.autres.push(manga);
     }
   });
 
-  function computeWeightedSimilarityScore(manga, group) {
-    return group.reduce((sum, other) => {
-      if (manga === other) return sum;
-      const common = manga.genresNorm.filter(g => other.genresNorm.includes(g));
-      return sum + common.reduce((score, g) => score + (genreImportance[g] || 1), 0);
-    }, 0);
-  }
+  const resultat = [];
+  const genreCounts = calculerGenresPopulaires(mangaData, 5);
 
-  Object.keys(groupes).forEach(groupe => {
-    groupes[groupe].forEach(m => {
-      m.similarityScore = computeWeightedSimilarityScore(m, groupes[groupe]);
+  Object.entries(regroupes).forEach(([type, liste]) => {
+    if (liste.length === 0) return;
+
+    const titreType = type === "female" ? "Protagoniste féminine"
+                    : type === "male" ? "Protagoniste masculine"
+                    : "Autres";
+
+    resultat.push({ isTitle: true, title: titreType });
+
+    const groupesParGenre = {};
+    const autres = [];
+
+    // Étape 1 — Déterminer le genre dominant
+    liste.forEach(manga => {
+      const genres = normalizeGenresArray(manga.genres || []);
+      let genreDominant = null;
+      let poidsMax = 0;
+
+      const candidats = genres.filter(g => {
+        const val = genreImportance[g];
+        const poids = Array.isArray(val) ? val[0] : val || 1;
+        return poids >= 5;
+      });
+
+      if (candidats.length > 0) {
+        genreDominant = candidats.sort((a, b) => {
+          const [poidsA, prioA = 99] = Array.isArray(genreImportance[a]) ? genreImportance[a] : [genreImportance[a] || 1, 99];
+          const [poidsB, prioB = 99] = Array.isArray(genreImportance[b]) ? genreImportance[b] : [genreImportance[b] || 1, 99];
+          return poidsB - poidsA || prioA - prioB;
+        })[0];
+
+        const dominantVal = genreImportance[genreDominant];
+        poidsMax = Array.isArray(dominantVal) ? dominantVal[0] : dominantVal || 1;
+      }
+
+      if (poidsMax >= 5 && genreDominant) {
+        if (!groupesParGenre[genreDominant]) groupesParGenre[genreDominant] = [];
+        groupesParGenre[genreDominant].push(manga);
+      } else {
+        autres.push(manga);
+      }
     });
-    groupes[groupe].sort((a, b) => b.similarityScore - a.similarityScore);
+
+    // Étape 2 — Ajouter les mangas sans genre dominant dans les groupes
+    autres.forEach(manga => {
+      const genres = normalizeGenresArray(manga.genres || []);
+      let placé = false;
+
+      for (const genre of genres) {
+        if (groupesParGenre[genre]) {
+          groupesParGenre[genre].push(manga);
+          placé = true;
+          break;
+        }
+      }
+
+      // Si aucun groupe ne correspond, on peut choisir d’ignorer ou de les ajouter à un groupe par défaut
+      if (!placé) {
+        // Optionnel : on peut les mettre dans le groupe le plus populaire
+        const [genrePlusPopulaire] = Object.entries(groupesParGenre).sort((a, b) => b[1].length - a[1].length)[0] || [];
+        if (genrePlusPopulaire) {
+          groupesParGenre[genrePlusPopulaire].push(manga);
+        }
+      }
+    });
+
+    // Étape 3 — Afficher les groupes triés
+    Object.entries(groupesParGenre)
+      .sort((a, b) => b[1].length - a[1].length)
+      .forEach(([genre, mangas]) => {
+        const similaires = trierParSimilariteLocale(mangas);
+        resultat.push(...similaires);
+      });
+
+    // ❌ PAS de section "Autres mangas similaires"
   });
 
-  // Fusionner
-  const resultatFinal = [];
-  for (const groupe of ['female lead', 'male lead', 'autres']) {
-    if (groupes[groupe].length > 0) {
-      resultatFinal.push({ isTitle: true, title: `Protagoniste : ${groupe}` });
-      resultatFinal.push(...groupes[groupe]);
-    }
-  }
-
-  displayGroupedByStatus(resultatFinal);
+  displayGroupedByStatus(resultat);
 }
+
+
 
 function displayGroupedByLetter(items) {
   container.innerHTML = '';
@@ -861,12 +967,14 @@ function afficherCartesSimilaires(manga) {
   const container = document.getElementById('popupSimilairesContainer');
   container.innerHTML = '';
 
-  if (!manga.similaires || manga.similaires.length === 0) {
-    container.innerHTML = '<p>Aucun manga similaire.</p>';
+  const similaires = manga.similaires;
+
+  if (!similaires || similaires.length === 0) {
+    container.innerHTML = '<p>Aucun manga similaire trouvé.</p>';
     return;
   }
 
-  manga.similaires.forEach(id => {
+  similaires.forEach(id => {
     const similaire = mangaData[id];
     if (!similaire) return;
 
@@ -877,23 +985,140 @@ function afficherCartesSimilaires(manga) {
     const imageSrc = similaire.image?.trim() || 'image/fond.jpg';
 
     card.innerHTML = `
-      <img src="${imageSrc}" alt="${similaire.title}">
-      <div class="info">
-        <h5>${similaire.title}</h5>
-        <p>${similaire.chTotal || '?'} chapitres</p>
-      </div>
+      <img src="${imageSrc}" alt="${similaire.title}" />
+      <p>${similaire.title}</p>
     `;
 
-    // ✅ Important : délai pour bien ouvrir le nouveau popup
-    card.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closePopup();
-      setTimeout(() => openPopup(id), 100);
-    });
-
+    card.addEventListener('click', () => openPopup(id)); 
     container.appendChild(card);
   });
 }
+
+
+
+function trouverMangasSimilairesAuto(manga) {
+  const scores = [];
+
+  const typeProtagoniste = manga.genres.includes("female lead") ? "female lead" :
+                           manga.genres.includes("male lead") ? "male lead" : "autre";
+
+  const genrePrincipal = getGenreDominant(manga);
+
+  for (const id in mangaData) {
+    if (id === manga.id) continue;
+
+    const autre = mangaData[id];
+    if (!autre.genres || autre.genres.length === 0) continue;
+
+    // Vérifie type de protagoniste
+    const autreType = autre.genres.includes("female lead") ? "female lead" :
+                      autre.genres.includes("male lead") ? "male lead" : "autre";
+    if (autreType !== typeProtagoniste) continue;
+
+    // Calcule score de similarité
+    let score = 0;
+    let genreCommun = false;
+    for (const genre of manga.genres) {
+      if (autre.genres.includes(genre)) {
+        const importance = genreImportance[genre];
+        if (typeof importance === 'number') {
+          score += importance;
+        } else if (Array.isArray(importance)) {
+          score += importance[0]; // pondération
+        } else {
+          score += 1;
+        }
+
+        if (genre === genrePrincipal) {
+          genreCommun = true; // genre dominant en commun
+        }
+      }
+    }
+
+    // Bonus si même genre dominant
+    if (getGenreDominant(autre) === genrePrincipal) {
+      score += 5;
+    }
+
+    if (score > 0) {
+      scores.push({ id, score, genreCommun });
+    }
+  }
+
+  // Trie par score DESC puis genre dominant commun
+  scores.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    if (b.genreCommun && !a.genreCommun) return 1;
+    if (!b.genreCommun && a.genreCommun) return -1;
+    return 0;
+  });
+
+  return scores.slice(0, 6).map(obj => obj.id);
+}
+
+
+
+
+function calculerGenresPopulaires(mangaData, seuil = 5) {
+  const genreCounts = {};
+
+  Object.values(mangaData).forEach(manga => {
+    const genres = normalizeGenresArray(manga.genres || []);
+    genres.forEach(g => {
+      if ((genreImportance[g] || 1) >= seuil) {
+        genreCounts[g] = (genreCounts[g] || 0) + 1;
+      }
+    });
+  });
+
+  return genreCounts;
+}
+
+function calculerSimilariteGenres(m1, m2) {
+  const genres1 = normalizeGenresArray(m1.genres || []);
+  const genres2 = normalizeGenresArray(m2.genres || []);
+  let score = 0;
+
+  genres1.forEach(g => {
+    if (genres2.includes(g)) {
+      score += genreImportance[g] || 1;
+    }
+  });
+
+  return score;
+}
+
+function getGenreDominant(manga) {
+  if (!manga.genres || manga.genres.length === 0) return null;
+
+  let maxPoids = -Infinity;
+  let meilleurGenre = null;
+  let meilleurePriorite = Infinity;
+
+  for (const genre of manga.genres) {
+    const valeur = genreImportance[genre];
+    if (!valeur) continue;
+
+    let poids = 0;
+    let priorite = 999;
+
+    if (typeof valeur === "number") {
+      poids = valeur;
+      priorite = 999;
+    } else if (Array.isArray(valeur)) {
+      [poids, priorite] = valeur;
+    }
+
+    if (poids > maxPoids || (poids === maxPoids && priorite < meilleurePriorite)) {
+      maxPoids = poids;
+      meilleurePriorite = priorite;
+      meilleurGenre = genre;
+    }
+  }
+
+  return maxPoids >= 5 ? meilleurGenre : null;
+}
+
 
 
 
