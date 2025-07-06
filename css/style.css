@@ -420,19 +420,6 @@ img, .manga, .popup-content {
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .sidebar {
-    top: 0;
-    right: 0;
-    width: 33.33%;
-    height: 100%;
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-}
-
 @media (max-width: 767px) {
   #mangaContainer {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));

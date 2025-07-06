@@ -561,7 +561,7 @@ if (search) {
     mangas.sort((a, b) => new Date(b.date || "2000-01-01") - new Date(a.date || "2000-01-01"));
   } else if (currentSort === 'chapitresMin') {
     mangas.sort((a, b) => (parseInt(b.chTotal || 0)) - (parseInt(a.chTotal || 0)));
-  } else {
+  }else if (!search) {
     // Mélange aléatoire si aucun tri activé
     mangas.sort(() => Math.random() - 0.5);
   }
@@ -670,11 +670,18 @@ function trierParGenresSimilaires() {
   const genreCounts = calculerGenresPopulaires(mangaData, 5);
 
   Object.entries(regroupes).forEach(([type, liste]) => {
-    if (liste.length === 0) return;
+  if (liste.length === 0) return;
 
-    const titreType = type === "female" ? "Protagoniste féminine"
-                    : type === "male" ? "Protagoniste masculine"
-                    : "Autres";
+  const titreType = type === "female" ? "Protagoniste féminine"
+                  : type === "male" ? "Protagoniste masculine"
+                  : "Autres";
+
+  const titre = document.createElement('h2');
+  titre.className = 'section-title mt-5 mb-3 border-bottom pb-2';
+  titre.textContent = titreType;
+
+  // ✅ Ajout de l'id pour permettre le scroll via le menu déroulant
+  titre.id = `section-${type}`;
 
     resultat.push({ isTitle: true, title: titreType });
 
@@ -742,14 +749,10 @@ function trierParGenresSimilaires() {
         const similaires = trierParSimilariteLocale(mangas);
         resultat.push(...similaires);
       });
-
-    // ❌ PAS de section "Autres mangas similaires"
   });
 
   displayGroupedByStatus(resultat);
 }
-
-
 
 function displayGroupedByLetter(items) {
   container.innerHTML = '';
@@ -888,19 +891,25 @@ lettres.forEach(lettre => {
   
 }
 
+function allerA(value) {
+  let cible = null;
 
-function allerA(groupe) {
-  const sections = document.querySelectorAll('.status-divider');
+  if (value === 'protagoniste : female lead') {
+    cible = document.getElementById('section-female');
+  } else if (value === 'protagoniste : male lead') {
+    cible = document.getElementById('section-male');
+  } else if (value === 'protagoniste : autres') {
+    cible = document.getElementById('section-autres');
+  }
 
-  for (const section of sections) {
-    if (section.textContent.toLowerCase().includes(groupe.toLowerCase())) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      section.style.backgroundColor = "#fffae6";
-      setTimeout(() => section.style.backgroundColor = "", 1000);
-      break;
-    }
+  if (cible) {
+    cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    cible.style.backgroundColor = "#fffae6";
+    setTimeout(() => cible.style.backgroundColor = "", 1000);
   }
 }
+
+
 
 document.getElementById("jadeFilter").addEventListener("change", afficherAvecFiltres);
 
@@ -967,16 +976,14 @@ function afficherCartesSimilaires(manga) {
   const container = document.getElementById('popupSimilairesContainer');
   container.innerHTML = '';
 
-  const similaires = manga.similaires;
+  const similairesManuels = (manga.similaires || []).filter(id => mangaData[id]);
+  const similairesUniques = new Set();
+  const cartesAAfficher = [];
 
-  if (!similaires || similaires.length === 0) {
-    container.innerHTML = '<p>Aucun manga similaire trouvé.</p>';
-    return;
-  }
-
-  similaires.forEach(id => {
+  // Ajouter les similaires définis manuellement
+  similairesManuels.forEach(id => {
     const similaire = mangaData[id];
-    if (!similaire) return;
+    if (!similaire || similaire.protagoniste !== manga.protagoniste || similairesUniques.has(id)) return;
 
     const card = document.createElement('div');
     card.className = 'similaire-card';
@@ -989,10 +996,47 @@ function afficherCartesSimilaires(manga) {
       <p>${similaire.title}</p>
     `;
 
-    card.addEventListener('click', () => openPopup(id)); 
+    card.addEventListener('click', () => openPopup(id));
     container.appendChild(card);
+    cartesAAfficher.push(id);
+    similairesUniques.add(id);
   });
+
+  // Compléter automatiquement si moins de 6
+  if (cartesAAfficher.length < 6) {
+    const similairesAuto = trouverMangasSimilairesAuto(manga);
+
+    for (let id of similairesAuto) {
+      if (cartesAAfficher.length >= 6) break;
+      if (similairesUniques.has(id)) continue;
+
+      const similaire = mangaData[id];
+      if (!similaire || similaire.protagoniste !== manga.protagoniste) continue;
+
+      const card = document.createElement('div');
+      card.className = 'similaire-card';
+      card.setAttribute('data-id', id);
+
+      const imageSrc = similaire.image?.trim() || 'image/fond.jpg';
+
+      card.innerHTML = `
+        <img src="${imageSrc}" alt="${similaire.title}" />
+        <p>${similaire.title}</p>
+      `;
+
+      card.addEventListener('click', () => openPopup(id));
+      container.appendChild(card);
+      cartesAAfficher.push(id);
+      similairesUniques.add(id);
+    }
+  }
+
+  // Si encore vide, message
+  if (cartesAAfficher.length === 0) {
+    container.innerHTML = '<p>Aucun manga similaire trouvé.</p>';
+  }
 }
+
 
 
 
