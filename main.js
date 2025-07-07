@@ -1,5 +1,52 @@
+const mangaData = {};
+
+async function chargerMangas() {
+  const fichiers = [
+    'json/a-b-c-d.json',
+    'json/e-f-g-h.json',
+    'json/i.json',
+    'json/j-k-l-m-n-o.json',
+    'json/p-q-r-s.json',
+    'json/t.json',
+    'json/u-v-w-x-y-z.json'
+  ];
+
+  for (const fichier of fichiers) {
+    try {
+      const reponse = await fetch(fichier);
+      const donnees = await reponse.json();
+      Object.assign(mangaData, donnees);
+    } catch (err) {
+      console.error(`Erreur lors du chargement de ${fichier} :`, err);
+    }
+  }
+
+  // Ajoute un ID à chaque manga
+  Object.entries(mangaData).forEach(([id, manga]) => {
+    manga.id = id;
+  });
+
+  // Affichage initial
+  afficherAvecFiltres();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  chargerMangas();
+
+  // Bouton "Genres similaires"
+  const btnSimilaires = document.getElementById("btnGenresSimilaires");
+  if (btnSimilaires) {
+    btnSimilaires.addEventListener("click", () => {
+      setSort("genres");
+    });
+  }
+});
+
+
+
 const genreImportance = {
   "abuse": 1,
+  
   "academy": 3,
   "acting": 3,
   "action": 1,
@@ -570,31 +617,7 @@ if (search) {
   // 6. Affichage final
   displayMangas(mangas);
 
-
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Ajoute l'ID aux mangas AVANT tout affichage
-  Object.entries(mangaData).forEach(([id, manga]) => {
-    manga.id = id;
-  });
-
-  // ✅ Ensuite on peut afficher
-  afficherAvecFiltres();
-
-  // Lier le bouton après chargement complet du DOM
-  const btnSimilaires = document.getElementById("btnGenresSimilaires");
-  if (btnSimilaires) {
-    btnSimilaires.addEventListener("click", () => {
-      setSort("genres");
-    });
-  }
-});
-
-
-
-
 
 document.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
   e.stopPropagation();
@@ -755,6 +778,8 @@ function trierParGenresSimilaires() {
 }
 
 function displayGroupedByLetter(items) {
+  const container = document.getElementById('mangaContainer');
+
   container.innerHTML = '';
 
   items.forEach(item => {
@@ -1163,6 +1188,19 @@ function getGenreDominant(manga) {
   return maxPoids >= 5 ? meilleurGenre : null;
 }
 
+chargerMangas();
+
+document.addEventListener("DOMContentLoaded", () => {
+  chargerMangas();
+
+  // Lier le bouton "Genres similaires"
+  const btnSimilaires = document.getElementById("btnGenresSimilaires");
+  if (btnSimilaires) {
+    btnSimilaires.addEventListener("click", () => {
+      setSort("genres");
+    });
+  }
+});
 
 
 
