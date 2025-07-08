@@ -44,14 +44,22 @@
     <label for="description" class="form-label">Description</label>
     <textarea id="description" class="form-control"></textarea>
   </div>
-  <div class="mb-2">
-    <label for="genres" class="form-label">Genres (séparés par des virgules)</label>
-    <input type="text" id="genres" class="form-control" />
-  </div>
-  <div class="mb-2">
-    <label for="status" class="form-label">Statut</label>
-    <input type="text" id="status" class="form-control" />
-  </div>
+ <div>
+  <label for="genres">Genres :</label>
+  <div id="formGenresTagsContainer" class="tags-container"></div>
+  <input type="hidden" id="genres" name="genres">
+</div>
+ <div>
+  <label for="status">Statut :</label>
+  <select id="status">
+    <option value="">— Choisir un statut —</option>
+    <option value="en cours">En cours</option>
+    <option value="terminé">Complet</option>
+    <option value="pause">Pause</option>
+    <option value="abandonné">Abandonné</option>
+  </select>
+</div>
+
   <div class="mb-2">
     <label for="chTotal" class="form-label">Chapitres total</label>
     <input type="number" id="chTotal" class="form-control" />

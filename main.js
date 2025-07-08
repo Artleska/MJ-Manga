@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const genreImportance = {
   "abuse": 1,
-  
   "academy": 3,
   "acting": 3,
   "action": 1,
@@ -400,15 +399,12 @@ popupGenres.innerHTML = '';
     externalLinksContainer.innerHTML = "<em>Aucun lien externe disponible.</em>";
   }
 
-if (
-  !Array.isArray(manga.similaires) ||
-  manga.similaires.length === 0 ||
-  manga.similaires.every(val => typeof val !== 'string' || val.trim() === "")
-) {
-  const autoSimilaires = trouverMangasSimilairesAuto(manga);
-  manga.similaires = autoSimilaires;
-  mangaData[id].similaires = autoSimilaires;
-}
+const similairesManuels = Array.isArray(manga.similaires) && manga.similaires.length > 0
+  ? manga.similaires
+  : null;
+
+const similairesAAfficher = similairesManuels || trouverMangasSimilairesAuto(manga);
+
 
 if (auth.currentUser && utilisateursAutorises.includes(auth.currentUser.email)) {
   document.getElementById('boutonsAdmin').innerHTML = `

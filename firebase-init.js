@@ -143,53 +143,127 @@ function activerEditionManga(id) {
   if (!manga) return;
 
   // Title editable
-  document.getElementById('popupTitle').innerHTML = `<input type="text" id="edit-title" value="${manga.title}">`;
+  document.getElementById('popupTitle').innerHTML = `
+    <label for="edit-title"><strong>Titre :</strong></label>
+    <input type="text" id="edit-title" value="${manga.title}">
+  `;
 
   // Description editable
-  document.getElementById('popupDescription').innerHTML = `<textarea id="edit-description" rows="4">${manga.description || ''}</textarea>`;
+  document.getElementById('popupDescription').innerHTML = `
+    <label for="edit-description"><strong>Description :</strong></label>
+    <textarea id="edit-description" rows="4">${manga.description || ''}</textarea>
+  `;
 
-  // Genres (affichage non modifiable dans ce cas, à complexifier si besoin)
-  // Tu peux aussi envisager un champ texte simple
-  const genresString = (manga.genres || []).join(', ');
-  const popupGenres = document.getElementById('popupGenres');
-  popupGenres.innerHTML = `<input type="text" id="edit-genres" value="${genresString}">`;
+  // Genres avec tags cliquables
+  const genresPossibles = [
+    
+  "abuse","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
+  "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
+  "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
+  "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
+  "mother","murim","multi world","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
+  "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
+  "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
+  "villainess","yaoi"];
+  
+  // Conteneur des tags genre
+  let genresHtml = `<label><strong>Genres :</strong></label><div id="genresTagsContainer" style="margin-bottom:10px;">`;
+  genresPossibles.forEach(genre => {
+    const actif = (manga.genres || []).includes(genre);
+    genresHtml += `<span class="genre-tag ${actif ? 'active' : ''}" data-genre="${genre}">${genre}</span>`;
+  });
+  genresHtml += `</div>`;
 
-  // Status / Date / DernierLecture
+  // Liste texte des genres sélectionnés
+  const selectedGenres = (manga.genres || []).join(', ');
+  genresHtml += `
+    <label><strong>Genres sélectionnés :</strong></label>
+    <div id="selectedGenresText" style="margin-bottom:15px; font-style: italic;">${selectedGenres || 'Aucun'}</div>
+  `;
+
+  document.getElementById('popupGenres').innerHTML = genresHtml;
+
+  // Ajout du gestionnaire de clic sur les tags genre (à faire après l'insertion dans le DOM)
+  document.querySelectorAll('#genresTagsContainer .genre-tag').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('active');
+
+      // Mise à jour de la liste sélectionnée
+      const actifs = Array.from(document.querySelectorAll('#genresTagsContainer .genre-tag.active'))
+        .map(span => span.getAttribute('data-genre'));
+
+      const selectedTextEl = document.getElementById('selectedGenresText');
+      if (actifs.length === 0) {
+        selectedTextEl.textContent = 'Aucun';
+      } else {
+        selectedTextEl.textContent = actifs.join(', ');
+      }
+    });
+  });
+
+
+  // Status select
+  const statusPossibles = ["En cours", "Complet", "Abandonné", "Pause"];
+  const statusSelectHtml = `
+    <label for="edit-status"><strong>Status :</strong></label>
+    <select id="edit-status" style="width: 100%;">
+      <option value="">-- Choisir un statut --</option>
+      ${statusPossibles.map(stat => `
+        <option value="${stat}" ${manga.status === stat ? 'selected' : ''}>${stat}</option>
+      `).join('')}
+    </select>
+  `;
+
+  // Date et dernierLecture + status
   document.getElementById('popupDateStatus').innerHTML = `
-    <input type="text" id="edit-status" value="${manga.status || ''}" placeholder="Status">
-    <input type="text" id="edit-date" value="${manga.date || ''}" placeholder="Date">
-    <input type="text" id="edit-dernierLecture" value="${manga.dernierLecture || ''}" placeholder="Dernière lecture">
+    ${statusSelectHtml}
+    <label for="edit-date" style="margin-top: 8px; display: block;"><strong>Date :</strong></label>
+    <input type="text" id="edit-date" value="${manga.date || ''}" placeholder="Date" style="width: 100%; margin-bottom: 8px;">
+
+    <label for="edit-dernierLecture" style="display: block;"><strong>Dernière lecture :</strong></label>
+    <input type="text" id="edit-dernierLecture" value="${manga.dernierLecture || ''}" placeholder="Dernière lecture" style="width: 100%;">
   `;
 
   // Chapitres
   document.getElementById('popupChContainer').innerHTML = `
+    <label for="edit-chTotal"><strong>Chapitres total :</strong></label>
     <input type="number" id="edit-chTotal" value="${manga.chTotal || 0}" placeholder="Chapitres total" min="0">
+
+    <label for="edit-chLus" style="margin-top: 8px;"><strong>Chapitres lus :</strong></label>
     <input type="text" id="edit-chLus" value="${manga.chLus || ''}" placeholder="Chapitres lus">
+
+    <label for="edit-chJade" style="margin-top: 8px;"><strong>Ch (Jade) :</strong></label>
     <input type="number" id="edit-chJade" value="${manga.chJade || 0}" placeholder="Ch (Jade)" min="0">
   `;
 
   // Autres titres
-  document.getElementById('popupOtherTitles').innerHTML = `<input type="text" id="edit-otherTitles" value="${(manga.otherTitles || []).join(', ')}">`;
+  document.getElementById('popupOtherTitles').innerHTML = `
+    <label for="edit-otherTitles"><strong>Autres titres (séparés par /) :</strong></label>
+    <input type="text" id="edit-otherTitles" value="${(manga.otherTitles || []).join(' / ')}">
+  `;
 
   // Page
-  document.getElementById('popupPageValue').innerHTML = `<input type="text" id="edit-page" value="${manga.page || ''}">`;
+  document.getElementById('popupPageValue').innerHTML = `
+    <label for="edit-page"><strong>Page :</strong></label>
+    <input type="text" id="edit-page" value="${manga.page || ''}">
+  `;
 
   // Liens externes
   const liens = Object.entries(manga.externalLinks || {}).map(([nom, url]) => `${nom}:${url}`).join('\n');
-  document.getElementById('popupExternalLinks').innerHTML = `<textarea id="edit-externalLinks" rows="3">${liens}</textarea>`;
+  document.getElementById('popupExternalLinks').innerHTML = `
+    <label for="edit-externalLinks"><strong>Liens externes (format nom:url par ligne) :</strong></label>
+    <textarea id="edit-externalLinks" rows="3">${liens}</textarea>
+  `;
 
   // Similaires
-const similairesEl = document.getElementById('popup-similaires');
-if (similairesEl) {
-  // 🔍 uniquement les similaires définis manuellement (avant génération auto)
-  const similairesManuels = mangaData[id]?.similaires || [];
-
-  similairesEl.innerHTML = `
-    <label for="edit-similaires"><strong>Similaires définis manuellement :</strong></label>
-    <input type="text" id="edit-similaires" value="${similairesManuels.join(', ')}">
-  `;
-}
-
+  const similairesEl = document.getElementById('popupSimilaires');
+  if (similairesEl) {
+    const similairesManuels = (manga.similaires || []).filter(s => typeof s === 'string' && s.trim());
+    similairesEl.innerHTML = `
+      <label for="edit-similaires"><strong>Similaires définis manuellement (séparés par une virgule) :</strong></label>
+      <input type="text" id="edit-similaires" value="${similairesManuels.join(', ')}">
+    `;
+  }
 
   // Remplacer les boutons
   document.getElementById('boutonsAdmin').innerHTML = `
@@ -197,6 +271,7 @@ if (similairesEl) {
     <button onclick="closePopup()">❌ Annuler</button>
   `;
 }
+
 
 
 
@@ -214,7 +289,8 @@ function enregistrerModifications(id) {
   const chJade = parseInt(document.getElementById("edit-chJade")?.value) || 0;
   const otherTitles = (document.getElementById("edit-otherTitles")?.value || '').split('/').map(t => t.trim()).filter(t => t);
   const page = document.getElementById("edit-page")?.value.trim() || '';
-  const genres = (document.getElementById("edit-genres")?.value || '').split(',').map(g => g.trim().toLowerCase()).filter(g => g);
+  const genresTags = document.querySelectorAll('#genresTagsContainer .genre-tag.active');
+const selectedGenres = Array.from(genresTags).map(el => el.getAttribute('data-genre'));
   const externalLinks = parseLiensExternes(document.getElementById("edit-externalLinks")?.value || '');
 
 const modifs = {
@@ -228,7 +304,7 @@ const modifs = {
   chJade,
   otherTitles,
   page,
-  genres,
+  genres: selectedGenres,
   externalLinks,
   similaires: (document.getElementById("edit-similaires")?.value || "")
     .split(",")
@@ -280,3 +356,77 @@ function parseLiensExternes(input) {
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangasDepuisFirestore();
 });
+
+function afficherSimilairesEdition(manga) {
+  const container = document.getElementById('popupSimilairesContainer');
+  container.innerHTML = '';
+
+  // On affiche un textarea pour modifier uniquement les similaires manuels
+  const similairesManuels = (manga.similaires || []).join(', ');
+  
+  const textarea = document.createElement('textarea');
+  textarea.id = 'edit-similaires';
+  textarea.rows = 2;
+  textarea.style.width = '100%';
+  textarea.placeholder = "Liste des mangas similaires, séparés par une virgule";
+  textarea.value = similairesManuels;
+
+  container.appendChild(textarea);
+}
+
+const genresPossibles = [
+  "abuse","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
+  "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
+  "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
+  "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
+  "mother","murim","multi world","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
+  "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
+  "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
+  "villainess","yaoi"
+];
+
+function afficherGenresPourAjout() {
+  const container = document.getElementById("formGenresTagsContainer");
+  const hiddenInput = document.getElementById("genres");
+  const selected = new Set();
+
+  // Réinitialiser le contenu
+  container.innerHTML = '';
+
+  // Créer et insérer le résumé des genres sélectionnés (au-dessus)
+  const selectedText = document.createElement("div");
+  selectedText.id = "formSelectedGenresText";
+  selectedText.style.fontStyle = "italic";
+  selectedText.style.marginBottom = "8px";
+  selectedText.textContent = "Genres sélectionnés : Aucun";
+  container.parentNode.insertBefore(selectedText, container);
+
+  // Créer les genres cliquables
+  genresPossibles.forEach(genre => {
+    const span = document.createElement("span");
+    span.className = "genre-tag";
+    span.textContent = genre;
+
+    span.addEventListener("click", () => {
+      span.classList.toggle("selected");
+      if (span.classList.contains("selected")) {
+        selected.add(genre);
+      } else {
+        selected.delete(genre);
+      }
+
+      const selection = Array.from(selected);
+      hiddenInput.value = selection.join(", ");
+      selectedText.textContent = selection.length
+        ? `Genres sélectionnés : ${selection.join(', ')}`
+        : "Genres sélectionnés : Aucun";
+    });
+
+    container.appendChild(span);
+  });
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", afficherGenresPourAjout);
