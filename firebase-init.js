@@ -157,7 +157,7 @@ function activerEditionManga(id) {
   // Genres avec tags cliquables
   const genresPossibles = [
     
-  "abuse","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
+  "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
   "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
   "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
@@ -375,7 +375,7 @@ function afficherSimilairesEdition(manga) {
 }
 
 const genresPossibles = [
-  "abuse","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
+  "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
   "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
   "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
