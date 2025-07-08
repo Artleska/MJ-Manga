@@ -47,27 +47,71 @@
 
     <div class="container">
 
-  <h1>Ajouter un Manga</h1>
+<h2>Ajouter un nouveau manga</h2>
+<form id="formAjout" class="mb-4">
+  <div class="mb-2">
+    <label for="mangaId" class="form-label">ID (laisser vide pour auto-générer)</label>
+    <input type="text" id="mangaId" class="form-control" placeholder="ID unique" />
+  </div>
+  <div class="mb-2">
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" id="title" class="form-control" required />
+  </div>
+  <div class="mb-2">
+    <label for="otherTitles" class="form-label">Autres titres (séparés par des virgules)</label>
+    <input type="text" id="otherTitles" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="image" class="form-label">URL de l’image</label>
+    <input type="text" id="image" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" class="form-control"></textarea>
+  </div>
+  <div class="mb-2">
+    <label for="genres" class="form-label">Genres (séparés par des virgules)</label>
+    <input type="text" id="genres" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="status" class="form-label">Statut</label>
+    <input type="text" id="status" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="chTotal" class="form-label">Chapitres total</label>
+    <input type="number" id="chTotal" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="chLus" class="form-label">Chapitres lus</label>
+    <input type="text" id="chLus" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="chJade" class="form-label">Ch (Jade)</label>
+    <input type="number" id="chJade" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="date" class="form-label">Date</label>
+    <input type="text" id="date" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="dernierLecture" class="form-label">Dernière lecture</label>
+    <input type="text" id="dernierLecture" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="page" class="form-label">Page</label>
+    <input type="text" id="page" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="similaires" class="form-label">Similaires (IDs séparés par des virgules)</label>
+    <input type="text" id="similaires" class="form-control" />
+  </div>
+  <div class="mb-2">
+    <label for="externalLinks" class="form-label">Liens externes (nom:url par ligne)</label>
+    <textarea id="externalLinks" class="form-control" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Ajouter Manga</button>
+</form>
 
-  <form id="formAjout">
-    <input type="text" id="mangaId" placeholder="ID unique (ex: ThePrincessintheDumpster)" required>
-    <input type="text" id="title" placeholder="Titre principal" required>
-    <input type="text" id="otherTitles" placeholder="Autres titres (séparés par virgule)">
-    <input type="text" id="image" placeholder="URL de l’image">
-    <textarea id="description" placeholder="Description" rows="4"></textarea>
-    <input type="text" id="genres" placeholder="Genres (séparés par virgule)">
-    <input type="text" id="status" placeholder="Statut (complet, en cours...)">
-    <input type="number" id="chTotal" placeholder="Nombre total de chapitres">
-    <input type="text" id="chLus" placeholder="Chapitres lus (ex: 1.2.3)">
-    <input type="number" id="chJade" placeholder="Chapitres lus par Jade">
-    <input type="text" id="date" placeholder="Année de sortie (ex: 2020)">
-<input type="text" id="dernierLecture" placeholder="Dernière lecture (facultatif)">
-<input type="text" id="page" placeholder="Page (facultatif)">
-<input type="text" id="similaires" placeholder="IDs de mangas similaires (séparés par virgules)">
-<textarea id="externalLinks" placeholder="Liens externes (format: Nom:URL par ligne)"></textarea>
-
-    <button type="submit">Ajouter</button>
-  </form>
 
 </div>
 

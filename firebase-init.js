@@ -18,7 +18,7 @@ const firestore = firebase.firestore();
 
 const utilisateursAutorises = [
   "megane.lavoie24@gmail.com",
-  "adresse.de.lautre.jadelavoie51@gmail.com"
+  "jadelavoie51@gmail.com"
 ];
 
 function seConnecter() {
