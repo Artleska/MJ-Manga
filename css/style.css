@@ -851,3 +851,78 @@ select:focus {
   white-space: nowrap;
 }
 
+/* Conteneur de la popup : déjà flex et centré, on laisse */
+
+/* Style général des inputs dans le popup */
+.popup-content input[type="text"],
+.popup-content input[type="number"],
+.popup-content textarea {
+  width: 100%;            /* prend toute la largeur dispo */
+  padding: 8px 12px;
+  margin: 6px 0 12px 0;
+  font-size: 1.1rem;      /* un peu plus grand que normal */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #222; /* sombre pour style sombre */
+  color: #eee;
+}
+
+/* Agrandir la textarea */
+.popup-content textarea {
+  min-height: 80px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Boutons modifier/enregistrer/supprimer */
+#boutonsAdmin button {
+  background-color: #444;
+  border: none;
+  color: #eee;
+  padding: 10px 16px;
+  margin-right: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#boutonsAdmin button:hover {
+  background-color: #666;
+}
+
+/* Labels (si tu veux en ajouter) */
+.popup-content label {
+  font-weight: 600;
+  color: #ddd;
+  display: block;
+  margin-top: 12px;
+}
+
+/* Espace entre les inputs dans le formulaire */
+.edit-field {
+  margin-bottom: 16px;
+}
+
+/* Facultatif : alignement formulaire en colonne verticale */
+.popup-info {
+  max-width: 500px; /* limite largeur */
+}
+
+/* Plus d’espace entre titre et formulaire */
+.popup-info h2 {
+  margin-bottom: 16px;
+}
+
+/* Couleur fond popup plus sombre */
+.popup {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Pour améliorer la lisibilité du texte dans la popup */
+.popup-content p,
+.popup-content span,
+.popup-content div {
+  color: #eee;
+}

@@ -410,8 +410,14 @@ if (
   mangaData[id].similaires = autoSimilaires;
 }
 
-
-
+if (auth.currentUser && utilisateursAutorises.includes(auth.currentUser.email)) {
+  document.getElementById('boutonsAdmin').innerHTML = `
+    <button onclick="activerEditionManga('${id}')">Modifier</button>
+    <button onclick="supprimerManga('${id}')">Supprimer</button>
+  `;
+} else {
+  document.getElementById('boutonsAdmin').innerHTML = '';
+}
 
 
 
