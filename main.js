@@ -411,23 +411,6 @@ if (
 }
 
 
-const user = firebase.auth().currentUser;
-const email = user?.email;
-
-const adminEmails = [
-  "megane.lavoie24@gmail.com",
-  "adresse.de.lautre.jadelavoie51@gmail.com"
-];
-
-const boutonAdmin = document.getElementById("boutonsAdmin");
-
-if (user && adminEmails.includes(email)) {
-  boutonAdmin.innerHTML = `
-    <button onclick="activerEditionManga('${id}')">✏️ Modifier</button>
-  `;
-} else {
-  boutonAdmin.innerHTML = "";
-}
 
 
 
@@ -1192,7 +1175,7 @@ function getGenreDominant(manga) {
 chargerMangas();
 
 document.addEventListener("DOMContentLoaded", () => {
-  chargerMangas();
+  chargerMangasDepuisFirestore();
 
   // Lier le bouton "Genres similaires"
   const btnSimilaires = document.getElementById("btnGenresSimilaires");
