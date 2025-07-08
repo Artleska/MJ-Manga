@@ -1,34 +1,18 @@
-const mangaData = {};
+let mangaData = {};
 
 async function chargerMangas() {
-  const fichiers = [
-    'json/a-b-c-d.json',
-    'json/e-f-g-h.json',
-    'json/i.json',
-    'json/j-k-l-m-n-o.json',
-    'json/p-q-r-s.json',
-    'json/t.json',
-    'json/u-v-w-x-y-z.json'
-  ];
+  try {
+    const snapshot = await firestore.collection("mangas").get();
+    snapshot.forEach(doc => {
+      mangaData[doc.id] = doc.data();
+    });
 
-  for (const fichier of fichiers) {
-    try {
-      const reponse = await fetch(fichier);
-      const donnees = await reponse.json();
-      Object.assign(mangaData, donnees);
-    } catch (err) {
-      console.error(`Erreur lors du chargement de ${fichier} :`, err);
-    }
+    afficherAvecFiltres(); // Affiche les mangas une fois chargés
+  } catch (error) {
+    console.error("Erreur lors du chargement des mangas depuis Firestore :", error);
   }
-
-  // Ajoute un ID à chaque manga
-  Object.entries(mangaData).forEach(([id, manga]) => {
-    manga.id = id;
-  });
-
-  // Affichage initial
-  afficherAvecFiltres();
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangas();
