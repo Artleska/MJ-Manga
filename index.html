@@ -16,23 +16,25 @@
 
 <body class="pt-5">
 
-<nav class="navbar">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="nav-links d-flex gap-4">
+  <div id="compteurLecturesDisplay" style="position:fixed; bottom:10px; right:10px; background:#222; color:#fff; padding:5px 10px; border-radius:8px; font-size:14px; z-index:999;">
+  📖 0 lectures Firestore
+</div>
+
+ <div id="authSection" class="d-flex align-items-center gap-2">
+      <button id="btnLogin" onclick="seConnecter()">Connexion</button>
+      <span id="userEmail" style="display:none; font-weight: 600; color: #ddd;"></span>
+      <button id="btnLogout" onclick="seDeconnecter()" style="display:none;">Déconnexion</button>
+    </div>
+
+ <nav class="navbar">
+    <div class="container">
       <a href="index.html" class="nav-link active">Manga</a>
       <a href="#" class="nav-link">Anime</a>
       <a href="#" class="nav-link">Film</a>
       <a href="#" class="nav-link">Série</a>
       <a href="carte.html" class="nav-link">Carte</a>
     </div>
-
-    <div id="authSection" class="d-flex align-items-center gap-2">
-      <button id="btnLogin" onclick="seConnecter()">Connexion</button>
-      <span id="userEmail" style="display:none; font-weight: 600; color: #ddd;"></span>
-      <button id="btnLogout" onclick="seDeconnecter()" style="display:none;">Déconnexion</button>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 
 
@@ -45,13 +47,13 @@
         </div>
         <div class="row">
           <div class="col-4">
-        <button class="btn-full" id="openSidebarBtn">Filtres de genre</button>
+        <button class="btn-full" id="openSidebarBtn">Genre</button>
         </div>
         <div class="col-4">
         <button class="btn-full" id="openSortSidebarBtn">Trier</button>
         </div>
         <div class="col-4">
-        <button class="btn-full" onclick="resetFilters()">Tout réinitialiser</button>
+        <button class="btn-full" onclick="resetFilters()">Réinitialiser</button>
         </div>
       </div>
     </div>
@@ -305,6 +307,10 @@
             <p><strong></strong> <span id="popupPageValue"></span></p>
             <!--bouton supprimer,modifier et enregister-->
             <div id="boutonsAdmin" style="margin-top: 15px;"></div>
+            <div id="boutonsEdition" style="margin-top: 15px; display: none;">
+  <button id="btnEnregistrer" onclick="enregistrerEdition()">Enregistrer</button>
+  <button id="btnAnnuler" onclick="annulerEdition()">Annuler</button>
+</div>
 
           </div>
 

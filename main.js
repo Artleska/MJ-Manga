@@ -11,9 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
-
 const genreImportance = {
   "abuse": 1,
   "academy": 3,
@@ -330,103 +327,95 @@ function capitalizeFirstLetter(text) {
 
 function openPopup(id) {
   const popup = document.getElementById('popup');
-  popup.classList.remove('editing');
+  popup.classList.remove('editing');  // mode lecture
   const manga = mangaData[id];
+
   document.getElementById('popupTitle').innerText = manga.title;
   document.getElementById('popupImg').src = manga.image || 'image/fond.jpg';
+
   document.getElementById('popupDescription').innerHTML = manga.description || '';
-const popupGenres = document.getElementById('popupGenres');
-popupGenres.innerHTML = '';
-(manga.genres || []).forEach(genre => {
-  const span = document.createElement('span');
-  span.className = 'genre-tag';
-  span.textContent = genre.trim();
-  popupGenres.appendChild(span);
-});
+
+  const popupGenres = document.getElementById('popupGenres');
+  popupGenres.innerHTML = '';
+  (manga.genres || []).forEach(genre => {
+    const span = document.createElement('span');
+    span.className = 'genre-tag';
+    span.textContent = genre.trim();
+    popupGenres.appendChild(span);
+  });
+
   document.getElementById('popupOtherTitles').innerText = manga.otherTitles?.join(', ') || "Aucun";
   document.getElementById('popupPageValue').textContent = manga.page || 'N/A';
 
-
-  // Ch et Ch total
   const popupChContainer = document.getElementById('popupChContainer');
   popupChContainer.innerHTML = `
-  <div class="row">
-    <div class="col-4"><strong>Ch total:</strong> ${manga.chTotal || '—'}</div>
-    <div class="col-4"><strong>Ch lus:</strong> ${manga.chLus || '—'}</div>
-    <div class="col-4"><strong>Ch:</strong> ${manga.chJade || '—'}</div>
-  </div>
-`;
+    <div class="row">
+      <div class="col-4"><strong>Ch total:</strong> ${manga.chTotal || '—'}</div>
+      <div class="col-4"><strong>Ch lus:</strong> ${manga.chLus || '—'}</div>
+      <div class="col-4"><strong>Ch:</strong> ${manga.chJade || '—'}</div>
+    </div>
+  `;
 
-
-  // Date et status
   const popupDateStatus = document.getElementById('popupDateStatus');
   popupDateStatus.innerHTML = `
-  <div class="row">
-    <div class="col-4"><strong>Status:</strong> ${manga.status || '—'}</div>
-    <div class="col-4"><strong>Date:</strong> ${manga.date || '—'}</div>
-    <div class="col-4"><strong>Last read:</strong> ${manga.dernierLecture || '—'}</div>
-  </div>
-`;
-
+    <div class="row">
+      <div class="col-4"><strong>Status:</strong> ${manga.status || '—'}</div>
+      <div class="col-4"><strong>Date:</strong> ${manga.date || '—'}</div>
+      <div class="col-4"><strong>Last read:</strong> ${manga.dernierLecture || '—'}</div>
+    </div>
+  `;
 
   // Liens externes
   const container = document.getElementById("popupExternalLinks");
-if (container) {
-  container.innerHTML = '';
-
-  const liens = Object.entries(manga.externalLinks || {});
-  if (liens.length > 0) {
-    const titre = document.createElement('h4');
-    titre.textContent = "🔗 Liens externes :";
-    container.appendChild(titre);
-
-    liens.forEach(([nom, url]) => {
-      const lien = document.createElement('a');
-      lien.href = url.startsWith("http") ? url : "https://" + url;
-      lien.textContent = nom;
-      lien.target = "_blank";
-      lien.rel = "noopener noreferrer";
-      lien.classList.add("external-link");
-      container.appendChild(lien);
-    });
-  } else {
-    container.innerHTML = "<em>Aucun lien externe disponible.</em>";
+  if (container) {
+    container.innerHTML = '';
+    const liens = Object.entries(manga.externalLinks || {});
+    if (liens.length > 0) {
+      liens.forEach(([nom, url]) => {
+        const lien = document.createElement('a');
+        lien.href = url.startsWith("http") ? url : "https://" + url;
+        lien.textContent = nom;
+        lien.target = "_blank";
+        lien.rel = "noopener noreferrer";
+        lien.classList.add("external-link");
+        container.appendChild(lien);
+      });
+    } else {
+      container.innerHTML = "<em>Aucun lien externe disponible.</em>";
+    }
   }
+
+  // Boutons Admin en mode lecture
+  if (auth.currentUser && utilisateursAutorises.includes(auth.currentUser.email)) {
+    const btnAdmin = document.getElementById('boutonsAdmin');
+    btnAdmin.style.display = 'block';
+    btnAdmin.innerHTML = `
+      <button onclick="activerEditionManga('${id}')">Modifier</button>
+      <button onclick="supprimerManga('${id}')">Supprimer</button>
+    `;
+  } else {
+    const btnAdmin = document.getElementById('boutonsAdmin');
+    btnAdmin.style.display = 'none';
+    btnAdmin.innerHTML = '';
+  }
+
+  // Cacher les boutons Enregistrer / Annuler
+  const btnEdition = document.getElementById('boutonsEdition');
+  if(btnEdition) btnEdition.style.display = 'none';
+
+  document.getElementById('popup').style.display = 'flex';
+  afficherCartesSimilaires(manga);
 }
 
-
-
-const similairesManuels = Array.isArray(manga.similaires) && manga.similaires.length > 0
-  ? manga.similaires
-  : null;
-
-const similairesAAfficher = similairesManuels || trouverMangasSimilairesAuto(manga);
-
-
-if (auth.currentUser && utilisateursAutorises.includes(auth.currentUser.email)) {
-  document.getElementById('boutonsAdmin').innerHTML = `
-    <button onclick="activerEditionManga('${id}')">Modifier</button>
-    <button onclick="supprimerManga('${id}')">Supprimer</button>
-  `;
-} else {
-  document.getElementById('boutonsAdmin').innerHTML = '';
-}
-
-
-
-
-// À la fin de openPopup
-document.getElementById('popup').style.display = 'flex';
-afficherCartesSimilaires(manga);  
-
-
-}
 
 
 
 function closePopup() {
-  document.getElementById('popup').style.display = 'none';
+  const popup = document.getElementById("popup");
+  popup.classList.remove("editing"); // quitte le mode édition
+  popup.style.display = "none";
 }
+
 
 function formatGenres(genres) {
   if (!genres) return "—";

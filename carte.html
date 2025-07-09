@@ -14,14 +14,14 @@
 <body>
 
   <nav class="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-link">Manga</a>
-    <a href="#" class="nav-link">Anime</a>
-    <a href="#" class="nav-link">Film</a>
-    <a href="#" class="nav-link">Série</a>
-    <a href="carte.html" class="nav-link active">Carte</a>
-  </div>
-</nav>
+    <div class="container">
+      <a href="index.html" class="nav-link">Manga</a>
+      <a href="#" class="nav-link">Anime</a>
+      <a href="#" class="nav-link">Film</a>
+      <a href="#" class="nav-link">Série</a>
+      <a href="carte.html" class="nav-link active">Carte</a>
+    </div>
+  </nav>
 
 
   <div class="container">
@@ -95,13 +95,21 @@
       <div id="externalLinksContainer">
         <label><strong>Liens externes :</strong></label>
         <div class="external-link-line">
-          <input type="text" placeholder="Nom (ex: Mangadex)" class="external-link-name">
-          <input type="text" placeholder="URL (ex: https://...)" class="external-link-url">
-           <button type="button" onclick="ajouterChampLienExterne()">+</button>
+          <div class="row">
+            <div class="col-5">
+              <input type="text" placeholder="Nom (ex: Mangadex)" class="external-link-name">
+            </div>
+            <div class="col-5">
+              <input type="text" placeholder="URL (ex: https://...)" class="external-link-url">
+            </div>
+            <div class="col-2">
+              <button type="button" onclick="ajouterChampLienExterne()">+</button>
+            </div>
+          </div>
+          </div>
         </div>
-      </div>
-     
-      <button type="submit" class="btn btn-primary">Ajouter Manga</button>
+
+        <button type="submit" class="btn btn-primary">Ajouter Manga</button>
     </form>
 
 

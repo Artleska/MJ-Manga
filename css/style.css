@@ -1070,23 +1070,41 @@ select:focus {
   }
 }
 
+
 #authSection button {
   background-color: #00aaff;
   color: white;
   border: none;
   border-radius: 16px;
-  padding: 6px 12px;
+  padding: 4px 8px;
   font-size: 0.85rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 12px;  
 }
 
 #authSection button:hover {
   background-color: #008ecc;
 }
 
+#authSection {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  font-size: 12px;       /* taille petite */
+  padding: 2px 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 9999;
+  color: #ccc;
+  user-select: none;
+}
+
+
 #userEmail {
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   white-space: nowrap;
   user-select: none;
 }

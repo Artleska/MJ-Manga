@@ -1,32 +1,90 @@
 let mangaData = {};
 let mangaDataCache = null;
+let compteurData = getCompteurLectures();
+let compteurLectures = compteurData.count; // <-- récupère la valeur existante
+saveCompteurLectures(compteurData); // affiche la valeur actuelle
 
-function chargerMangasDepuisFirestore() {
+// --- Compteur lecture journalier localStorage ---
+function getCompteurLectures() {
+  const data = JSON.parse(localStorage.getItem('compteurLecturesJournalier')) || { count: 0, lastReset: 0 };
+  const maintenant = Date.now();
+
+  if (maintenant - data.lastReset > 24 * 60 * 60 * 1000) {
+    // Plus de 24h, reset compteur
+    return { count: 0, lastReset: maintenant };
+  }
+  return data;
+}
+
+
+function saveCompteurLectures(data) {
+  localStorage.setItem('compteurLecturesJournalier', JSON.stringify(data));
+  const compteurEl = document.getElementById("compteurLecturesDisplay");
+  if (compteurEl) compteurEl.textContent = `📖 ${data.count} lectures Firestore`;
+}
+
+
+async function chargerMangasDepuisFirestore() {
   if (mangaDataCache) {
-    // Si déjà en cache, on ne refait pas un nouveau listener
-    mangaData = mangaDataCache;
+    mangaData = JSON.parse(JSON.stringify(mangaDataCache));
     afficherAvecFiltres();
     return;
   }
 
   mangaDataCache = {};
 
-  db.collection("mangas").onSnapshot((snapshot) => {
-    snapshot.docChanges().forEach(change => {
-      const id = change.doc.id;
-      if (change.type === "added" || change.type === "modified") {
-        mangaDataCache[id] = change.doc.data();
-      } else if (change.type === "removed") {
-        delete mangaDataCache[id];
-      }
-    });
+  try {
+    // 1. Lecture initiale
+    const snapshot = await db.collection("mangas").get();
+snapshot.forEach(doc => {
+  mangaDataCache[doc.id] = doc.data();
+  compteurLectures++;
+});
+compteurData.count = compteurLectures;
+compteurData.lastReset = compteurData.lastReset || Date.now();
+saveCompteurLectures(compteurData);
 
-    mangaData = mangaDataCache;  // synchroniser mangaData avec cache
-    afficherAvecFiltres(); // rafraîchit l'affichage à chaque changement
-  }, (error) => {
-    console.error("Erreur lors du chargement des mangas :", error);
+mangaData = mangaDataCache;
+afficherAvecFiltres();
+
+
+    // Affichage du compteur sur la page
+    const compteurEl = document.getElementById("compteurLecturesDisplay");
+    if (compteurEl) {
+      compteurEl.textContent = `📖 ${compteurLectures} lectures Firestore`;
+    }
+
+    // 2. Écoute des changements (temps réel)
+    db.collection("mangas").onSnapshot(snapshot => {
+  snapshot.docChanges().forEach(change => {
+    const id = change.doc.id;
+
+    if (change.type === "added") {
+      compteurLectures++;
+      compteurData.count = compteurLectures;
+      saveCompteurLectures(compteurData);
+    }
+
+    if (change.type === "added" || change.type === "modified") {
+      const data = change.doc.data();
+      mangaDataCache[id] = data;
+      mangaData[id] = data;
+    } else if (change.type === "removed") {
+      delete mangaDataCache[id];
+      delete mangaData[id];
+    }
   });
+
+  afficherAvecFiltres(); // Mise à jour uniquement si changement
+});
+
+
+  } catch (error) {
+    console.error("❌ Erreur chargement Firestore :", error);
+  }
 }
+
+
 
 
 
@@ -229,10 +287,9 @@ document.getElementById('popupImage').innerHTML = `
   </div>
 `;
 
-document.getElementById('edit-image').addEventListener('input', (e) => {
-  const url = e.target.value.trim();
-  document.getElementById('preview-image').src = url || 'image/fond.jpg';
-});
+// Sélectionne nouvel input et preview
+  const newInputImage = document.getElementById('edit-image');
+  const previewImage = document.getElementById('preview-image');
 
 
   // Title editable
@@ -362,13 +419,20 @@ genresHtml += `</div>`;
 
   // Remplacer les boutons
   document.getElementById('boutonsAdmin').innerHTML = `
-    <button onclick="enregistrerModifications('${id}')">💾 Enregistrer</button>
-    <button onclick="closePopup()">❌ Annuler</button>
+    <button onclick="enregistrerModifications('${id}')">Enregistrer</button>
+    <button onclick="annulerModifications('${id}')">Annuler</button>
+
   `;
   document.getElementById('popup').classList.add('editing');
-
 }
 
+function annulerModifications(id) {
+  closePopup();
+  document.getElementById('popup').classList.remove('editing');
+  setTimeout(() => {
+    openPopup(id);
+  }, 200);
+}
 
 
 
@@ -414,13 +478,17 @@ const modifs = {
 
 
   docRef.update(modifs)
-    .then(() => {
-      alert("Modifications enregistrées !");
-      // Ne recharge pas toute la collection, mets juste à jour localement
-      mangaData[id] = { ...mangaData[id], ...modifs };
-      afficherAvecFiltres();
-      closePopup();
-    })
+   .then(() => {
+  alert("Modifications enregistrées !");
+  mangaData[id] = { ...mangaData[id], ...modifs };
+  afficherAvecFiltres();
+  closePopup();
+  document.getElementById('popup').classList.remove('editing');
+  setTimeout(() => {
+    openPopup(id);
+  }, 200);
+})
+
     .catch(error => {
       console.error("Erreur lors de l'enregistrement :", error);
       alert("Erreur lors de l'enregistrement.");
