@@ -23,6 +23,16 @@ function saveCompteurLectures(data) {
   if (compteurEl) compteurEl.textContent = `📖 ${data.count} lectures Firestore`;
 }
 
+function getIdsDejaComptes() {
+  return new Set(JSON.parse(localStorage.getItem('idsDejaComptes') || '[]'));
+}
+
+function ajouterIdDejaCompte(id) {
+  const deja = getIdsDejaComptes();
+  deja.add(id);
+  localStorage.setItem('idsDejaComptes', JSON.stringify(Array.from(deja)));
+}
+
 
 async function chargerMangasDepuisFirestore() {
   if (mangaDataCache) {
@@ -32,57 +42,54 @@ async function chargerMangasDepuisFirestore() {
   }
 
   mangaDataCache = {};
+  
+  // Récupérer les IDs déjà comptés depuis localStorage
+  const dejaComptes = getIdsDejaComptes();
 
   try {
-    // 1. Lecture initiale
-    const snapshot = await db.collection("mangas").get();
-snapshot.forEach(doc => {
-  mangaDataCache[doc.id] = doc.data();
-  compteurLectures++;
-});
-compteurData.count = compteurLectures;
-compteurData.lastReset = compteurData.lastReset || Date.now();
-saveCompteurLectures(compteurData);
-
-mangaData = mangaDataCache;
-afficherAvecFiltres();
-
-
-    // Affichage du compteur sur la page
-    const compteurEl = document.getElementById("compteurLecturesDisplay");
-    if (compteurEl) {
-      compteurEl.textContent = `📖 ${compteurLectures} lectures Firestore`;
-    }
-
-    // 2. Écoute des changements (temps réel)
     db.collection("mangas").onSnapshot(snapshot => {
-  snapshot.docChanges().forEach(change => {
-    const id = change.doc.id;
+      let compteurModifie = false; // Pour savoir si on doit sauver compteur
 
-    if (change.type === "added") {
-      compteurLectures++;
-      compteurData.count = compteurLectures;
-      saveCompteurLectures(compteurData);
-    }
+      snapshot.docChanges().forEach(change => {
+        const id = change.doc.id;
 
-    if (change.type === "added" || change.type === "modified") {
-      const data = change.doc.data();
-      mangaDataCache[id] = data;
-      mangaData[id] = data;
-    } else if (change.type === "removed") {
-      delete mangaDataCache[id];
-      delete mangaData[id];
-    }
-  });
+        if (change.type === "added" || change.type === "modified") {
+          const data = change.doc.data();
+          mangaDataCache[id] = data;
+          mangaData[id] = data;
+        }
 
-  afficherAvecFiltres(); // Mise à jour uniquement si changement
-});
+        if (change.type === "added" && !dejaComptes.has(id)) {
+          dejaComptes.add(id);
+          ajouterIdDejaCompte(id); // Sauvegarde dans localStorage aussi
+          compteurLectures++;
+          compteurModifie = true;
+        }
 
+        if (change.type === "removed") {
+          delete mangaDataCache[id];
+          delete mangaData[id];
+
+          // Eventuellement retirer des IDs déjà comptés ? (selon besoin)
+          // dejaComptes.delete(id);
+          // localStorage.setItem('idsDejaComptes', JSON.stringify(Array.from(dejaComptes)));
+        }
+      });
+
+      if (compteurModifie) {
+        compteurData.count = compteurLectures;
+        saveCompteurLectures(compteurData);
+      }
+
+      afficherAvecFiltres();
+    });
 
   } catch (error) {
-    console.error("❌ Erreur chargement Firestore :", error);
+    console.error("❌ Erreur Firestore :", error);
   }
 }
+
+
 
 
 
@@ -102,6 +109,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
+
+// Activer la persistance Firestore
+db.enablePersistence()
+  .catch((err) => {
+    if (err.code == 'failed-precondition') {
+      console.warn("Persistance non activée : plusieurs onglets Firestore ouverts");
+    } else if (err.code == 'unimplemented') {
+      console.warn("Persistance non supportée par ce navigateur");
+    }
+  });
 
 // Emails autorisés
 const utilisateursAutorises = [
