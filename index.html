@@ -16,15 +16,25 @@
 
 <body class="pt-5">
 
-<nav class="navbar navbar-expand">
-  <div class="container d-flex justify-content-center gap-4">
-    <a class="nav-link  active" href="index.html">Manga</a>
-    <a class="nav-link " href="#">Anime</a>
-    <a class="nav-link " href="#">Film</a>
-    <a class="nav-link " href="#">Série</a>
-    <a class="nav-link " href="carte.html">Carte</a>
+<nav class="navbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="nav-links d-flex gap-4">
+      <a href="index.html" class="nav-link active">Manga</a>
+      <a href="#" class="nav-link">Anime</a>
+      <a href="#" class="nav-link">Film</a>
+      <a href="#" class="nav-link">Série</a>
+      <a href="carte.html" class="nav-link">Carte</a>
+    </div>
+
+    <div id="authSection" class="d-flex align-items-center gap-2">
+      <button id="btnLogin" onclick="seConnecter()">Connexion</button>
+      <span id="userEmail" style="display:none; font-weight: 600; color: #ddd;"></span>
+      <button id="btnLogout" onclick="seDeconnecter()" style="display:none;">Déconnexion</button>
+    </div>
   </div>
 </nav>
+
+
 
 
   <!-- Barre de recherche + boutons -->
@@ -32,18 +42,20 @@
     <div class="filters">
       <div class="filters-row d-flex flex-wrap w-100 gap-2">
         <input type="text" id="searchInput" placeholder="Rechercher par titre..." />
-        <button id="openSidebarBtn">Filtres de genre</button>
-        <button id="openSortSidebarBtn">Trier</button>
-        <button onclick="resetFilters()">Tout réinitialiser</button>
+        </div>
+        <div class="row">
+          <div class="col-4">
+        <button class="btn-full" id="openSidebarBtn">Filtres de genre</button>
+        </div>
+        <div class="col-4">
+        <button class="btn-full" id="openSortSidebarBtn">Trier</button>
+        </div>
+        <div class="col-4">
+        <button class="btn-full" onclick="resetFilters()">Tout réinitialiser</button>
+        </div>
       </div>
     </div>
-    <div id="authSection">
-  <button onclick="seConnecter()">Connexion</button>
-  <span id="userEmail" style="margin-left: 10px;"></span>
-  <button onclick="seDeconnecter()">Déconnexion</button>
-
-
-</div>
+  
 
 
     <!-- Sidebar des genres -->

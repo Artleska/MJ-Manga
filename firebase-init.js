@@ -35,39 +35,63 @@ const utilisateursAutorises = [
 // Connexion
 function seConnecter() {
   const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider)
+  firebase.auth().signInWithPopup(provider)
     .then(result => {
-      const email = result.user.email;
-      if (utilisateursAutorises.includes(email)) {
-        document.getElementById("userEmail").textContent = email;
-        alert("Connecté !");
-      } else {
-        auth.signOut();
-        alert("Accès refusé");
+      const email = result.user.email.toLowerCase();
+      if (!utilisateursAutorises.includes(email)) {
+        alert("Accès refusé : utilisateur non autorisé.");
+        firebase.auth().signOut();
       }
     })
     .catch(error => {
-      console.error("Erreur de connexion :", error);
-      alert("Erreur de connexion.");
+      console.error("Erreur connexion :", error);
+      alert("Erreur lors de la connexion.");
     });
 }
 
 // Déconnexion
 function seDeconnecter() {
-  auth.signOut().then(() => {
-    document.getElementById("userEmail").textContent = "";
-    alert("Déconnecté");
-  });
+  firebase.auth().signOut()
+    .then(() => {
+      afficherEtatConnexion(null);
+    })
+    .catch(error => {
+      console.error("Erreur déconnexion :", error);
+      alert("Erreur lors de la déconnexion.");
+    });
 }
 
-// Utilisateur connecté ?
-auth.onAuthStateChanged(user => {
+function afficherEtatConnexion(user) {
+  const userEmailEl = document.getElementById("userEmail");
+  const loginBtn = document.getElementById("btnLogin");
+  const logoutBtn = document.getElementById("btnLogout");
+
   if (user && utilisateursAutorises.includes(user.email)) {
-    document.getElementById("userEmail").textContent = user.email;
+    // Affichage personnalisé selon l'utilisateur
+    if (user.email === "megane.lavoie24@gmail.com") {
+      userEmailEl.textContent = "Connectée en tant que Megane";
+    } else if (user.email === "jadelavoie51@gmail.com") {
+      userEmailEl.textContent = "Connectée en tant que Jade";
+    } else {
+      userEmailEl.textContent = "Connecté";
+    }
+
+    userEmailEl.style.display = "inline";
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "inline-block";
   } else {
-    document.getElementById("userEmail").textContent = "";
+    userEmailEl.textContent = "";
+    userEmailEl.style.display = "none";
+    loginBtn.style.display = "inline-block";
+    logoutBtn.style.display = "none";
   }
+}
+
+auth.onAuthStateChanged(user => {
+  afficherEtatConnexion(user);
 });
+
+
 
 // Transformer textarea liens externes en objet
 function parseLiensExternes(input) {
@@ -107,7 +131,18 @@ document.getElementById("formAjout").addEventListener("submit", async (e) => {
   const dernierLecture = document.getElementById("dernierLecture").value.trim();
   const page = document.getElementById("page").value.trim();
   const similaires = document.getElementById("similaires").value.split(",").map(s => s.trim()).filter(s => s);
-  const externalLinks = parseLiensExternes(document.getElementById("externalLinks").value);
+  const noms = document.querySelectorAll(".external-link-name");
+const urls = document.querySelectorAll(".external-link-url");
+const externalLinks = {};
+
+for (let i = 0; i < noms.length; i++) {
+  const nom = noms[i].value.trim();
+  const url = urls[i].value.trim();
+  if (nom && url) {
+    externalLinks[nom] = url;
+  }
+}
+
 
   const id = mangaId !== "" ? mangaId : title.replace(/\s+/g, '').replace(/[^\w]/g, '');
 
@@ -129,13 +164,17 @@ document.getElementById("formAjout").addEventListener("submit", async (e) => {
   };
 
   try {
-    await db.collection("mangas").doc(id).set(data);
-    alert("✅ Manga ajouté !");
-    document.getElementById("formAjout").reset();
-  } catch (err) {
-    console.error("Erreur Firebase :", err);
-    alert("❌ Erreur lors de l'ajout !");
-  }
+  await db.collection("mangas").doc(id).set(data);
+  alert("✅ Manga ajouté !");
+  document.getElementById("formAjout").reset();
+
+  chargerMangasDepuisFirestore();  // <-- ici, pour rafraîchir la liste
+
+} catch (err) {
+  console.error("Erreur Firebase :", err);
+  alert("❌ Erreur lors de l'ajout !");
+}
+
 });
 
 function activerEditionManga(id) {
@@ -161,7 +200,7 @@ function activerEditionManga(id) {
   "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
   "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
-  "mother","murim","multi world","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
+  "mother","murim","multi world","multi life", "musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
   "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
   "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
   "villainess","yaoi"];
@@ -379,7 +418,7 @@ const genresPossibles = [
   "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
   "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
-  "mother","murim","multi world","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
+  "mother","murim","multi world","multi life","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
   "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
   "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
   "villainess","yaoi"
@@ -426,7 +465,19 @@ function afficherGenresPourAjout() {
   });
 }
 
+function ajouterChampLienExterne() {
+  const container = document.getElementById("externalLinksContainer");
+
+  const ligne = document.createElement("div");
+  ligne.className = "external-link-line";
+  ligne.innerHTML = `
+    <input type="text" placeholder="Nom (ex: Mangadex)" class="external-link-name">
+    <input type="text" placeholder="URL (ex: https://...)" class="external-link-url">
+  `;
+  container.appendChild(ligne);
+}
 
 
 
 document.addEventListener("DOMContentLoaded", afficherGenresPourAjout);
+

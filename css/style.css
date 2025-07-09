@@ -746,13 +746,17 @@ select:focus {
 }
 
 .similaire-card {
-  width: 100%;
-  background-color: #1f1f1f;
-  border: 1px solid #333;
+  flex: 1 1 160px; /* Taille minimale de la carte */
+  max-width: 200px;
+  box-sizing: border-box;
+  background: #222;
   border-radius: 8px;
-  padding: 0.5rem;
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .similaire-card:hover {
@@ -814,24 +818,28 @@ select:focus {
 
 #popupGenres {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 4px;
-  border-radius: 5px;
+  flex-wrap: nowrap;      /* interdit le retour à la ligne */
+  overflow-x: auto;       /* ajoute une barre de défilement horizontale si nécessaire */
+  gap: 1px;               /* espace entre les genres */
+  padding: 4px 0;
+  -webkit-overflow-scrolling: touch; /* défilement fluide sur mobile */
 }
+
 
 .popup-genres-line {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 10px;
+  align-items: center; /* aligne verticalement au centre */
+  gap: 8px;            /* espace entre label et genres */
+  margin-bottom: 10px; 
 }
+
 
 .popup-genres-line .label {
   font-weight: bold;
   white-space: nowrap;
+  width: 70px; /* ajuste selon besoin */
 }
+
 
 .genres-container {
   display: flex;
@@ -905,10 +913,7 @@ select:focus {
   margin-bottom: 16px;
 }
 
-/* Facultatif : alignement formulaire en colonne verticale */
-.popup-info {
-  max-width: 500px; /* limite largeur */
-}
+
 
 /* Plus d’espace entre titre et formulaire */
 .popup-info h2 {
@@ -992,3 +997,114 @@ select:focus {
 }
 
 
+.external-link-line {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.external-link-line input {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  user-select: none;
+}
+
+/* Container centré et flexible */
+.navbar .container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* Liens de navigation */
+.nav-link {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Ligne sous le lien actif */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: #00aaff;
+  border-radius: 2px;
+}
+
+/* Effet hover */
+.nav-link:hover {
+  background-color: #00aaff;
+  color: #fff;
+  box-shadow: 0 0 8px #00aaff;
+}
+
+/* Responsive : sur mobile on réduit l'espacement */
+@media (max-width: 600px) {
+  .navbar .container {
+    gap: 16px;
+  }
+  .nav-link {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+#authSection button {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#authSection button:hover {
+  background-color: #008ecc;
+}
+
+#userEmail {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn-full {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-full:hover {
+  background-color: #444;
+  cursor: pointer;
+}
