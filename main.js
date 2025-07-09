@@ -1,23 +1,8 @@
-let mangaData = {};
-
-async function chargerMangas() {
-  try {
-    const snapshot = await firestore.collection("mangas").get();
-    snapshot.forEach(doc => {
-      mangaData[doc.id] = doc.data();
-    });
-
-    afficherAvecFiltres(); // Affiche les mangas une fois chargés
-  } catch (error) {
-    console.error("Erreur lors du chargement des mangas depuis Firestore :", error);
-  }
-}
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  chargerMangas();
+  chargerMangasDepuisFirestore(); // à la place de chargerMangas()
 
-  // Bouton "Genres similaires"
   const btnSimilaires = document.getElementById("btnGenresSimilaires");
   if (btnSimilaires) {
     btnSimilaires.addEventListener("click", () => {
@@ -25,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
@@ -343,6 +329,8 @@ function capitalizeFirstLetter(text) {
 
 
 function openPopup(id) {
+  const popup = document.getElementById('popup');
+  popup.classList.remove('editing');
   const manga = mangaData[id];
   document.getElementById('popupTitle').innerText = manga.title;
   document.getElementById('popupImg').src = manga.image || 'image/fond.jpg';
@@ -423,6 +411,7 @@ if (auth.currentUser && utilisateursAutorises.includes(auth.currentUser.email)) 
 } else {
   document.getElementById('boutonsAdmin').innerHTML = '';
 }
+
 
 
 

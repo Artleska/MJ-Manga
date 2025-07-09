@@ -1,14 +1,27 @@
+let mangaData = {};
+let mangaDataCache = null;
+
 function chargerMangasDepuisFirestore() {
+  if (mangaDataCache) {
+    // Si déjà en cache, on ne refait pas un nouveau listener
+    mangaData = mangaDataCache;
+    afficherAvecFiltres();
+    return;
+  }
+
+  mangaDataCache = {};
+
   db.collection("mangas").onSnapshot((snapshot) => {
     snapshot.docChanges().forEach(change => {
       const id = change.doc.id;
       if (change.type === "added" || change.type === "modified") {
-        mangaData[id] = change.doc.data();
+        mangaDataCache[id] = change.doc.data();
       } else if (change.type === "removed") {
-        delete mangaData[id];
+        delete mangaDataCache[id];
       }
     });
 
+    mangaData = mangaDataCache;  // synchroniser mangaData avec cache
     afficherAvecFiltres(); // rafraîchit l'affichage à chaque changement
   }, (error) => {
     console.error("Erreur lors du chargement des mangas :", error);
@@ -207,6 +220,21 @@ function activerEditionManga(id) {
   const manga = mangaData[id];
   if (!manga) return;
 
+  // Image editable
+document.getElementById('popupImage').innerHTML = `
+  <label for="edit-image"><strong>URL de l'image :</strong></label>
+  <input type="text" id="edit-image" value="${manga.image || ''}">
+  <div style="margin-top:8px;">
+    <img id="preview-image" src="${manga.image || ''}" alt="Prévisualisation" style="max-width: 100%; max-height: 200px; border-radius: 6px;">
+  </div>
+`;
+
+document.getElementById('edit-image').addEventListener('input', (e) => {
+  const url = e.target.value.trim();
+  document.getElementById('preview-image').src = url || 'image/fond.jpg';
+});
+
+
   // Title editable
   document.getElementById('popupTitle').innerHTML = `
     <label for="edit-title"><strong>Titre :</strong></label>
@@ -231,20 +259,22 @@ function activerEditionManga(id) {
   "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
   "villainess","yaoi"];
   
-  // Conteneur des tags genre
-  let genresHtml = `<label><strong>Genres :</strong></label><div id="genresTagsContainer" style="margin-bottom:10px;">`;
-  genresPossibles.forEach(genre => {
-    const actif = (manga.genres || []).includes(genre);
-    genresHtml += `<span class="genre-tag ${actif ? 'active' : ''}" data-genre="${genre}">${genre}</span>`;
-  });
-  genresHtml += `</div>`;
+  // Contenu HTML des genres
+const selectedGenres = (manga.genres || []).join(', ') || 'Aucun';
+let genresHtml = `
+  <label><strong>Genres sélectionnés :</strong></label>
+  <div id="selectedGenresText" style="margin-bottom:10px; font-style: italic;">${selectedGenres}</div>
 
-  // Liste texte des genres sélectionnés
-  const selectedGenres = (manga.genres || []).join(', ');
-  genresHtml += `
-    <label><strong>Genres sélectionnés :</strong></label>
-    <div id="selectedGenresText" style="margin-bottom:15px; font-style: italic;">${selectedGenres || 'Aucun'}</div>
-  `;
+  <label><strong>Genres :</strong></label>
+  <div id="genresTagsContainer" style="margin-bottom:10px;">
+`;
+
+genresPossibles.forEach(genre => {
+  const actif = (manga.genres || []).includes(genre);
+  genresHtml += `<span class="genre-tag ${actif ? 'active' : ''}" data-genre="${genre}">${genre}</span>`;
+});
+genresHtml += `</div>`;
+
 
   document.getElementById('popupGenres').innerHTML = genresHtml;
 
@@ -335,6 +365,8 @@ function activerEditionManga(id) {
     <button onclick="enregistrerModifications('${id}')">💾 Enregistrer</button>
     <button onclick="closePopup()">❌ Annuler</button>
   `;
+  document.getElementById('popup').classList.add('editing');
+
 }
 
 
@@ -357,8 +389,11 @@ function enregistrerModifications(id) {
   const genresTags = document.querySelectorAll('#genresTagsContainer .genre-tag.active');
 const selectedGenres = Array.from(genresTags).map(el => el.getAttribute('data-genre'));
   const externalLinks = parseLiensExternes(document.getElementById("edit-externalLinks")?.value || '');
+  const image = document.getElementById("edit-image")?.value.trim() || '';
+
 
 const modifs = {
+  image,
   title,
   description,
   status,
@@ -403,7 +438,6 @@ function supprimerManga(id) {
       closePopup();
       delete mangaData[id];
 afficherAvecFiltres();
-closePopup();
 alert("✅ Manga supprimé !");
 
     })
@@ -416,7 +450,9 @@ alert("✅ Manga supprimé !");
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangasDepuisFirestore();
+  afficherGenresPourAjout();
 });
+
 
 function afficherSimilairesEdition(manga) {
   const container = document.getElementById('popupSimilairesContainer');
@@ -501,5 +537,4 @@ function ajouterChampLienExterne() {
 
 
 
-document.addEventListener("DOMContentLoaded", afficherGenresPourAjout);
 
