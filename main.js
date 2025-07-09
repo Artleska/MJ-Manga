@@ -382,22 +382,31 @@ popupGenres.innerHTML = '';
 
 
   // Liens externes
-  const externalLinksContainer = document.getElementById('popupExternalLinks');
-  externalLinksContainer.innerHTML = '';
-  if (manga.externalLinks) {
-    for (const [name, url] of Object.entries(manga.externalLinks)) {
-      if (url) {
-        const a = document.createElement('a');
-        a.href = url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = name;
-        externalLinksContainer.appendChild(a);
-      }
-    }
+  const container = document.getElementById("popupExternalLinks");
+if (container) {
+  container.innerHTML = '';
+
+  const liens = Object.entries(manga.externalLinks || {});
+  if (liens.length > 0) {
+    const titre = document.createElement('h4');
+    titre.textContent = "🔗 Liens externes :";
+    container.appendChild(titre);
+
+    liens.forEach(([nom, url]) => {
+      const lien = document.createElement('a');
+      lien.href = url.startsWith("http") ? url : "https://" + url;
+      lien.textContent = nom;
+      lien.target = "_blank";
+      lien.rel = "noopener noreferrer";
+      lien.classList.add("external-link");
+      container.appendChild(lien);
+    });
   } else {
-    externalLinksContainer.innerHTML = "<em>Aucun lien externe disponible.</em>";
+    container.innerHTML = "<em>Aucun lien externe disponible.</em>";
   }
+}
+
+
 
 const similairesManuels = Array.isArray(manga.similaires) && manga.similaires.length > 0
   ? manga.similaires

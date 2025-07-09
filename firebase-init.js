@@ -1,14 +1,20 @@
 function chargerMangasDepuisFirestore() {
-  db.collection("mangas").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      mangaData[doc.id] = doc.data();
+  db.collection("mangas").onSnapshot((snapshot) => {
+    snapshot.docChanges().forEach(change => {
+      const id = change.doc.id;
+      if (change.type === "added" || change.type === "modified") {
+        mangaData[id] = change.doc.data();
+      } else if (change.type === "removed") {
+        delete mangaData[id];
+      }
     });
 
-    afficherAvecFiltres(); // ou afficherTousLesMangas(), selon ton site
-  }).catch((error) => {
+    afficherAvecFiltres(); // rafraîchit l'affichage à chaque changement
+  }, (error) => {
     console.error("Erreur lors du chargement des mangas :", error);
   });
 }
+
 
 
 // Configuration Firebase
@@ -95,16 +101,34 @@ auth.onAuthStateChanged(user => {
 
 // Transformer textarea liens externes en objet
 function parseLiensExternes(input) {
+  const result = {};
   const lignes = input.split('\n');
-  const liens = {};
-  lignes.forEach(ligne => {
-    const [nom, url] = ligne.split(":").map(part => part.trim());
-    if (nom && url) {
-      liens[nom] = url;
+
+  for (const ligne of lignes) {
+    const [nom, ...rest] = ligne.split(':');
+    if (!nom || rest.length === 0) continue;
+
+    const urlBrute = rest.join(':').trim(); // Pour gérer les cas où l'URL contient des ":"
+    let url = urlBrute;
+
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      url = 'https://' + url;
     }
-  });
-  return liens;
+
+    try {
+      const testUrl = new URL(url);
+      result[nom.trim()] = testUrl.href;
+    } catch (e) {
+      console.warn("❌ Lien invalide ignoré :", ligne);
+    }
+  }
+
+  return result;
 }
+
+
+
+
 
 // Soumission du formulaire d'ajout
 document.getElementById("formAjout").addEventListener("submit", async (e) => {
@@ -164,11 +188,13 @@ for (let i = 0; i < noms.length; i++) {
   };
 
   try {
-  await db.collection("mangas").doc(id).set(data);
-  alert("✅ Manga ajouté !");
-  document.getElementById("formAjout").reset();
+await db.collection("mangas").doc(id).set(data);
+alert("✅ Manga ajouté !");
+document.getElementById("formAjout").reset();
 
-  chargerMangasDepuisFirestore();  // <-- ici, pour rafraîchir la liste
+mangaData[id] = data;        // ajoute localement
+afficherAvecFiltres();       // rafraîchit l'affichage
+
 
 } catch (err) {
   console.error("Erreur Firebase :", err);
@@ -355,13 +381,16 @@ const modifs = {
   docRef.update(modifs)
     .then(() => {
       alert("Modifications enregistrées !");
+      // Ne recharge pas toute la collection, mets juste à jour localement
+      mangaData[id] = { ...mangaData[id], ...modifs };
+      afficherAvecFiltres();
       closePopup();
-      chargerMangasDepuisFirestore(); // Recharge les mangas avec les données à jour
     })
     .catch(error => {
       console.error("Erreur lors de l'enregistrement :", error);
       alert("Erreur lors de l'enregistrement.");
     });
+
 }
 
 
@@ -372,7 +401,11 @@ function supprimerManga(id) {
     .then(() => {
       alert("✅ Manga supprimé !");
       closePopup();
-      location.reload();
+      delete mangaData[id];
+afficherAvecFiltres();
+closePopup();
+alert("✅ Manga supprimé !");
+
     })
     .catch(error => {
       console.error("Erreur lors de la suppression :", error);
@@ -380,17 +413,6 @@ function supprimerManga(id) {
     });
 }
 
-function parseLiensExternes(input) {
-  const lignes = input.split('\n');
-  const liens = {};
-  lignes.forEach(ligne => {
-    const [nom, url] = ligne.split(":").map(part => part.trim());
-    if (nom && url) {
-      liens[nom] = url;
-    }
-  });
-  return liens;
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangasDepuisFirestore();
