@@ -1162,3 +1162,17 @@ select:focus {
   }
 }
 
+.btn-voir-plus {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-voir-plus:hover {
+  background-color: #444;
+}

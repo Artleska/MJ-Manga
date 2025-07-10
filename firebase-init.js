@@ -1,21 +1,21 @@
 let mangaData = {};
-let mangaDataCache = null;
-let compteurData = getCompteurLectures();
-let compteurLectures = compteurData.count; // <-- récupère la valeur existante
-saveCompteurLectures(compteurData); // affiche la valeur actuelle
+let lastVisible = null;
+let isLoading = false;
 
-// --- Compteur lecture journalier localStorage ---
+let compteurData = getCompteurLectures();
+let compteurLectures = compteurData.count;
+saveCompteurLectures(compteurData);
+
+const dejaComptes = getIdsDejaComptes();
+
 function getCompteurLectures() {
   const data = JSON.parse(localStorage.getItem('compteurLecturesJournalier')) || { count: 0, lastReset: 0 };
   const maintenant = Date.now();
-
   if (maintenant - data.lastReset > 24 * 60 * 60 * 1000) {
-    // Plus de 24h, reset compteur
     return { count: 0, lastReset: maintenant };
   }
   return data;
 }
-
 
 function saveCompteurLectures(data) {
   localStorage.setItem('compteurLecturesJournalier', JSON.stringify(data));
@@ -28,72 +28,63 @@ function getIdsDejaComptes() {
 }
 
 function ajouterIdDejaCompte(id) {
-  const deja = getIdsDejaComptes();
-  deja.add(id);
-  localStorage.setItem('idsDejaComptes', JSON.stringify(Array.from(deja)));
+  dejaComptes.add(id);
+  localStorage.setItem('idsDejaComptes', JSON.stringify(Array.from(dejaComptes)));
 }
 
+async function chargerMangasDepuisFirestore(voirPlus = false) {
+  if (isLoading) return;
+  isLoading = true;
 
-async function chargerMangasDepuisFirestore() {
-  if (mangaDataCache) {
-    mangaData = JSON.parse(JSON.stringify(mangaDataCache));
-    afficherAvecFiltres();
-    return;
+  let query = db.collection("mangas").orderBy("title").limit(50);
+  if (voirPlus && lastVisible) {
+    query = query.startAfter(lastVisible);
   }
-
-  mangaDataCache = {};
-  
-  // Récupérer les IDs déjà comptés depuis localStorage
-  const dejaComptes = getIdsDejaComptes();
 
   try {
-    db.collection("mangas").onSnapshot(snapshot => {
-      let compteurModifie = false; // Pour savoir si on doit sauver compteur
+    const snapshot = await query.get();
+    if (snapshot.empty) {
+      document.getElementById("voirPlusBtn")?.remove();
+      return;
+    }
 
-      snapshot.docChanges().forEach(change => {
-        const id = change.doc.id;
+    let compteurModifie = false;
 
-        if (change.type === "added" || change.type === "modified") {
-          const data = change.doc.data();
-          mangaDataCache[id] = data;
-          mangaData[id] = data;
-        }
+    snapshot.docs.forEach(doc => {
+      const id = doc.id;
+      const data = doc.data();
+      mangaData[id] = data;
 
-        if (change.type === "added" && !dejaComptes.has(id)) {
-          dejaComptes.add(id);
-          ajouterIdDejaCompte(id); // Sauvegarde dans localStorage aussi
-          compteurLectures++;
-          compteurModifie = true;
-        }
-
-        if (change.type === "removed") {
-          delete mangaDataCache[id];
-          delete mangaData[id];
-
-          // Eventuellement retirer des IDs déjà comptés ? (selon besoin)
-          // dejaComptes.delete(id);
-          // localStorage.setItem('idsDejaComptes', JSON.stringify(Array.from(dejaComptes)));
-        }
-      });
-
-      if (compteurModifie) {
-        compteurData.count = compteurLectures;
-        saveCompteurLectures(compteurData);
+      if (!dejaComptes.has(id)) {
+        ajouterIdDejaCompte(id);
+        compteurLectures++;
+        compteurModifie = true;
       }
-
-      afficherAvecFiltres();
     });
 
-  } catch (error) {
-    console.error("❌ Erreur Firestore :", error);
+    if (compteurModifie) {
+      compteurData.count = compteurLectures;
+      saveCompteurLectures(compteurData);
+    }
+
+    lastVisible = snapshot.docs[snapshot.docs.length - 1];
+    afficherAvecFiltres();
+
+    if (!document.getElementById("voirPlusBtn")) {
+      const btn = document.createElement("button");
+      btn.id = "voirPlusBtn";
+      btn.textContent = "Voir plus";
+      btn.classList.add("btn-voir-plus");
+      btn.onclick = () => chargerMangasDepuisFirestore(true);
+      document.getElementById("mangaContainer").after(btn);
+    }
+
+  } catch (err) {
+    console.error("❌ Erreur Firestore :", err);
+  } finally {
+    isLoading = false;
   }
 }
-
-
-
-
-
-
 
 // Configuration Firebase
 const firebaseConfig = {
@@ -536,7 +527,9 @@ alert("✅ Manga supprimé !");
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangasDepuisFirestore();
   afficherGenresPourAjout();
+  afficherNombreTotalMangas();
 });
+
 
 
 function afficherSimilairesEdition(manga) {
@@ -619,6 +612,27 @@ function ajouterChampLienExterne() {
   `;
   container.appendChild(ligne);
 }
+
+function afficherNombreTotalMangas() {
+  db.collection("meta").doc("stats").get()
+    .then(doc => {
+      if (doc.exists) {
+        const total = doc.data().totalMangas || 0;
+        console.log("Total mangas récupéré:", total);
+        const el = document.getElementById("totalMangasDisplay");
+        if (el) el.textContent = `📚 Total mangas : ${total}`;
+      } else {
+        console.log("Document stats introuvable");
+      }
+    })
+    .catch(err => {
+      console.error("Erreur lecture total mangas:", err);
+    });
+}
+
+
+
+
 
 
 
