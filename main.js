@@ -1,4 +1,5 @@
-
+let mangasFiltres = [];  // Tous les mangas après filtres/recherche
+let limiteAffichage = 50; // Nombre mangas à afficher
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangasDepuisFirestore(); // à la place de chargerMangas()
@@ -12,84 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const genreImportance = {
-  "abuse": 1,
-  "academy": 3,
-  "acting": 3,
-  "action": 1,
-  "adopted": 2,
-  "androgine": 1,
-  "animals": 3,
-  "apocalypse": 4,
-  "art": 2,
-  "arts-martiaux": [5, 9],
-  "aventure": 1,
-  "badass": 5,
-  "beast world": [5, 7],
-  "business": 3,
-  "caretaker": 3,
-  "child lead": [5, 2],
-  "comédie": 1,
-  "cooking": 5,
-  "crossdressing": 2,
-  "cultivation": 4,
-  "drame": 2,
-  "disciple": 2,
-  "dungeon":[5, 10],
-  "enfant": 3,
-  "fantasy": [5, 7],
-  "father": 4,
-  "female lead": 1,
-  "food": 3,
-  "jeux vidéo": 3,
-  "ghosts": 2,
-  "harem": 2,
-  "historical": [5, 5],
-  "horreur": 3,
-  "isekai": 3,
-  "idol": 4,
-  "long life": 2,
-  "magie": 2,
-  "male lead": 1,
-  "manga": [5, 1],
-  "mature": 2,
-  "mécanique": 2,
-  "médicale": [5, 11],
-  "militaire": 2,
-  "moderne": [5, 4],
-  "monstre": 1,
-  "mother": 3,
-  "murim": 4,
-  "multi world": [5, 6],
-  "musique": 3,
-  "mystère": 5,
-  "novel": 2,
-  "omegaverse": 3,
-  "power": 1,
-  "prof": 2,
-  "psychologique": 2,
-  "réincarnation": 4,
-  "return": 3,
-  "revenge": 1,
-  "rich": 3,
-  "romance": 1,
-  "saint": 1,
-  "school life": 1,
-  "seconde chance": 3,
-  "secret identity": 4,
-  "sick": [5, 2],
-  "sport": 1,
-  "suicide":1,
-  "superhero": 1,
-  "surnaturel": 2,
-  "system": [5, 12],
-  "time travel": 2,
-  "tower": 4,
-  "tyrant": 4,
-  "transmigration": 3,
-  "transformation": 2,
-  "vampire": 2,
-  "villainess": 1,
-  "yaoi": 5
+  "abuse": 1, "academy": 3, "acting": 3, "action": 1, "adopted": 2, "androgine": 1, "animals": 3,
+  "apocalypse": 4, "art": 2, "arts-martiaux": [5, 9], "aventure": 1, "badass": 5, "beast world": [5, 7],
+  "business": 3, "caretaker": 3, "child lead": [5, 2], "comédie": 1, "cooking": 5, "crossdressing": 2,
+  "cultivation": 4, "drame": 2, "disciple": 2, "dungeon":[5, 10], "enfant": 3, "fantasy": [5, 7],
+  "father": 4, "female lead": 1, "food": 3, "jeux vidéo": 3, "ghosts": 2, "harem": 2, "historical": [5, 5],
+  "horreur": 3, "isekai": 3, "idol": 4, "long life": 2, "magie": 2, "male lead": 1, "manga": [5, 1],
+  "mature": 2, "mécanique": 2, "médicale": [5, 11], "militaire": 2, "moderne": [5, 4], "monstre": 1,
+  "mother": 3, "murim": 4, "multi world": [5, 6], "musique": 3, "mystère": 5, "novel": 2,
+  "omegaverse": 3, "power": 1, "prof": 2, "psychologique": 2, "réincarnation": 4, "return": 3,
+  "revenge": 1, "rich": 3, "romance": 1, "saint": 1, "school life": 1, "seconde chance": 3, "secret identity": 4,
+  "sick": [5, 2], "sport": 1, "suicide":1, "superhero": 1, "surnaturel": 2, "system": [5, 12],
+  "time travel": 2, "tower": 4, "tyrant": 4, "transmigration": 3, "transformation": 2, "vampire": 2,
+  "villainess": 1, "yaoi": 5
   // Tous les genres non listés vaudront 1
 };
 
@@ -147,13 +83,19 @@ function countCommonGenres(mangaGenres, selectedGenres) {
 
 
 function displayMangas(mangas) {
+  mangasFiltres = mangas; // Sauvegarde pour pagination
+
   const countDiv = document.getElementById("mangaCount");
   if (countDiv) {
     countDiv.textContent = `${mangas.length} manga${mangas.length > 1 ? 's' : ''} affiché${mangas.length > 1 ? 's' : ''}`;
   }
 
   container.innerHTML = '';
-  mangas.forEach(manga => {
+
+  // On affiche seulement la limite (50) ou tout si limite est > mangas.length
+  const toDisplay = mangas.slice(0, limiteAffichage);
+
+  toDisplay.forEach(manga => {
     const id = Object.keys(mangaData).find(key => mangaData[key] === manga);
     const imageSrc = manga.image && manga.image.trim() !== '' ? manga.image : 'image/fond.jpg';
 
@@ -177,18 +119,44 @@ function displayMangas(mangas) {
     container.appendChild(card);
   });
 
+  // Affichage du compteur dans la barre
   const countBar = document.getElementById("mangaCountBar");
-if (countBar) {
-  if (mangas.length > 0) {
-    countBar.textContent = `${mangas.length} manga${mangas.length > 1 ? 's' : ''}`;
-  } else {
-    countBar.textContent = 'Aucun manga trouvé';
+  if (countBar) {
+    if (mangas.length > 0) {
+      countBar.textContent = `${mangas.length} manga${mangas.length > 1 ? 's' : ''}`;
+    } else {
+      countBar.textContent = 'Aucun manga trouvé';
+    }
+  }
+
+  // Gestion du bouton "Voir plus"
+  const btnVoirPlusId = "btnVoirPlusMangas";
+  let btnVoirPlus = document.getElementById(btnVoirPlusId);
+
+  if (mangas.length > limiteAffichage) {
+    // Si le bouton n'existe pas, on le crée
+    if (!btnVoirPlus) {
+      btnVoirPlus = document.createElement('button');
+      btnVoirPlus.id = btnVoirPlusId;
+      btnVoirPlus.textContent = "Voir plus";
+      btnVoirPlus.style.display = 'block';
+      btnVoirPlus.style.margin = "10px auto";
+      btnVoirPlus.style.padding = "10px 20px";
+      btnVoirPlus.style.cursor = "pointer";
+      btnVoirPlus.addEventListener('click', afficherPlus);
+      container.parentNode.insertBefore(btnVoirPlus, container.nextSibling);
+    } else {
+      btnVoirPlus.style.display = 'block';
+    }
+  } else if (btnVoirPlus) {
+    btnVoirPlus.style.display = 'none';
   }
 }
-document.getElementById("mangaCountBar").innerHTML = `${mangas.length} mangas`;
 
+function afficherPlus() {
+  limiteAffichage += 50;
+  displayMangas(mangasFiltres);
 }
-
 
 function filterByStatus(status) {
   const allMangas = Object.values(mangaData);
@@ -534,7 +502,6 @@ function afficherAvecFiltres() {
     return true; // Aucun des deux actifs
   });
 
-
   // 2. Genre cochés
   const selectedGenres = Array.from(document.querySelectorAll("#genreSidebar input[type='checkbox']:checked"))
     .map(cb => cb.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
@@ -545,7 +512,6 @@ function afficherAvecFiltres() {
     });
   }
 
-  // 3. Mot-clé dans la recherche
 // 3. Mot-clé dans la recherche (avec Fuse.js)
 const search = searchInput.value.trim();
 if (search) {
@@ -561,8 +527,6 @@ if (search) {
   mangas = results.map(r => r.item);
 }
 
-
-
   // 4. Chapitres minimum
   const minInput = document.getElementById("minChapitresInput");
   if (minInput) {
@@ -573,7 +537,6 @@ if (search) {
     });
   }
 
-  // 5. Tri (si activé)
   // 5. Tri (si activé) ou mélanger si aucun tri
   if (currentSort === 'alphabetique') {
     mangas.sort((a, b) => a.title.localeCompare(b.title));
@@ -586,6 +549,12 @@ if (search) {
     mangas.sort(() => Math.random() - 0.5);
   }
 
+  // Si recherche active, on enlève la limite, sinon limite à 50
+if (searchInput.value.trim().length > 0) {
+  limiteAffichage = mangas.length; // afficher tout
+} else {
+  limiteAffichage = 50;
+}
 
   // 6. Affichage final
   displayMangas(mangas);

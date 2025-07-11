@@ -17,6 +17,17 @@ function getCompteurLectures() {
   return data;
 }
 
+const genresPossibles = [
+  "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
+  "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
+  "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
+  "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
+  "mother","murim","multi world","multi life","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
+  "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
+  "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
+  "villainess","yaoi"
+];
+
 function saveCompteurLectures(data) {
   localStorage.setItem('compteurLecturesJournalier', JSON.stringify(data));
   const compteurEl = document.getElementById("compteurLecturesDisplay");
@@ -36,15 +47,12 @@ async function chargerMangasDepuisFirestore(voirPlus = false) {
   if (isLoading) return;
   isLoading = true;
 
-  let query = db.collection("mangas").orderBy("title").limit(50);
-  if (voirPlus && lastVisible) {
-    query = query.startAfter(lastVisible);
-  }
+  let query = db.collection("mangas").orderBy("title");
+
 
   try {
     const snapshot = await query.get();
     if (snapshot.empty) {
-      document.getElementById("voirPlusBtn")?.remove();
       return;
     }
 
@@ -67,17 +75,9 @@ async function chargerMangasDepuisFirestore(voirPlus = false) {
       saveCompteurLectures(compteurData);
     }
 
-    lastVisible = snapshot.docs[snapshot.docs.length - 1];
+    
     afficherAvecFiltres();
 
-    if (!document.getElementById("voirPlusBtn")) {
-      const btn = document.createElement("button");
-      btn.id = "voirPlusBtn";
-      btn.textContent = "Voir plus";
-      btn.classList.add("btn-voir-plus");
-      btn.onclick = () => chargerMangasDepuisFirestore(true);
-      document.getElementById("mangaContainer").after(btn);
-    }
 
   } catch (err) {
     console.error("❌ Erreur Firestore :", err);
@@ -286,18 +286,12 @@ function activerEditionManga(id) {
   const manga = mangaData[id];
   if (!manga) return;
 
-  // Image editable
+// Image editable 
 document.getElementById('popupImage').innerHTML = `
   <label for="edit-image"><strong>URL de l'image :</strong></label>
   <input type="text" id="edit-image" value="${manga.image || ''}">
-  <div style="margin-top:8px;">
-    <img id="preview-image" src="${manga.image || ''}" alt="Prévisualisation" style="max-width: 100%; max-height: 200px; border-radius: 6px;">
-  </div>
 `;
 
-// Sélectionne nouvel input et preview
-  const newInputImage = document.getElementById('edit-image');
-  const previewImage = document.getElementById('preview-image');
 
 
   // Title editable
@@ -311,18 +305,6 @@ document.getElementById('popupImage').innerHTML = `
     <label for="edit-description"><strong>Description :</strong></label>
     <textarea id="edit-description" rows="4">${manga.description || ''}</textarea>
   `;
-
-  // Genres avec tags cliquables
-  const genresPossibles = [
-    
-  "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
-  "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
-  "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
-  "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
-  "mother","murim","multi world","multi life", "musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
-  "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
-  "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
-  "villainess","yaoi"];
   
   // Contenu HTML des genres
 const selectedGenres = (manga.genres || []).join(', ') || 'Aucun';
@@ -548,17 +530,6 @@ function afficherSimilairesEdition(manga) {
 
   container.appendChild(textarea);
 }
-
-const genresPossibles = [
-  "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
-  "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
-  "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
-  "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
-  "mother","murim","multi world","multi life","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
-  "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
-  "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
-  "villainess","yaoi"
-];
 
 function afficherGenresPourAjout() {
   const container = document.getElementById("formGenresTagsContainer");
