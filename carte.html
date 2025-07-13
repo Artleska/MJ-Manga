@@ -91,24 +91,10 @@
         <label for="similaires" class="form-label">Similaires (IDs séparés par des virgules)</label>
         <input type="text" id="similaires" class="form-control" />
       </div>
-      <div id="externalLinksContainer">
-        <label><strong>Liens externes :</strong></label>
-        <div class="external-link-line">
-          <div class="row">
-            <div class="col-5">
-              <input type="text" placeholder="Nom (ex: Mangadex)" class="external-link-name">
-            </div>
-            <div class="col-5">
-              <input type="text" placeholder="URL (ex: https://...)" class="external-link-url">
-            </div>
-            <div class="col-2">
-              <button type="button" onclick="ajouterChampLienExterne()">+</button>
-            </div>
-          </div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Ajouter Manga</button>
+<div id="externalLinksContainer">
+  <label><strong>Liens externes :</strong></label>
+</div>
+      <button type="submit" class="btn bouton-ajout">Ajouter Manga</button>
     </form>
 
 
@@ -122,11 +108,19 @@
 
   <script src="firebase-init.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    afficherGenresPourAjout();
-  });
-</script>
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+  afficherGenresPourAjout();
+
+  // Initialiser le conteneur des liens externes
+  const externalLinksContainer = document.getElementById("externalLinksContainer");
+  if (externalLinksContainer) {
+    externalLinksContainer.innerHTML = '<label><strong>Liens externes :</strong></label>'; // remettre le label
+    ajouterChampLienExterne();
+  }
+});
+
+  </script>
 
 </body>
 

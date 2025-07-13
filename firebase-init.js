@@ -19,7 +19,7 @@ function getCompteurLectures() {
 
 const genresPossibles = [
   "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
-  "badass","beast world","business","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
+  "badass","beast world","business","brother","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
   "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
   "mother","murim","multi world","multi life","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
@@ -280,11 +280,11 @@ if (selectedText) selectedText.textContent = "Genres sélectionnés : Aucun";
 // Réinitialiser la sélection de genres (rafraîchir la zone genre)
 afficherGenresPourAjout();
 
-// Vider les liens externes et ajouter une ligne vide
+// Vider les liens externes et ajouter une ligne vide avec bouton
 const externalLinksContainer = document.getElementById("externalLinksContainer");
 if (externalLinksContainer) {
   externalLinksContainer.innerHTML = '';
-  ajouterChampLienExterne();
+  ajouterChampLienExterne(); // Réinsère une seule ligne avec le bouton
 }
 
 // Vider le champ similaires
@@ -604,16 +604,30 @@ function afficherGenresPourAjout() {
   });
 }
 
-
 function ajouterChampLienExterne() {
   const container = document.getElementById("externalLinksContainer");
 
   const ligne = document.createElement("div");
   ligne.className = "external-link-line";
+  ligne.style.display = "flex";
+  ligne.style.alignItems = "center";
+  ligne.style.gap = "8px";
+  ligne.style.marginBottom = "6px";
+
   ligne.innerHTML = `
-    <input type="text" placeholder="Nom (ex: Mangadex)" class="external-link-name">
-    <input type="text" placeholder="URL (ex: https://...)" class="external-link-url">
+    <input type="text" placeholder="Nom (ex: Mangadex)" class="external-link-name" style="flex: 2;">
+    <input type="text" placeholder="URL (ex: https://...)" class="external-link-url" style="flex: 3;">
   `;
+
+  // Si c’est la première ligne, on ajoute le bouton +
+  if (container.querySelectorAll(".external-link-line").length === 0) {
+    const boutonPlus = document.createElement("button");
+    boutonPlus.type = "button";
+    boutonPlus.textContent = "+";
+    boutonPlus.onclick = ajouterChampLienExterne;
+    ligne.appendChild(boutonPlus);
+  }
+
   container.appendChild(ligne);
 }
 

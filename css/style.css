@@ -233,7 +233,7 @@ header {
 }
 #popupExternalLinks a {
   display: block;
-  color: #1a73e8;
+  color: #00aaff;
   text-decoration: none;
   margin: 4px 0;
 }
@@ -1175,4 +1175,32 @@ select:focus {
 }
 .btn-voir-plus:hover {
   background-color: #444;
+}
+
+/* Style général du bouton + */
+#externalLinksContainer button {
+  background-color: #00aaff;       /* Vert bleu */
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* pour bien centrer verticalement dans flex */
+}
+
+/* Hover : changement de couleur */
+#externalLinksContainer button:hover {
+  background-color: #0581bf;
+}
+
+.bouton-ajout{
+  background-color: #00aaff!important; 
+  color: white!important;
+}
+
+.bouton-ajout:hover {
+  background-color: #0581bf!important;
 }
