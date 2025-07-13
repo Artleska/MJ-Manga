@@ -566,13 +566,18 @@ function afficherGenresPourAjout() {
   // Réinitialiser le contenu
   container.innerHTML = '';
 
-  // Créer et insérer le résumé des genres sélectionnés (au-dessus)
-  const selectedText = document.createElement("div");
-  selectedText.id = "formSelectedGenresText";
-  selectedText.style.fontStyle = "italic";
-  selectedText.style.marginBottom = "8px";
+  // Vérifier si le résumé existe déjà
+  let selectedText = document.getElementById("formSelectedGenresText");
+  if (!selectedText) {
+    selectedText = document.createElement("div");
+    selectedText.id = "formSelectedGenresText";
+    selectedText.style.fontStyle = "italic";
+    selectedText.style.marginBottom = "8px";
+    container.parentNode.insertBefore(selectedText, container);
+  }
+
+  // Réinitialiser le texte du résumé
   selectedText.textContent = "Genres sélectionnés : Aucun";
-  container.parentNode.insertBefore(selectedText, container);
 
   // Créer les genres cliquables
   genresPossibles.forEach(genre => {
@@ -598,6 +603,7 @@ function afficherGenresPourAjout() {
     container.appendChild(span);
   });
 }
+
 
 function ajouterChampLienExterne() {
   const container = document.getElementById("externalLinksContainer");
