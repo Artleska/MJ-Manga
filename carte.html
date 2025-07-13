@@ -10,8 +10,14 @@
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="pt-5">
+<div id="authSection" class="d-flex align-items-center gap-2">
+      <button id="btnLogin" onclick="seConnecter()">Connexion</button>
+      <span id="userEmail" style="display:none; font-weight: 600; color: #ddd;"></span>
+      <button id="btnLogout" onclick="seDeconnecter()" style="display:none;">Déconnexion</button>
+    </div>
 
+    <div class="container">
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="nav-link">Manga</a>
@@ -21,7 +27,7 @@
       <a href="carte.html" class="nav-link active">Carte</a>
     </div>
   </nav>
-
+</div>
 
   <div class="container">
 
