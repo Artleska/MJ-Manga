@@ -268,6 +268,15 @@ for (let i = 0; i < noms.length; i++) {
   // Remise à zéro du formulaire natif
 document.getElementById("formAjout").reset();
 
+// Réinitialiser les genres sélectionnés manuellement
+document.querySelectorAll("#formGenresTagsContainer .genre-tag").forEach(span => {
+  span.classList.remove("selected");
+});
+document.getElementById("genres").value = "";
+const selectedText = document.getElementById("formSelectedGenresText");
+if (selectedText) selectedText.textContent = "Genres sélectionnés : Aucun";
+
+
 // Réinitialiser la sélection de genres (rafraîchir la zone genre)
 afficherGenresPourAjout();
 
