@@ -23,7 +23,7 @@ const genresPossibles = [
   "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
   "mother","murim","multi world","multi life","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
-  "return","revenge","rich","romance","saint","school life","seconde chance","secret identity","sick","sport","suicide",
+  "return","revenge","rich","romance","saint","school life","slice of Life","seconde chance","secret identity","sick","sport","suicide",
   "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
   "villainess","yaoi"
 ];
