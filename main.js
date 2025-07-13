@@ -507,7 +507,7 @@ function afficherAvecFiltres() {
     .map(cb => cb.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
   if (selectedGenres.length > 0) {
     mangas = mangas.filter(m => {
-      const genres = normalizeGenresArray(m.genres);
+      const genres = normalizeGenresArray(m.genres || []);
       return selectedGenres.every(g => genres.includes(g));
     });
   }
@@ -516,7 +516,17 @@ function afficherAvecFiltres() {
 const search = searchInput.value.trim();
 if (search) {
   const options = {
-    keys: ['title', 'otherTitles'],
+    keys: [
+  {
+    name: 'title',
+    getFn: m => m.title || ''
+  },
+  {
+    name: 'otherTitles',
+    getFn: m => Array.isArray(m.otherTitles) ? m.otherTitles : []
+  }
+],
+
     threshold: 0.4, // 0 = strict, 1 = très tolérant
     ignoreLocation: true,
     minMatchCharLength: 2
@@ -591,7 +601,6 @@ document.getElementById("openSortSidebarBtn").addEventListener("click", () => {
 document.getElementById("closeSortSidebarBtn").addEventListener("click", () => {
   document.getElementById("sortSidebar").classList.remove("open");
 });
-
 
 function trierParSimilariteLocale(mangas) {
   return mangas
@@ -1130,7 +1139,7 @@ function getGenreDominant(manga) {
   return maxPoids >= 5 ? meilleurGenre : null;
 }
 
-chargerMangas();
+chargerMangasDepuisFirestore();
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerMangasDepuisFirestore();
@@ -1143,16 +1152,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
 
 

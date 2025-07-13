@@ -172,12 +172,6 @@ function afficherEtatConnexion(user) {
   }
 }
 
-auth.onAuthStateChanged(user => {
-  afficherEtatConnexion(user);
-});
-
-
-
 // Transformer textarea liens externes en objet
 function parseLiensExternes(input) {
   const result = {};
@@ -250,35 +244,67 @@ for (let i = 0; i < noms.length; i++) {
   const id = mangaId !== "" ? mangaId : title.replace(/\s+/g, '').replace(/[^\w]/g, '');
 
   const data = {
-    title,
-    otherTitles,
-    image,
-    description,
-    genres,
-    status,
-    chTotal,
-    chLus,
-    chJade,
-    date,
-    dernierLecture,
-    page,
-    similaires,
-    externalLinks
-  };
+  title: title || "(Sans titre)",
+  otherTitles: Array.isArray(otherTitles) ? otherTitles : [],
+  image: image || "",
+  description: description || "",
+  genres: Array.isArray(genres) ? genres : [],
+  status: status || "",
+  chTotal: parseInt(chTotal) || 0,
+  chLus: chLus || "",
+  chJade: parseInt(chJade) || 0,
+  date: date || "",
+  dernierLecture: dernierLecture || "",
+  page: page || "",
+  similaires: Array.isArray(similaires) ? similaires : [],
+  externalLinks: externalLinks || {}
+};
 
-  try {
-await db.collection("mangas").doc(id).set(data);
-alert("✅ Manga ajouté !");
+ try {
+  await db.collection("mangas").doc(id).set(data);
+
+  // Succès Firestore
+  alert("✅ Manga ajouté !");
+  // Remise à zéro du formulaire natif
 document.getElementById("formAjout").reset();
 
-mangaData[id] = data;        // ajoute localement
-afficherAvecFiltres();       // rafraîchit l'affichage
+// Réinitialiser la sélection de genres (rafraîchir la zone genre)
+afficherGenresPourAjout();
+
+// Vider les liens externes et ajouter une ligne vide
+const externalLinksContainer = document.getElementById("externalLinksContainer");
+if (externalLinksContainer) {
+  externalLinksContainer.innerHTML = '';
+  ajouterChampLienExterne();
+}
+
+// Vider le champ similaires
+const similairesInput = document.getElementById("similaires");
+if (similairesInput) similairesInput.value = "";
+
+// Remettre le focus sur le premier champ (optionnel)
+document.getElementById("title").focus();
+
+// Mettre à jour les données locales
+mangaData[id] = data;
+
+// Rafraîchir l'affichage des mangas
+try {
+  afficherAvecFiltres();
+} catch (e) {
+  console.error("Erreur d'affichage après ajout :", e);
+  alert("⚠️ Manga ajouté, mais affichage impossible (champ invalide ?)");
+}
+
+// Mettre à jour le compteur total mangas dans Firestore
+await mettreAJourTotalMangas(1);
 
 
 } catch (err) {
   console.error("Erreur Firebase :", err);
   alert("❌ Erreur lors de l'ajout !");
 }
+
 
 });
 
@@ -491,28 +517,20 @@ function supprimerManga(id) {
   if (!confirm("⚠️ Es-tu sûr(e) de vouloir supprimer ce manga ?")) return;
 
   db.collection("mangas").doc(id).delete()
-    .then(() => {
-      alert("✅ Manga supprimé !");
-      closePopup();
-      delete mangaData[id];
-afficherAvecFiltres();
-alert("✅ Manga supprimé !");
+  .then(async () => {
+    alert("✅ Manga supprimé !");
+    closePopup();
+    delete mangaData[id];
+    afficherAvecFiltres();
 
-    })
-    .catch(error => {
-      console.error("Erreur lors de la suppression :", error);
-      alert("❌ Erreur lors de la suppression.");
-    });
+    // <-- Ajoute cette ligne pour décrémenter le compteur dans Firestore :
+    await mettreAJourTotalMangas(-1);
+  })
+  .catch(error => {
+    console.error("Erreur lors de la suppression :", error);
+    alert("❌ Erreur lors de la suppression.");
+  });
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  chargerMangasDepuisFirestore();
-  afficherGenresPourAjout();
-  afficherNombreTotalMangas();
-});
-
-
 
 function afficherSimilairesEdition(manga) {
   const container = document.getElementById('popupSimilairesContainer');
@@ -587,6 +605,7 @@ function ajouterChampLienExterne() {
 function afficherNombreTotalMangas() {
   db.collection("meta").doc("stats").get()
     .then(doc => {
+      console.log("Doc snapshot:", doc);
       if (doc.exists) {
         const total = doc.data().totalMangas || 0;
         console.log("Total mangas récupéré:", total);
@@ -594,14 +613,52 @@ function afficherNombreTotalMangas() {
         if (el) el.textContent = `📚 Total mangas : ${total}`;
       } else {
         console.log("Document stats introuvable");
+        const el = document.getElementById("totalMangasDisplay");
+        if (el) el.textContent = "Aucun total mangas trouvé";
       }
     })
     .catch(err => {
       console.error("Erreur lecture total mangas:", err);
+      const el = document.getElementById("totalMangasDisplay");
+      if (el) el.textContent = "Erreur chargement total mangas";
     });
 }
 
 
+
+firebase.auth().onAuthStateChanged(async (user) => {
+  afficherEtatConnexion(user);
+
+  try {
+    // Attendre un peu pour éviter certains cas Safari
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    await chargerMangasDepuisFirestore();
+    afficherGenresPourAjout();
+    afficherNombreTotalMangas();
+  } catch (e) {
+    console.error("Erreur chargement après connexion :", e);
+    alert("❌ Erreur lors du chargement des mangas.");
+  }
+});
+
+async function mettreAJourTotalMangas(delta) {
+  const metaRef = db.collection("meta").doc("stats");
+  try {
+    await db.runTransaction(async (transaction) => {
+      const doc = await transaction.get(metaRef);
+      if (!doc.exists) {
+        transaction.set(metaRef, { totalMangas: Math.max(0, delta) });
+      } else {
+        const total = doc.data().totalMangas || 0;
+        const nouveauTotal = Math.max(0, total + delta);
+        transaction.update(metaRef, { totalMangas: nouveauTotal });
+      }
+    });
+  } catch (err) {
+    console.error("Erreur mise à jour total mangas :", err);
+  }
+}
 
 
 
