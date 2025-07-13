@@ -1,16 +1,4 @@
 let mangasFiltres = [];  // Tous les mangas après filtres/recherche
-let limiteAffichage = 50; // Nombre mangas à afficher
-
-document.addEventListener("DOMContentLoaded", () => {
-  chargerMangasDepuisFirestore(); // à la place de chargerMangas()
-
-  const btnSimilaires = document.getElementById("btnGenresSimilaires");
-  if (btnSimilaires) {
-    btnSimilaires.addEventListener("click", () => {
-      setSort("genres");
-    });
-  }
-});
 
 const genreImportance = {
   "abuse": 1, "academy": 3, "acting": 3, "action": 1, "adopted": 2, "androgine": 1, "animals": 3,
@@ -92,8 +80,8 @@ function displayMangas(mangas) {
 
   container.innerHTML = '';
 
-  // On affiche seulement la limite (50) ou tout si limite est > mangas.length
-  const toDisplay = mangas.slice(0, limiteAffichage);
+ const toDisplay = mangas;
+
 
   toDisplay.forEach(manga => {
     const id = Object.keys(mangaData).find(key => mangaData[key] === manga);
@@ -128,34 +116,6 @@ function displayMangas(mangas) {
       countBar.textContent = 'Aucun manga trouvé';
     }
   }
-
-  // Gestion du bouton "Voir plus"
-  const btnVoirPlusId = "btnVoirPlusMangas";
-  let btnVoirPlus = document.getElementById(btnVoirPlusId);
-
-  if (mangas.length > limiteAffichage) {
-    // Si le bouton n'existe pas, on le crée
-    if (!btnVoirPlus) {
-      btnVoirPlus = document.createElement('button');
-      btnVoirPlus.id = btnVoirPlusId;
-      btnVoirPlus.textContent = "Voir plus";
-      btnVoirPlus.style.display = 'block';
-      btnVoirPlus.style.margin = "10px auto";
-      btnVoirPlus.style.padding = "10px 20px";
-      btnVoirPlus.style.cursor = "pointer";
-      btnVoirPlus.addEventListener('click', afficherPlus);
-      container.parentNode.insertBefore(btnVoirPlus, container.nextSibling);
-    } else {
-      btnVoirPlus.style.display = 'block';
-    }
-  } else if (btnVoirPlus) {
-    btnVoirPlus.style.display = 'none';
-  }
-}
-
-function afficherPlus() {
-  limiteAffichage += 50;
-  displayMangas(mangasFiltres);
 }
 
 function filterByStatus(status) {
@@ -299,8 +259,15 @@ function openPopup(id) {
   const manga = mangaData[id];
 
   document.getElementById('popupTitle').innerText = manga.title;
-  document.getElementById('popupImg').src = manga.image || 'image/fond.jpg';
+  // Image principale
+  const imageUrl = manga.image || 'image/fond.jpg';
+  document.getElementById('popupImg').src = imageUrl;
 
+  // Image floue en fond
+  const popupBlur = document.getElementById('popupBlur');
+  if(popupBlur){
+    popupBlur.style.backgroundImage = `url('${imageUrl}')`;
+  }
   document.getElementById('popupDescription').innerHTML = manga.description || '';
 
   const popupGenres = document.getElementById('popupGenres');
@@ -558,13 +525,6 @@ if (search) {
     // Mélange aléatoire si aucun tri activé
     mangas.sort(() => Math.random() - 0.5);
   }
-
-  // Si recherche active, on enlève la limite, sinon limite à 50
-if (searchInput.value.trim().length > 0) {
-  limiteAffichage = mangas.length; // afficher tout
-} else {
-  limiteAffichage = 50;
-}
 
   // 6. Affichage final
   displayMangas(mangas);
@@ -1142,9 +1102,19 @@ function getGenreDominant(manga) {
 chargerMangasDepuisFirestore();
 
 document.addEventListener("DOMContentLoaded", () => {
-  chargerMangasDepuisFirestore();
+  firebase.auth().onAuthStateChanged(async (user) => {
+    afficherEtatConnexion(user);
 
-  // Lier le bouton "Genres similaires"
+    try {
+      await new Promise(resolve => setTimeout(resolve, 100)); // anti-bug Safari
+      await chargerMangasDepuisFirestore(); // OK
+      afficherGenresPourAjout?.(); // appelle-le si défini
+      afficherNombreTotalMangas?.(); // appelle-le si défini
+    } catch (e) {
+      console.error("Erreur chargement après connexion :", e);
+    }
+  });
+
   const btnSimilaires = document.getElementById("btnGenresSimilaires");
   if (btnSimilaires) {
     btnSimilaires.addEventListener("click", () => {

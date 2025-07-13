@@ -19,11 +19,11 @@ function getCompteurLectures() {
 
 const genresPossibles = [
   "abu","academy","acting","action","adopted","androgine","animals","apocalypse","art","arts-martiaux","aventure",
-  "badass","beast world","business","brother","caretaker","child lead","comédie","cooking","crossdressing","cultivation","drame",
-  "disciple","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
+  "badass","beast world","business","brother","caretaker","child lead","comédie","contrat de mariage","cooking","crossdressing","cultivation","drame",
+  "disciple","divorce","dungeon","enfant","fantasy","father","female lead","food","jeux vidéo","ghosts","harem","historical","horreur",
   "isekai","idol","long life","magie","male lead","manga","mature","mécanique","médicale","militaire","moderne","monstre",
   "mother","murim","multi world","multi life","musique","mystère","novel","omegaverse","power","prof","psychologique","réincarnation",
-  "return","revenge","rich","romance","saint","school life","slice of Life","seconde chance","secret identity","sick","sport","suicide",
+  "return","revenge","rich","romance","saint","school life","slice of Life","seconde chance","secret identity","secte","sick","sport","suicide",
   "superhero","surnaturel","system","time travel","tower","tyrant","transmigration","transformation","vampire",
   "villainess","yaoi"
 ];
@@ -381,15 +381,17 @@ genresHtml += `</div>`;
 
   // Status select
   const statusPossibles = ["En cours", "Complet", "Abandonné", "Pause"];
-  const statusSelectHtml = `
-    <label for="edit-status"><strong>Status :</strong></label>
-    <select id="edit-status" style="width: 100%;">
-      <option value="">-- Choisir un statut --</option>
-      ${statusPossibles.map(stat => `
-        <option value="${stat}" ${manga.status === stat ? 'selected' : ''}>${stat}</option>
-      `).join('')}
-    </select>
-  `;
+const statusActuel = (manga.status || "").toLowerCase();
+
+const statusSelectHtml = `
+  <label for="edit-status"><strong>Status :</strong></label>
+  <select id="edit-status" style="width: 100%;">
+    <option value="">-- Choisir un statut --</option>
+    ${statusPossibles.map(stat => `
+      <option value="${stat}" ${stat.toLowerCase() === statusActuel ? 'selected' : ''}>${stat}</option>
+    `).join('')}
+  </select>
+`;
 
   // Date et dernierLecture + status
   document.getElementById('popupDateStatus').innerHTML = `

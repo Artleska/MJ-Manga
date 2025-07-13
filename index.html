@@ -88,10 +88,12 @@
         <input type="checkbox" id="caretaker" value="caretaker" /><label for="caretaker">Caretaker</label>
         <input type="checkbox" id="child lead" value="child lead" /><label for="child lead">Child lead</label>
         <input type="checkbox" id="comédie" value="comédie" /><label for="comédie">Comédie</label>
+        <input type="checkbox" id="contrat de mariage" value="contrat de mariage" /><label for="contrat de mariage">Contrat de mariage</label>
         <input type="checkbox" id="cooking" value="cooking" /><label for="cooking">Cooking</label>
         <input type="checkbox" id="crossdressing" value="crossdressing" /><label  for="crossdressing">Crossdressing</label>
         <input type="checkbox" id="cultivation" value="cultivation" /><label for="cultivation">Cultivation</label>
         <input type="checkbox" id="disciple" value="disciple" /><label for="disciple">Disciple</label>
+        <input type="checkbox" id="divorce" value="divorce" /><label for="divorce">Divorce</label>
         <input type="checkbox" id="drame" value="drame" /><label for="drame">Drame</label>
         <input type="checkbox" id="dungeon" value="dungeon" /><label for="dungeon">Dungeon</label>
         <input type="checkbox" id="enfant" value="enfant" /><label for="enfant">Enfant</label>
@@ -137,6 +139,7 @@
         <input type="checkbox" id="slice of Life" value="slice of Life" /><label for="slice of Life">Slice of Life</label>
         <input type="checkbox" id="seconde chance" value="seconde chance" /><label for="seconde chance">Seconde chance</label>
         <input type="checkbox" id="secret identity" value="secret identity" /><label for="secret identity">Secret identity</label>
+        <input type="checkbox" id="secte" value="secte" /><label for="secte">Secte</label>
         <input type="checkbox" id="sick" value="sick" /><label for="sick">Sick</label>
         <input type="checkbox" id="sport" value="sport" /><label for="sport">Sport</label>
         <input type="checkbox" id="suicide" value="suicide" /><label for="suicide">Suicide</label>
@@ -274,8 +277,12 @@
         <!-- Conteneur pour l'édition de l'image -->
 
 
-        <img id="popupImg" src="" alt="" />
-        <div id="popupImage" class="popup-section" style="margin-bottom: 15px;"></div>
+    <div class="popup-image-wrapper">
+     <div id="popupBlur" class="popup-image-blur"></div>
+     <img id="popupImg" src="" alt="" class="popup-image" />
+    </div>
+
+
         <div class="popup-info">
           <h2 id="popupTitle"></h2>
           <p><strong>Autres titres :</strong> <span id="popupOtherTitles"></span></p>
@@ -332,9 +339,7 @@
 
   <script src="firebase-init.js"></script>
   <script src="main.js"></script>
-  <script>
-  chargerMangas();
-</script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-I1gdWZ4v8QXfVqN0L+eYoDIfBp6ySgGfKFlJYoNOE81z9vUeK1HklzUe3dkCJ3Qw"

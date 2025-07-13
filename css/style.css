@@ -157,12 +157,6 @@ header {
   object-fit: cover;
 }
 
-@media (min-width: 600px) {
-  .popup-flex {
-    flex-direction: row;
-  }
-}
-
 @media (max-width: 600px) {
   #mangaContainer {
     gap: 4px;
@@ -378,10 +372,60 @@ img, .manga, .popup-content {
 }
 
 @media (min-width: 1200px) {
-  #mangaContainer {
-    grid-template-columns: repeat(6, 1fr);
+  /* Le wrapper image */
+  .popup-image-wrapper {
+    position: relative;
+    width: auto;          /* largeur auto selon contenu */
+    height: 100%;         /* prend toute la hauteur du parent (.popup-content) */
+    max-width: none;      /* pas de max-width */
+    margin-right: 20px;   /* espace à droite */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;       /* ne se rétrécit pas */
+  }
+
+  /* L’image nette */
+  .popup-image {
+    height: 100%;         /* prend toute la hauteur du wrapper */
+    width: auto;          /* largeur auto pour garder proportions */
+    max-width: none;      /* pas de max */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    background: #111;
+    object-fit: contain;  /* s’adapte dans le cadre sans découpage */
+    display: block;
+  }
+
+  /* Pas d’image floue */
+  .popup-image-blur {
+    display: none !important;
+  }
+
+  /* Pour que flex prenne toute la hauteur */
+    .popup-flex {
+    display: flex;
+    flex-direction: row; /* image + infos côte à côte */
+    gap: 20px;           /* espace entre image et infos */
+    align-items: stretch;
+  }
+
+  /* S’assurer que popup-content a une hauteur définie */
+  .popup-content {
+    display: flex;        /* on passe en flex pour bien gérer la hauteur */
+    flex-direction: row;
+    height: 90vh;         /* hauteur max (comme déjà présent) */
+  }
+
+  /* Pour que .popup-info prenne le reste */
+  .popup-info {
+    flex: 1 1 auto;
+    overflow-y: auto;     /* si contenu trop grand */
   }
 }
+
 
 .status-divider {
   grid-column: 1 / -1;
@@ -1204,3 +1248,70 @@ select:focus {
 .bouton-ajout:hover {
   background-color: #0581bf!important;
 }
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  .popup-flex {
+    flex-direction: column; /* garder la colonne sur moyen écran */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .popup-flex img {
+    width: 60%;
+    max-width: 175px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .popup-info {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  .popup-image-wrapper {
+    position: relative;
+    width: 100%;         /* toute la largeur de la popup */
+    max-width: 900px;    /* max largeur popup */
+    height: 250px;       /* hauteur fixe, modifiable */
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-image-blur {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px) brightness(0.6);
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+  .popup-image {
+    position: relative;
+    max-width: 280px;    /* image nette plus petite */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    background: #111;
+    display: block;
+  }
+}
+
+/* Sur mobile (max 599px) : pas d’image floue */
+@media (max-width: 599px) {
+  .popup-image-blur {
+    display: none !important;
+  }
+}
+
+
